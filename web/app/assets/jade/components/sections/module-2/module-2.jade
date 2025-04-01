@@ -1,0 +1,54 @@
+mixin module-2(page, added_class)
+    section.module-2(class= added_class)
+        .module-2__overlay
+        img.image_svg.module-2__icon(src='/img/icon-section-2.svg')
+        .container
+            .row
+                .col.s12.module-2__content
+                    .section-header
+                        h2.module-2__title !{page.mainSlider.title}
+                    .section-header
+                        h6.module-2__pretitle
+                            a(href='/stock.html') посмотреть все
+                    .module-2__sliders-wrap
+                        .module-2__slider-middle
+                            each slide in page.mainSlider.slides
+                                .module-2__slide--middle
+                                    .block-logo.block-logo--mob
+                                        img(src= slide.logo)
+                                    img(src= slide.img)
+                                    a.module-2__slide-middle-btn.btn(href= slide.href) 
+                                        span посмотреть модель
+                        .module-2__counter
+                            p.counter__curent 1
+                            p.counter__all / !{page.mainSlider.slides.length}
+                        .module-2__slider-top
+                            each slide in page.mainSlider.slides
+                                .module-2__slide--top
+                                    .block-descr
+                                        .line-descr
+                                            img.image_svg(src='/img/icon-numbers-cil.svg')
+                                            .line-descr-text
+                                                p.line-descr-title количество цилиндров
+                                                p.line-descr-about
+                                                    | !{slide.numbers}
+                                        .line-descr
+                                            img.image_svg(src='/img/icon-value-cil.svg')
+                                            .line-descr-text
+                                                p.line-descr-title ёмкость цилиндров
+                                                p.line-descr-about
+                                                    | !{slide.volume}
+                                                    span  CC
+                                        .line-descr
+                                            img.image_svg(src='/img/icon-horse-cil.svg')
+                                            .line-descr-text
+                                                p.line-descr-title Мощность
+                                                p.line-descr-about
+                                                    | !{slide.power}
+                                                    span  л.с. / 11,500 об.мин
+                                    .block-logo.block-logo--desctp
+                                        img(src= slide.logo)
+                                    .block-price
+                                        p от
+                                        p.price !{slide.price}
+                                        p.curency ₽

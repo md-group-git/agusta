@@ -1,0 +1,177 @@
+.module-4 + .module-5
+  padding-top: 0
+.module-5
+  position: relative
+  z-index: 2
+  display: none
+  @media only screen and (max-width: 1024px)
+    padding-top: 40px
+    padding-bottom: 40px
+
+  &__overlay
+    position: absolute
+    left: 50%
+    top: 50%
+    transform translate(-50%,-50%)
+    width: 100%
+    pointer-events none
+    @media only screen and (max-width: 1460px)
+      top: -100px
+      transform translate(-50%,0)
+    @media only screen and (max-width: 1024px)
+      display: none
+
+  &__icon
+    position: absolute
+    left: 50%
+    transform translateX(-50%)
+    bottom: -90px
+    z-index: 2
+
+  &__bottom-slider
+    margin-top: 40px
+
+  &__bottom-slider
+    width: 794px
+    padding-left: 115px
+    padding-right: 115px
+    margin-left: auto
+    margin-right: auto
+    @media only screen and (max-width: 1024px)
+      display: none
+    .slick-arrow
+      position: absolute
+      top: 50%
+      transform translateY(-50%)
+      z-index: 2
+      cursor pointer
+      path
+        transform all .3s ease
+      &:hover
+        path
+          stroke brown
+    .next-btn
+      right: 0
+    .prev-btn
+      left: 0
+    .slick-slide
+      max-height 83px
+      &.module-5__bottom-slide--video
+        position: relative
+        &:before
+          content ''
+          width: 36px
+          height: 33px
+          position: absolute
+          top: 50%
+          left: 50%
+          transform translate(-50%, -50%)
+          background url("/img/icon-play-small.svg") center no-repeat
+          background-size contain
+    .slick-active
+      position: relative
+      &:after
+        content ''
+        display: block
+        position: absolute
+        bottom: 0
+        left: 0
+        height: 2px
+        width: 100%
+        background-color: #fff
+
+
+  &__bottom-slide
+    position: relative
+    margin-left: 20px
+    margin-right: 20px
+    width: 148px
+    cursor pointer
+
+
+
+  &__top-slider
+    width: 794px
+    margin-left: auto
+    margin-right: auto
+    @media only screen and (max-width: 1024px)
+      width: auto
+      .slick-arrow
+        position: absolute
+        bottom: -64px
+        z-index 2
+        path
+          fill #636363
+      .next-btn
+        right: 50%
+        transform translateX(70px)
+      .prev-btn
+        left: 50%
+        transform translateX(-70px)
+      .slick-list
+        width: 100vw
+        overflow visible
+        padding: 0!important
+        margin-left: -27px
+        @media only screen and (max-width: 600px)
+          margin-left: -12px
+      .module-5__top-slide
+        margin-right: 80px
+        @media only screen and (max-width: 768px)
+          margin-right: 50px
+        @media only screen and (max-width: 600px)
+          margin-right: 30px
+    iframe
+      width: 794px
+      height: 529px
+      img
+        width: 100%
+      @media only screen and (max-width: 1024px)
+        width: 572.58px;
+        height: 382px;
+      @media only screen and (max-width: 640px)
+        width: 314px;
+        height: 209px;
+      @media only screen and (max-width: 360px)
+        width: 268.11px;
+        height: 178.46px;
+    .module-5__top-slide--img
+      cursor zoom-in
+      @media only screen and (max-width: 1024px)
+        width: 572.58px;
+        height: 382px;
+      @media only screen and (max-width: 640px)
+        width: 314px;
+        height: 209px;
+      @media only screen and (max-width: 360px)
+        width: 268.11px;
+        height: 178.46px;
+
+
+  &__counter
+    display: none
+    align-items center
+    font-weight: 700;
+    z-index 2
+    justify-content center
+    margin-top: 40px
+    @media only screen and (max-width: 1024px)
+      display: flex
+    p
+      font-weight 700
+      font-size: 18px;
+      line-height: 16px;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 0
+      color #636363
+    .counter__curent
+      color white
+      margin-right: 8px
+
+  &.no-icon
+    .module-5__icon
+      display: none
+
+  &.active
+    display: block

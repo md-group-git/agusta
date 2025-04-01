@@ -1,0 +1,7 @@
+<div class="line-descr">
+    <img src="{{ asset('img/icon-moment-cil.svg') }}" class="image_svg" alt=""/>
+    <div class="line-descr-text">
+        <p class="line-descr-title">Максимальный крутящий момент</p>
+        <p class="line-descr-about">{{ model.torque }}<span> кг-м / {{ model.torqueRpm | number_format(0, ',', ',') }} об.мин</span></p>
+    </div>
+</div>

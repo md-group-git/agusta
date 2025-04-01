@@ -1,0 +1,13 @@
+<div id="modalCall" class="modal modal-call">
+    <div class="modal-cross-wrap">
+        <a href="#!" class="modal-close">
+            <img src="{{ asset('img/icon-cross.svg') }}" class="image_svg" alt=""/>
+        </a>
+    </div>
+
+    <div class="modal-content">
+        <p class="modal__title">оставьте свои данные</p>
+        <img src="{{ asset('img/modal-line.svg') }}" class="image_svg" alt=""/>
+        {{ include('sections/forms/call.html.twig') }}
+    </div>
+</div>

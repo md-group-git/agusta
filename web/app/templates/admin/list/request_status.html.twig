@@ -1,0 +1,17 @@
+{% extends '@SonataAdmin/CRUD/base_list_field.html.twig' %}
+
+{% block field %}
+    {%- apply spaceless %}
+        {% if value == 'new' %}
+            <span class="label label-primary">{{ 'enum.request.new' | trans }}</span>
+        {% endif %}
+
+        {% if value == 'processing' %}
+            <span class="label label-warning">{{ 'enum.request.processing' | trans }}</span>
+        {% endif %}
+
+        {% if value == 'processed' %}
+            <span class="label label-success">{{ 'enum.request.processed' | trans }}</span>
+        {% endif %}
+    {% endapply -%}
+{% endblock %}

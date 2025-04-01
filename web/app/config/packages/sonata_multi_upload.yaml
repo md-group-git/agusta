@@ -1,0 +1,10 @@
+sonata_admin:
+    assets:
+        extra_stylesheets:
+            - bundles/sonatamultiupload/dist/sonata-multiupload.css
+
+        extra_javascripts:
+            - bundles/sonatamultiupload/dist/sonata-multiupload.js
+
+sonata_multi_upload:
+    redirect_to: 'admin_app_media_create_gallery'

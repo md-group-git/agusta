@@ -1,0 +1,47 @@
+logout: Logout
+
+enum:
+    stock:
+        instock: In Stock
+        onorder: Available on Order
+        outofstock: Out of Stock
+    location:
+        top: Top
+        bottom: Bottom
+    request:
+        new: New
+        processing: Processing
+        processed: Processed
+    color:
+        ago_red_ago_silver: Ago Red / Ago Silver
+        ago_red_metallic_carbon_black: Ago Red / Metallic Carbon Black
+        metallic_carbon_black: Metallic Carbon Black
+        metallic_carbon_black_metallic_dark_gray: Metallic Carbon Black / Metallic Dark Gray
+
+entry:
+    admins: Admins
+    catalog: Catalog
+    lineup: Lineup
+    models: Models
+    colors: Colors
+    highlights: Highlights
+    requests: Requests
+    request:
+        call: Back Call
+        order: Order Request
+        ride: Test-Ride Request
+        service: Service Request
+
+message:
+    you_cannot_delete_your_own_account: You cannot delete your own account
+
+circular: View 360°
+color: Color
+default: Default
+document: Document
+header_gallery: Header Gallery
+highlight: Highlight
+logo: Logo
+model: Model
+bike_gallery: Model Gallery
+sound: Sound

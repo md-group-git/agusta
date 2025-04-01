@@ -1,0 +1,30 @@
+include ../components/include/head
+include ../components/include/googleanalitics
+include ../components/include/scripts
+include ../components/sections/s-modal-policy/s-modal-policy
+
+include ../components/sections/menu/menu
+include ../components/sections/s-header/s-header
+include ../components/sections/s-footer/s-footer
+
+include ../components/sections/module-1/module-1
+include ../components/sections/module-2/module-2
+include ../components/sections/module-3/module-3
+
+doctype html
+html(lang="en")
+    +head(mainPage)  
+    body
+        //#preloader
+            //img(src="/img/logo-main.svg" alt='')
+        .b-wrapper
+            .content
+                +menu(mainPage)
+                +s-header(mainPage)
+                +module-2(mainPage, 'top-overlay')
+                +module-1(mainPage)
+                +module-3(mainPage)
+                +s-footer(mainPage)
+                +s-modal-policy()
+                //+s-contact(mainPage)
+            +scripts()

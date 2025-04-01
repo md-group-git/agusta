@@ -1,0 +1,53 @@
+mixin module-5(page, added_class)
+    section.module-5.active(class= added_class, data-id='about1')
+        img.image_svg.module-5__icon(src='/img/icon-section-2.svg')
+        img.module-5__overlay(src= page.videoSlider.bg)
+        .container
+            .row
+                .col.s12.module-5__content
+                    .module-5__top-slider
+                        each video in page.videoSlider.videos
+                            if (video.type == 'video')
+                                .module-5__top-slide.module-5__top-slide--video
+                                    iframe(src= video.src, frameborder='0', allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen='')
+                            if (video.type == 'img')
+                                a.module-5__top-slide.module-5__top-slide--img.module-5-popup-link(href= video.src)
+                                    img(src= video.src)
+                    .module-5__bottom-slider
+                        each image in page.videoSlider.images
+                            if (image.type == 'video')
+                                .module-5__bottom-slide.module-5__bottom-slide--video
+                                    img(src= image.src)
+                            if (image.type == 'img')
+                                .module-5__bottom-slide.module-5__bottom-slide--img
+                                    img(src= image.src)
+                    .module-5__counter
+                        p.counter__curent 1
+                        p.counter__all / !{page.videoSlider.videos.length}
+    if page.videoSlider2
+        section.module-5(class= added_class, data-id='about2')
+            img.image_svg.module-5__icon(src='/img/icon-section-2.svg')
+            img.module-5__overlay(src= page.videoSlider2.bg)
+            .container
+                .row
+                    .col.s12.module-5__content#about1
+                        .module-5__top-slider
+                            each video in page.videoSlider2.videos
+                                if (video.type == 'video')
+                                    .module-5__top-slide.module-5__top-slide--video
+                                        iframe(src= video.src, frameborder='0', allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen='')
+                                if (video.type == 'img')
+                                    a.module-5__top-slide.module-5__top-slide--img.module-5-popup-link(href= video.src)
+                                        img(src= video.src)
+                        .module-5__bottom-slider
+                            each image in page.videoSlider2.images
+                                if (image.type == 'video')
+                                    .module-5__bottom-slide.module-5__bottom-slide--video
+                                        img(src= image.src)
+                                if (image.type == 'img')
+                                    .module-5__bottom-slide.module-5__bottom-slide--img
+                                        img(src= image.src)
+                        .module-5__counter
+                            p.counter__curent 1
+                            p.counter__all / !{page.videoSlider2.videos.length}
+

@@ -1,0 +1,165 @@
+.header-slider
+  padding: 0
+
+  .container
+    max-width inherit
+    padding-left: 0
+    padding-right: 0
+
+  .col
+    padding: 0
+
+  &__slider
+    margin-top: -245px
+    @media only screen and (max-width: 1600px)
+      margin-top: -100px
+    @media only screen and (max-width: 1400px)
+      margin-top: 0
+    @media only screen and (max-width: 768px)
+      margin-top: -70px
+    @media only screen and (max-width: 600px)
+      margin-top: -20px
+    @media only screen and (max-width: 480px)
+      margin-top: 0
+
+
+  &__content
+    position: relative
+
+  &__tag
+    margin-top: 20px
+    font-style: italic;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: right;
+    text-transform: uppercase;
+    color rgba(255,255,255,.5)
+    @media only screen and (max-width: 1280px)
+      margin-top: 8px
+      font-size: 18px;
+    @media only screen and (max-width: 768px)
+      margin-top: 0
+    @media only screen and (max-width: 600px)
+      font-size: 14px;
+    @media only screen and (max-width: 400px)
+      font-size 12px
+
+  &__diller
+    font-style: italic;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    position: absolute
+    left: 40px
+    top: 130px
+    display: none
+    z-index: 2
+    max-width 300px
+    @media only screen and (max-width: 1400px)
+      display: block
+    @media only screen and (max-width: 1024px)
+      font-size: 18px;
+      top: 54px
+      left: 20px
+    @media only screen and (max-width: 768px)
+      width: 250px
+    @media only screen and (max-width: 600px)
+      top: 80px
+      font-size: 14px;
+      width: 200px
+    @media only screen and (max-width: 400px)
+      top: 84px
+      font-size: 12px;
+      line-height: 24px
+      width: 150px
+
+  &__logo
+    width: 340px
+    position: absolute
+    top: 140px
+    right: 60px
+    z-index: 2
+    @media only screen and (max-width: 1024px)
+      top: 64px
+      right: 20px
+    @media only screen and (max-width: 767px)
+      width: 250px
+    @media only screen and (max-width: 600px)
+      top: 90px
+      width: 200px
+    @media only screen and (max-width: 460px)
+      width: 160px
+    @media only screen and (max-width: 350px)
+      width: 140px
+    //  top auto
+    //  right auto
+    //  bottom: -50px
+    //  left 50%
+    //  transform translateX(-50%)
+
+  &__slide
+    width: 100vw
+    img
+      @media only screen and (max-width: 768px)
+        position: relative
+        left: 50%
+        transform translateX(-50%)
+        width: 150vw
+        max-width inherit
+      @media only screen and (max-width: 480px)
+        width: 160vw
+      @media only screen and (max-width: 380px)
+        width: 190vw
+
+  .slick-arrow
+    position: absolute
+    bottom 32px
+    z-index: 2
+    cursor pointer
+    path
+      fill rgba(255,255,255,.4)
+      transition all .3s ease
+    &:hover
+      path
+        fill white
+
+  .prev-btn
+    left calc(50% - 90px)
+
+  .next-btn
+    right calc(50% - 90px)
+
+  &__counter
+    position: absolute
+    bottom 40px
+    left: 50%
+    transform translateX(-50%)
+    display: flex
+    align-items center
+    font-weight: 700;
+    z-index 2
+    @media only screen and (max-width: 992px)
+      bottom: 0
+    p
+      font-weight 700
+      font-size: 18px;
+      line-height: 16px;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 0
+      color rgba(255,255,255,.4)
+    .counter__curent
+      color white
+      margin-right: 8px
+
+  &__overlay
+    position: absolute
+    bottom: 0
+    left 0
+    width: 100%
+    height: 112px
+    background: linear-gradient(180deg, #141414 0%, rgba(27, 27, 27, 0.51) 55.21%, rgba(27, 27, 27, 0) 100%);
+    transform: matrix(1, 0, 0, -1, 0, 0);

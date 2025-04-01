@@ -1,0 +1,23 @@
+include ../components/include/head
+include ../components/include/googleanalitics
+include ../components/include/scripts
+include ../components/sections/s-modal-policy/s-modal-policy
+
+include ../components/sections/menu/menu
+include ../components/sections/s-footer/s-footer
+include ../components/sections/s-map/s-map
+
+
+doctype html
+html(lang="en")
+    +head(contacts)
+    body
+        //#preloader
+            //img(src="/img/logo-main.svg" alt='')
+        .b-wrapper
+            .content
+                +menu(contacts)
+                +s-map(contacts)
+                +s-footer(contacts)
+                +s-modal-policy()
+            +scripts()

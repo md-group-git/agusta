@@ -1,0 +1,71 @@
+mixin s-ride-form(page)
+    section.s-ride-form#rideFormSection
+        .container
+            .row
+                .col.s12
+                    .s-ride-form__content
+                        p.s-ride-form__title оставьте свои данные
+                        img.image_svg.s-ride-form__line(src='/img/ride-line.svg')
+                        p.s-ride-form__description С Вами свяжутся по телефону для подтверждения бронирования. Пожалуйста, убедитесь в том, что Ваш телефон указан верно
+                        form#rideOrderForm.wpcf7-form(class="form-style notvalid" novalidate="novalidate")
+                            .formWP.form-wrp
+                                .form-group
+                                    .wrp-input.input-field.input-field--half
+                                        label(for='first_name_r') Имя
+                                        input#first_name_r(type='text', name='firstName', maxlength='50')
+                                    .wrp-input.input-field.input-field--half
+                                        label(for='phone_r') Телефон *
+                                        input#phone_r.form-control(type='tel', name='phone', required='', maxlength='30')
+                                .form-group
+                                    .wrp-input.input-field.input-field--half
+                                        label(for='last_name_r') Фамилия
+                                        input#last_name_r(type='text', name='lastName', maxlength='50')
+                                    .wrp-input.input-field.input-field--half
+                                        label(for='email_r') E-mail
+                                        input#email_r(type='email', name='email', maxlength='254')
+                                .form-group
+                                    .wrp-input.input-field.input-field--date.input-field--half
+                                        input.datepicker#date_r(type='text', name='date', placeholder='Дата и время')
+                                    .wrp-input.input-field.input-field--half
+                                        select#license_r(name='licensed')
+                                            option(value='', disabled='', selected='') У Вас есть ВУ с категорией А?
+                                            option(value= 'true') да
+                                            option(value= 'false') нет
+                                .form-group.form-group--center
+                                    .wrp-input.input-field.input-field--half
+                                        select#model_r(name='motorcycle')
+                                            option(value='', disabled='', selected='') Выберите модель
+                                            option(value='brutale-1000-serie-oro') Brutale 1000 Serie Oro
+                                            option(value='dragster-800-rosso') Dragster 800 Rosso
+                                            option(value='brutale-800-rosso') Brutale 800 Rosso
+                                            option(value='turismo-veloce-800-lusso') Turismo Veloce 800 Lusso
+                                            option(value='brutale-800-rr-scs') Brutale 800 RR SCS
+                                h5 ХОТИТЕ ЛИ ВЫ, ЧТОБЫ МЫ СВЯЗАЛИСЬ С ВАМИ ПО ПОВОДУ ПРОДУКЦИИ, УСЛУГ И МЕРОПРИЯТИЙ?
+                                .checkbox-wrap
+                                    label
+                                        input.filled-in(type='checkbox', name="agree_receive", value="Yes")
+                                        span Согласен на получение рекламных информационных материалов
+                                .checkbox-wrap
+                                    label
+                                        input.filled-in.required-checkbox.form-control(type='checkbox', name="agree_personal", value="Yes")
+                                        span
+                                            | Я согласен на обработку персональных данных в соответствие с&ensp;
+                                            a.policy_modal-link.modal-trigger(href="#modalPolicy") политикой кофиденциальности
+                                            | *
+                            //p.s-ride-form__title хотите ли вы, чтобы мы связались с вами по поводу продукции, услуг и мероприятий?
+                            //img.image_svg.s-ride-form__line(src='/img/ride-line.svg')
+                            //p.s-ride-form__privacy-text
+                            //    | я прочитал, понял смысл и принимаю прилагаемое
+                            //    a(href='#')  уведомление о конфиденциальности
+                            //    | , и хочу, чтобы вы связались со мной по телефону
+                            .btn-wrap
+                                button.btn.submitButton(type='submit')
+                                    span отправить
+                                .preloader-wrapper.preloader-wrapper-btn.small.active
+                                    .spinner-layer.spinner-green-only
+                                        .circle-clipper.left
+                                            .circle
+                                        .gap-patch
+                                            .circle
+                                        .circle-clipper.right
+                                            .circle

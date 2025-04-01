@@ -1,0 +1,63 @@
+<ul id="slide-out" class="sidenav">
+    <div class="sidenav-header">
+        <a href="#!" class="sidenav-close sidenav-cross">
+            <img src="{{ asset('img/icon-cross.svg') }}" class="image_svg" alt=""/>
+        </a>
+    </div>
+
+    <div class="sidenav-body">
+        <a href="{{ path('stock') }}" class="sidenav__link sidenav__link--mob">
+            <span>Мотоциклы в наличии</span>
+        </a>
+
+        <ul class="collapsible">
+            <li class="first-level-item">
+                <div class="collapsible-header first-level-header">
+                    <p>Модельный ряд</p>
+                </div>
+                
+                <div class="collapsible-body">
+                    <ul class="collapsible">
+                        {% for lineup in lineupListService.sorted %}
+                        <li class="second-level-item">
+                            <div class="collapsible-header second-level-header">
+                                <p>{{ lineup.name }}</p>
+                            </div>
+                            <div class="collapsible-body">
+                                {% for model in lineup.modelsSorted if not model.special %}
+                                <a href="{{ path('model', { lineup: lineup.slug, model: model.slug }) }}">
+                                    <span>{{ lineup.name }} {{ model.name }}</span>
+                                </a>
+                                {% endfor %}
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+        <a href="{{ path('contacts') }}" class="sidenav__link sidenav__link--mob">
+            <span>Контакты</span>
+        </a>
+
+        <a href="{{ path('service') }}" class="sidenav__link">
+            <span>Запись на сервис</span>
+        </a>
+
+        <a href="{{ path('company') }}" class="sidenav__link">
+            <span>О компании</span>
+        </a>
+
+        <a href="{{ path('ride') }}" class="sidenav__link sidenav__link--mob sidenav__link--ride">
+            <span>Тест-райд</span>
+        </a>
+
+        <div class="sidenav__link-phone-wrap sidenav__link--mob">
+            <a href="#modalCall" class="sidenav__link sidenav__link--mob sidenav__link--phone modal-trigger sidenav-close">
+                <img src="{{ asset('img/icon-phone.svg') }}" class="image_svg" alt=""/>
+                <span>Обратный звонок</span>
+            </a>
+        </div>
+    </div>
+</ul>

@@ -1,0 +1,55 @@
+<nav class="top-menu">
+    {% set route = app.request.get('_route') %}
+
+    <div class="nav-wrapper">
+        <div class="nav-wrapper__block">
+            <ul class="anqors-wrap">
+                <li>
+                    <a href="#" data-target="slide-out" class="sidenav-trigger sandwich-wrap">
+                        <div class="sandwich">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+            <a href="#" class="top-menu__link top-menu__link--models">
+                <span>Модельный ряд</span>
+                <img src="{{ asset('img/line-menu.svg') }}" class="image_svg top-menu__link-line" alt=""/>
+                <img src="{{ asset('img/line-menu-yellow.svg') }}" class="image_svg top-menu__link-line-active" alt=""/>
+            </a>
+
+            <a href="{{ path('stock') }}" class="top-menu__link {% if route == 'stock' %}active{% endif %}">
+                <span>Мотоциклы в наличии</span>
+                <img src="{{ asset('img/line-menu-long.svg') }}" class="image_svg top-menu__link-line" alt=""/>
+                <img src="{{ asset('img/line-menu-yellow.svg') }}" class="image_svg top-menu__link-line-active" alt=""/>
+            </a>
+        </div>
+
+        <a href="{{ path('homepage') }}" class="brand-logo">
+            <img src="{{ asset('img/logo-main.svg') }}" alt=""/>
+        </a>
+
+        <div class="nav-wrapper__block">
+            <a href="{{ path('contacts') }}" class="top-menu__link {% if route == 'contacts' %}active{% endif %}">
+                <span>Контакты</span>
+                <img src="{{ asset('img/line-menu.svg') }}" class="image_svg top-menu__link-line" alt=""/>
+                <img src="{{ asset('img/line-menu-yellow.svg') }}" class="image_svg top-menu__link-line-active" alt=""/>
+            </a>
+
+            <a href="{{ path('ride') }}" class="top-menu__link top-menu__link--ride {% if route == 'ride' %}active{% endif %}">
+                <span>Тест-райд</span>
+                <img src="{{ asset('img/line-menu.svg') }}" class="image_svg top-menu__link-line" alt=""/>
+                <img src="{{ asset('img/line-menu-yellow.svg') }}" class="image_svg top-menu__link-line-active" alt=""/>
+            </a>
+
+            <a href="#modalCall" class="top-menu__link-phone modal-trigger">
+                <img src="{{ asset('img/icon-phone.svg') }}" class="image_svg" alt=""/>
+                <div class="top-menu__phone-tooltip">
+                    <span>Обратный звонок</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</nav>

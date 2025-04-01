@@ -1,0 +1,7 @@
+{% extends '@SonataAdmin/CRUD/base_list_field.html.twig' %}
+
+{% block field %}
+    {%- apply spaceless %}
+        <img src="{% path value, 'small' %}" alt="{{ value }}" title="{{ value }}">
+    {% endapply -%}
+{% endblock %}

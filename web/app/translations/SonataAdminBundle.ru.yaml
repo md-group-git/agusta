@@ -1,0 +1,24 @@
+Admin: MV Agusta Russia Admin
+
+label_type_yes: Да
+label_type_no: Нет
+link_action_create: Добавить
+link_add: Добавить
+action_edit: Ред.
+action_clone: Клон.
+action_recalc_positions: Пересчитать позиции элементов
+btn_create_and_create_a_new_one: Создать и добавить ещё
+
+title_clone: Подтверждение клонирования
+message_clone_confirmation: Вы действительно хотите клонировать "%object%"?
+btn_clone: Клонировать
+flash_clone_success: Элемент успешно клонирован.
+flash_clone_error: Во время клонирования произошла ошибка.
+
+title_recalc_positions: Подтверждение пересчета позиций
+message_recalc_positions_confirmation:
+    Пересчет следует выполнять при возникновении ошибок перемещения элементов в списке.
+    Текущий порядок по возможнсти будет сохранен.
+btn_recalc_positions: Пересчитать
+flash_recalc_positions_success: Позиции успешно пересчитаны.
+flash_recalc_positions_error: Во время пересчита позиций произошла ошибка.

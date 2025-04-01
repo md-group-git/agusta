@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="8px" viewBox="0 0 14 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="w-copy-9" transform="translate(-1102.000000, -809.000000)" fill="#1D27FC" fill-rule="nonzero">
+            <g id="arrow-down-sign-to-navigate-copy" transform="translate(1109.000000, 813.000000) scale(1, -1) translate(-1109.000000, -813.000000) translate(1102.000000, 809.000000)">
+                <path d="M6.99997676,8 C6.74906827,8 6.49819076,7.90396229 6.30689549,7.71229066 L0.287198515,1.67775576 C-0.0957328382,1.29388447 -0.0957328382,0.671502977 0.287198515,0.28778699 C0.669974947,-0.0959289967 1.29070856,-0.0959289967 1.6736709,0.28778699 L6.99997676,5.62747728 L12.3263136,0.28797335 C12.709245,-0.0957426363 13.3299166,-0.0957426363 13.7126621,0.28797335 C14.0957793,0.671689337 14.0957793,1.29407083 13.7126621,1.67794212 L7.69305803,7.71247702 C7.50166982,7.90417971 7.25079231,8 6.99997676,8 Z" id="Path" transform="translate(7.000000, 4.000000) scale(1, -1) translate(-7.000000, -4.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

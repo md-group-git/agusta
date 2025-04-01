@@ -1,0 +1,330 @@
+{% extends 'base.html.twig' %}
+
+{% set title = model.lineup.name ~ ' ' ~ model.name %}
+
+{% block page %}
+    <section class="header-slider">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 header-slider__content">
+                    <div class="header-slider__logo">
+                        <img src="{% path model.logo, 'reference' %}" alt=""/>
+                        <p class="header-slider__tag">{{ model.slogan }}</p>
+                    </div>
+                    <div class="header-slider__slider">
+                        {% if model.header %}
+                            {% for headerGalleryItem in model.header.galleryHasMedias %}
+                            <div class="header-slider__slide">
+                                <img src="{% path headerGalleryItem.media, 'reference' %}" alt="">
+                            </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <div class="header-slider__counter">
+                        {% if model.header and model.header.galleryHasMedias.count > 1 %}
+                        <p class="counter__curent">1</p>
+                        <p class="counter__all">/ {{ model.header.galleryHasMedias.count }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="header-slider__overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="module-4 module-4--price">
+        <div class="module-4__price-block-wrap">
+            <div class="module-4__block">
+                <p class="module-4__title">от официального дилера в России</p>
+            </div>
+            <div class="module-4__block module-4__block--price">
+                {{ include('sections/blocks/price.html.twig') }}
+            </div>
+            <div class="module-4__block">
+                <div class="btns-wrap">
+                    {% if model.ride %}
+                    <a href="{{ path('ride') }}" class="btn btn--black">
+                        <span>Записаться на тест-райд</span>
+                    </a>
+                    {% endif %}
+                    <a href="#modalCall" class="btn btn--white modal-trigger">
+                        <span>Запросить предложение</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="module-4 product">
+        <div class="module-4__overlay"></div>
+        <img src="{{ asset('img/icon-section-2.svg') }}" class="image_svg module-4__icon module-4__icon--bottom" alt=""/>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 module-4__content module-4__content--top module-4__content--mob">
+                    <img src="{{ asset('img/icon-section-2.svg') }}" class="image_svg module-4__icon" alt=""/>
+                    <div class="module-4__block">
+                        <p class="module-4__title">от официального дилера в России</p>
+                    </div>
+
+                    <div class="module-4__block module-4__block--price">
+                        {{ include('sections/blocks/price.html.twig') }}
+                    </div>
+
+                    <div class="module-4__block">
+                        <div class="btns-wrap">
+                            {% if model.ride %}
+                            <a href="{{ path('ride') }}" class="btn btn--black">
+                                <span>Записаться на тест-райд</span>
+                            </a>
+                            {% endif %}
+                            <a href="#modalCall" class="btn btn--white modal-trigger">
+                                <span>Запросить предложение</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% if model.paints|length %}
+        <div class="module-4__circle-slider-wrap">
+            <div class="container module-360">
+                <div class="row">
+                    <div class="module-4__colors-wrap">
+                        {% for paint in model.paints %}
+                        <a href="#" data-color="{{ paint.paintColor.id }}" class="module-4__color-line {% if loop.first %}active{% endif %}">
+                            <span>{{ paint.paintColor.name | nl2br }}</span>
+                            <div class="module-4__color-img-wrap">
+                                <img src="{% path paint.paintColor.image, 'reference' %}" class="image_svg" alt=""/>
+                            </div>
+                        </a>
+                        {% endfor %}
+                    </div>
+
+                    <div class="col s12 module-4__content module-4__content--slider model-container">
+                        {% for paint in model.paints %}
+                        <div data-color="{{ paint.paintColor.id }}" class="module-4__rotation-slider rotation version-container {% if loop.first %}active{% endif %}">
+                            {% if paint.gallery and paint.gallery.galleryHasMedias %}
+                                {% for paintGalleryItem in paint.gallery.galleryHasMedias %}
+                                    <img src="{% path paintGalleryItem.media, 'reference' %}" class="single-image" alt="">
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+
+                        <img src="{{ asset('img/360-circle.png') }}" class="module-4__rotation-circle" alt=""/>
+                        <p class="module-4__rotation-circle-num">360°</p>
+                    </div>
+
+                    {% if model.sound %}
+                    <div class="module-4__sound-wrap" style="display: none">
+                        <audio id="motoSound" controls="">
+                            <source src="{% path model.sound, 'reference' %}" type="audio/mpeg"/>Ваш браузер не поддерживает воспроизведение аудио.
+                        </audio>
+                        <div class="module-4__sound-btn">
+                            <canvas id="motoSoundCanvas"></canvas>
+                            <div class="module-4__sound-btn-content">
+                                <img src="{{ asset('img/icon-sound.svg') }}" class="image_svg" alt=""/>
+                                    <span>ЗАПУСТИТЬ ДВИГАТЕЛЬ</span>
+                                    <span class="off-eng">ВЫКЛЮЧИТЬ ДВИГАТЕЛЬ</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <div class="module-4__circle-slider-description">
+                        {{ include('sections/blocks/lineDescrCylinders.html.twig') }}
+                        {{ include('sections/blocks/lineDescrVolume.html.twig') }}
+                        {{ include('sections/blocks/lineDescrSpeed.html.twig') }}
+                        {{ include('sections/blocks/lineDescrWeight.html.twig') }}
+                        {{ include('sections/blocks/lineDescrPower.html.twig') }}
+                        {{ include('sections/blocks/lineDescrCompression.html.twig') }}
+                        {{ include('sections/blocks/lineDescrTorque.html.twig') }}
+                        {% if model.techSpecsTree %}
+                        {{ include('sections/blocks/lineTechSpecs.html.twig') }}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </section>
+
+    {% if model.techSpecsTree %}
+    {{ include('sections/modalTechSpec.html.twig') }}
+    {% endif %}
+
+    {% if model.gallery and model.gallery.galleryHasMedias %}
+    <section data-id="about1" class="module-5 active">
+        <img src="{{ asset('img/icon-section-2.svg') }}" class="image_svg module-5__icon" alt=""/>
+        <img src="{{ asset('img/s-videos-bg.png') }}" class="module-5__overlay" alt=""/>
+
+        <div class="container">
+            <div class="row">
+                <div class="col s12 module-5__content">
+                    <div class="module-5__top-slider">
+                        {% for item in model.gallery.galleryHasMedias %}
+                            {% if item.media.providerName == 'sonata.media.provider.youtube' %}
+                                <div class="module-5__top-slide module-5__top-slide--video">
+                                    {#{{ item.media.providerMetadata.html | raw }}#}
+                                    <iframe src="https://www.youtube.com/embed/{{ item.media.providerReference }}"
+                                            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen=""></iframe>
+                                </div>
+                            {% elseif item.media.providerName == 'sonata.media.provider.video' %}
+                                <video controls style="width: 100%">
+                                    <source src="{% path item.media, 'reference' %}">
+                                </video>
+                            {% elseif item.media.providerName == 'sonata.media.provider.image' %}
+                                <a href="{% path item.media, 'reference' %}" class="module-5__top-slide module-5__top-slide--img module-5-popup-link">
+                                    <img src="{% path item.media, 'reference' %}" alt=""/>
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+                    <div class="module-5__bottom-slider">
+                        {% for item in model.gallery.galleryHasMedias %}
+                            {% if item.media.providerName == 'sonata.media.provider.youtube' %}
+                            <div class="module-5__bottom-slide module-5__bottom-slide--video">
+                                <img src="{% path item.media, 'reference' %}" alt=""/>
+                            </div>
+                            {% elseif item.media.providerName == 'sonata.media.provider.video' %}
+                            <div class="module-5__bottom-slide module-5__bottom-slide--video">
+                                <img src="{% path item.media, 'big' %}" alt=""/>
+                            </div>
+                            {% elseif item.media.providerName == 'sonata.media.provider.image' %}
+                            <div class="module-5__bottom-slide module-5__bottom-slide--img">
+                                <img src="{% path item.media, 'reference' %}" alt=""/>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+                    <div class="module-5__counter">
+                        <p class="counter__curent">1</p>
+                        <p class="counter__all">/ {{ model.gallery.galleryHasMedias.count }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    {% if model.topHighlights.count %}
+    <section class="module-6">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 module-6__content">
+                    <div class="module-6__blocks-wrap">
+                        <div class="module-6__text-block">
+                            <div class="module-6__text-slider">
+                                {% for highlight in model.topHighlights %}
+                                <div>
+                                    <h3>{{ highlight.title }}</h3>
+                                    <div class="line"></div>
+                                    <p class="module-6__text module-6__text-slide">{{ highlight.description }}</p>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="module-6__slider-controls module-6__slider-controls--desct">
+                                <div class="module-6__counter">
+                                    <p class="counter__curent">1</p>
+                                    <p class="counter__all">/ {{ model.topHighlights.count }}</p>
+                                </div>
+                                <div class="module-6__arrows-wrap">
+                                    <div class="module-6__arrow prev-btn"><img src="{{ asset('img/icon-arrow-left.svg') }}" class="image_svg" alt=""/></div>
+                                    <div class="module-6__arrow next-btn"><img src="{{ asset('img/icon-arrow-right.svg') }}" class="image_svg" alt=""/></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="module-6__slider-block">
+                            {% for highlight in model.topHighlights %}
+                            <div class="module-6__slide">
+                                <img src="{% path highlight.image, 'reference' %}" alt=""/>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="module-6__slider-controls module-6__slider-controls--mob">
+                            <div class="module-6__counter">
+                                <p class="counter__curent">1</p>
+                                <p class="counter__all">/ {{ model.topHighlights.count }}</p>
+                            </div>
+                            <div class="module-6__arrows-wrap">
+                                <div class="module-6__arrow prev-btn"><img src="{{ asset('img/icon-arrow-left.svg') }}" class="image_svg" alt=""/></div>
+                                <div class="module-6__arrow next-btn"><img src="{{ asset('img/icon-arrow-right.svg') }}" class="image_svg" alt=""/></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    {% if model.bottomHighlights.count %}
+    <section class="module-7">
+        <img src="{{ asset('img/icon-section-2.svg') }}" class="image_svg module-7__icon" alt=""/>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 module-7__content">
+                    <div class="module-7__blocks-wrap">
+                        <div class="module-7__text-block">
+                            <div class="module-7__text-slider">
+                                {% for highlight in model.bottomHighlights %}
+                                <div>
+                                    <h3>{{ highlight.title }}</h3>
+                                    <div class="line"></div>
+                                    <p class="module-7__text module-7__text-slide">{{ highlight.description }}</p>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="module-7__slider-controls module-7__slider-controls--desct">
+                                <div class="module-7__counter">
+                                    <p class="counter__curent">1</p>
+                                    <p class="counter__all">/ {{ model.bottomHighlights.count }}</p>
+                                </div>
+                                <div class="module-7__arrows-wrap">
+                                    <div class="module-7__arrow prev-btn"><img src="{{ asset('img/icon-arrow-left.svg') }}" class="image_svg" alt=""/></div>
+                                    <div class="module-7__arrow next-btn"><img src="{{ asset('img/icon-arrow-right.svg') }}" class="image_svg" alt=""/></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="module-7__slider-block">
+                            {% for highlight in model.bottomHighlights %}
+                            <div class="module-7__slide">
+                                <img src="{% path highlight.image, 'reference' %}" alt=""/>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="module-7__slider-controls module-7__slider-controls--mob">
+                            <div class="module-7__counter">
+                                <p class="counter__curent">1</p>
+                                <p class="counter__all">/ {{ model.bottomHighlights.count }}</p>
+                            </div>
+                            <div class="module-7__arrows-wrap">
+                                <div class="module-7__arrow prev-btn"><img src="{{ asset('img/icon-arrow-left.svg') }}" class="image_svg" alt=""/></div>
+                                <div class="module-7__arrow next-btn"><img src="{{ asset('img/icon-arrow-right.svg') }}" class="image_svg" alt=""/></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <section class="s-order">
+        <img src="{{ asset('img/icon-section-2.svg') }}" class="image_svg s-order__icon" alt=""/>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 s-order__content">
+                    <h4 class="s-order__title">Оставить заявку</h4>
+                    {{ include('sections/forms/order.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{ include('sections/inStock.html.twig', { topOverlay: false }) }}
+{% endblock %}

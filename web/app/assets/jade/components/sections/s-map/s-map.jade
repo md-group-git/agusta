@@ -1,0 +1,222 @@
+mixin s-map(page)
+    section.s-map
+        .s-map__overlay
+        .s-map__content
+            .s-map__modal
+                .s-map__modal-img-wrap
+                    img.s-map__modal-img(src='/img/s-map-image.jpg')
+                .s-map__modal-descr
+                    .s-map__modal-title
+                        p MV AGUSTA MOTOR RUS
+                        img.image_svg(src='/img/modal-line.svg')
+                    p.s-map__modal-address 143421, Новорижское шоссе, 25-й километр, вл20, городской округ Красногорск, Московская область, Россия
+                    a.s-map__modal-phone(href='tel: +7 495 477 33 92') +7 495 477 33 92
+                    a.s-map__modal-mail(href='mailto: russia@mvagusta.com') russia@mvagusta.com
+                    a.s-map__modal-whatspp(href='https://api.whatsapp.com/send?phone=+7 995 880 00 59&text=%20' target="_blank") MV Agusta Russia & CIS - +7 995 880 00 59
+            script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyA5tHdJpA3nilBstRyWqiAGc1hiSvfdIGc&callback=initMap&libraries=&v=weekly' defer='')
+            .s-map__map-wrap
+                #map
+                //iframe.s-map__iframe-map(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2242.917986525571!2d37.265704316047554!3d55.79466199623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c9ef372363590d%3A0x7cf6a6daffd30e4a!2sStok%20Parts%2C%20Ooo!5e1!3m2!1sen!2sby!4v1594150326409!5m2!1sen!2sby" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0")
+            script.
+                // Initialize and add the map
+                function initMap() {
+                    // The location of Uluru
+                    const uluru = {lat: 55.787497, lng: 37.2516929};
+                    // The map, centered at Uluru
+                    const map = new google.maps.Map(document.getElementById("map"), {
+                        zoom: 16,
+                        center: uluru,
+                        styles: [
+                            {
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#212121"
+                                    }
+                                ]
+                            },
+                            {
+                                "elementType": "labels.icon",
+                                "stylers": [
+                                    {
+                                        "visibility": "off"
+                                    }
+                                ]
+                            },
+                            {
+                                "elementType": "labels.text.fill",
+                                "stylers": [
+                                    {
+                                        "color": "#757575"
+                                    }
+                                ]
+                            },
+                            {
+                                "elementType": "labels.text.stroke",
+                                "stylers": [
+                                    {
+                                        "color": "#212121"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "administrative",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#757575"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "administrative.country",
+                                "elementType": "labels.text.fill",
+                                "stylers": [
+                                    {
+                                        "color": "#9e9e9e"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "administrative.land_parcel",
+                                "stylers": [
+                                    {
+                                        "visibility": "off"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "administrative.locality",
+                                "elementType": "labels.text.fill",
+                                "stylers": [
+                                    {
+                                        "color": "#bdbdbd"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "poi",
+                                "elementType": "labels.text.fill",
+                                "stylers": [
+                                    {
+                                        "color": "#757575"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "poi.park",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#181818"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "poi.park",
+                                "elementType": "labels.text.fill",
+                                "stylers": [
+                                    {
+                                        "color": "#616161"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "poi.park",
+                                "elementType": "labels.text.stroke",
+                                "stylers": [
+                                    {
+                                        "color": "#1b1b1b"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road",
+                                "elementType": "geometry.fill",
+                                "stylers": [
+                                    {
+                                        "color": "#2c2c2c"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road",
+                                "elementType": "labels.text.fill",
+                                "stylers": [
+                                    {
+                                        "color": "#8a8a8a"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.arterial",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#373737"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.highway",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#3c3c3c"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.highway.controlled_access",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#4e4e4e"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.local",
+                                "elementType": "labels.text.fill",
+                                "stylers": [
+                                    {
+                                        "color": "#616161"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "transit",
+                                "elementType": "labels.text.fill",
+                                "stylers": [
+                                    {
+                                        "color": "#757575"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "water",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "color": "#000000"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "water",
+                                "elementType": "labels.text.fill",
+                                "stylers": [
+                                    {
+                                        "color": "#3d3d3d"
+                                    }
+                                ]
+                            }
+                        ]
+                    });
+                    // The marker, positioned at Uluru
+                    const marker = new google.maps.Marker({
+                        position: uluru,
+                        map: map,
+                    });
+                }
+

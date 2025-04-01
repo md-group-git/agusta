@@ -1,0 +1,18 @@
+mixin header-slider(page)
+    section.header-slider
+        .container
+            .row
+                .col.s12.header-slider__content
+                    .header-slider__logo
+                        img(src= page.headerSlider.logo)
+                        p.header-slider__tag !{page.headerSlider.tag}
+                    p.header-slider__diller от официального дилера в России
+                    .header-slider__slider
+                        each slide in page.headerSlider.slides
+                            .header-slider__slide
+                                img(src= slide)
+                    if (page.headerSlider.slides.length > 1)
+                        .header-slider__counter
+                            p.counter__curent 1
+                            p.counter__all / !{page.headerSlider.slides.length}
+                    .header-slider__overlay

@@ -1,0 +1,62 @@
+<div id="dropdown-models" class="models-dropdown">
+    <ul class="models-main-links">
+        {% for lineup in lineupListService.sorted %}
+        <li class="models-main-item">
+            <a href="#" class="models-main-link">
+                <span class="models-main-name">{{ lineup.name }}</span>
+            </a>
+            <ul class="models-second-links">
+                {% for model in lineup.modelsSorted if not model.special %}
+                <li class="models-second-item">
+                    <a href="{{ path('model', { "lineup": lineup.slug, "model": model.slug }) }}" data-href="{{ lineup.slug }}-{{ model.slug }}" class="models-second-link">
+                        <span class="models-second-name">{{ lineup.name }} {{ model.name }}</span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <div class="models-blocks-wrap">
+        {% for lineup in lineupListService.sorted %}
+            {% for model in lineup.modelsSorted if not model.special %}
+                <div data-id="{{ lineup.slug }}-{{ model.slug }}" class="models-block">
+                    <div class="models-block__img-wrap">
+                        <img src="{% path model.image, 'reference' %}" alt=""/>
+                    </div>
+
+                    <div class="models-block__descr-wrap">
+                        <div class="models-block__price-block">
+                            {{ include('sections/blocks/price.html.twig') }}
+
+                            {% if model.stockStatus == 'instock' %}
+                            <p class="stock">В наличии</p>
+                            {% elseif model.stockStatus == 'onorder' %}
+                            <p class="stock stock--grey">На заказ</p>
+                            {% elseif model.stockStatus == 'outofstock' %}
+                            <p class="stock stock--grey">Нет в наличии</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="models-block__logo-wrap">
+                            <div class="models-block__logo-block">
+                                <img src="{% path model.logo, 'reference' %}" class="models-block__logo" alt=""/>
+                            </div>
+                            <a href="{{ path('model', { lineup: lineup.slug, model: model.slug }) }}" class="models-block__link">
+                                <div class="models-block__link-arrow">
+                                    <img src="{{ asset('img/arrow-btn.svg') }}" class="image_svg" alt=""/>
+                                </div>
+                                <span>подробнее</span>
+                            </a>
+                        </div>
+
+                        {{ include('sections/blocks/modelDescrCylinders.html.twig') }}
+                        {{ include('sections/blocks/modelDescrVolume.html.twig') }}
+                        {{ include('sections/blocks/modelDescrPower.html.twig') }}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>

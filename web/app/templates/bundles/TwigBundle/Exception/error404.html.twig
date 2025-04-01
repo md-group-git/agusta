@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% set title = '404 - Страница не найдена' %}
+
+{% block page %}
+<section class="s-404">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 s-404__content">
+                <div class="s-404__content-wrap">
+                    <img src="{{ asset('img/404.png') }}" alt="" class="s-404__image"/>
+                    <p class="s-404__text">Страница не найдена</p>
+                    <div class="btn-wrap">
+                        <a href="{{ path('homepage') }}" class="btn">
+                            <span>вернуться на главную</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

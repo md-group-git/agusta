@@ -1,0 +1,30 @@
+breadcrumb.link_media_multi_upload: Множественная загрузка медиа
+
+sonata.media.provider.image.multiupload: Изображение
+sonata.media.provider.image.multiupload.description: Загрузка нескольких изображений
+
+sonata.media.provider.video: Видео
+sonata.media.provider.video.description: Загрузка видео
+
+sonata.media.provider.audio: Аудио
+sonata.media.provider.audio.description: Загрузка аудио
+
+sonata.media.provider.svg: SVG
+sonata.media.provider.svg.description: Загрузка SVG
+
+Gallery: Галерея
+Options: Опции
+
+circular: Вид 360°
+color: Цвет
+default: Общий
+document: Документ
+header_gallery: Галерея (заголовок)
+highlight: Особенность
+logo: Логотип
+model: Модель
+bike_gallery: Галерея (модель)
+sound: Звук
+
+#    Invalid extensions
+#    Invalid mime type : image/svg

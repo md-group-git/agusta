@@ -1,0 +1,141 @@
+enum:
+    stock:
+        instock: В наличии
+        onorder: Под заказ
+        outofstock: Нет в наличии
+    location:
+        top: Сверху
+        bottom: Снизу
+    request:
+        new: Новый
+        processing: В обработке
+        processed: Обработан
+
+entry:
+    admins: Администраторы
+    catalog: Каталог
+    lineup: Модельный ряд
+    models: Модели
+    colors: Цвета
+    highlights: Особенности
+    paints: Вариант покраски
+    requests: Заявки
+    request:
+        call: Обратный звонок
+        order: Заказ
+        ride: Запись на тест-райд
+        service: Запись на сервис
+    tech_sections: Тех. разделы
+
+label:
+    action: Действие
+    add_media: Добавление объектов медиа
+    add_paints: Добавление вариантов покраски
+    add_highlights: Добавление особенностей
+    availability: Доступность
+    brochure: Тех. документация
+    common: Общие
+    compression: Степень сжатия
+    contacts: Контакты
+    created_at: Создан
+    cylinders: Кол-во цилиндров
+    date: Дата
+    description: Описание
+    email: E-mail
+    enabled: Включено
+    engine: Двигатель
+    engine_sound: Звук мотора
+    first_name: Имя
+    gallery360: Галерея (обзор 360°)
+    header: Заголовок
+    header_gallery: Галерея (заголовок)
+    highlights: Особенности
+    image: Изображение
+    last_name: Фамилия
+    licensed: Есть ВУ
+    lineup: Модельный ряд
+    location: Расположение
+    logo: Логотип
+    main: Главная
+    media: Медиа
+    message: Сообщение
+    model: Модель
+    bike_gallery: Галерея (модель)
+    name: Название
+    num: №
+    note: Доп. информация
+    color: Цвет
+    page: Страница
+    paints: Варианты покраски
+    password: Пароль
+    phone: Телефон
+    power: Мощность (л.с.)
+    power_rpm: Мощность (об.мин)
+    price: Цена
+    request: Запрос
+    section: Раздел
+    slogan: Слоган
+    special: Особый
+    specs: Характеристики
+    speed: Скорость (км/ч)
+    status: Статус
+    stock_status: Наличие
+    subtitle: Подзаголовок
+    tech_section: Тех. раздел
+    tech_specs: Спецификации
+    test_ride: Тест-райд
+    text: Текст
+    title: Заголовок
+    torque: Крутящий момент (кг-м)
+    torque_rpm: Крутящий момент (об.мин)
+    updated_at: Обновлен
+    volume_cc: Рабочий объем (куб.см)
+    weight: Вес (кг)
+
+message:
+    call_request: Обратный звонок
+    order_request: Заказ
+    ride_request: Заявка на тест-райд
+    service_request: Заявка на сервис
+    you_cannot_delete_your_own_account: Вы не можете удалить свою собственную учётную запись
+
+Call Request List: Обратный звонок
+Call Request Create: Добавить
+
+Highlight List: Особенности
+Highlight Create: Добавить
+
+Lineup List: Модельный ряд
+Lineup Create: Добавить
+
+Model List: Модели
+Model Create: Добавить
+
+Order Request List: Заказ
+Order Request Create: Добавить
+
+Ride Request List: Запись на тест-райд
+Ride Request Create: Добавить
+
+Service Request List: Запись на сервис
+Service Request Create: Добавить
+
+Paint Color List: Цвета
+Paint Color Create: Добавить
+
+Tech Section List: Тех. разделы
+Tech Section Create: Добавить
+
+User List: Пользователь
+User Create: Добавить
+
+circular: Вид 360°
+color: Цвет
+default: Общий
+document: Документ
+header_gallery: Галерея (заголовок)
+highlight: Особенность
+logo: Логотип
+model: Модель
+bike_gallery: Галерея (модель)
+sound: Звук

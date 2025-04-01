@@ -1,0 +1,36 @@
+mixin module-7(page)
+    section.module-7
+        img.image_svg.module-7__icon(src='/img/icon-section-2.svg')
+        .container
+            .row
+                .col.s12.module-7__content
+                    .module-7__blocks-wrap
+                        .module-7__text-block
+                            .module-7__text-slider
+                                each text in page.module7.textSlides
+                                    div
+                                        h3 !{text.header}
+                                        .line
+                                        p.module-7__text.module-7__text-slide !{text.text}
+                            .module-7__slider-controls.module-7__slider-controls--desct
+                                .module-7__counter
+                                    p.counter__curent 1
+                                    p.counter__all / !{page.module7.slides.length}
+                                .module-7__arrows-wrap
+                                    .module-7__arrow.prev-btn
+                                        img.image_svg(src='/img/icon-arrow-left.svg')
+                                    .module-7__arrow.next-btn
+                                        img.image_svg(src='/img/icon-arrow-right.svg')
+                        .module-7__slider-block
+                            each slide in page.module7.slides
+                                .module-7__slide
+                                    img(src=slide)
+                        .module-7__slider-controls.module-7__slider-controls--mob
+                            .module-7__counter
+                                p.counter__curent 1
+                                p.counter__all / !{page.module7.slides.length}
+                            .module-7__arrows-wrap
+                                .module-7__arrow.prev-btn
+                                    img.image_svg(src='/img/icon-arrow-left.svg')
+                                .module-7__arrow.next-btn
+                                    img.image_svg(src='/img/icon-arrow-right.svg')

@@ -1,0 +1,39 @@
+include ../components/include/head
+include ../components/include/googleanalitics
+include ../components/include/scripts
+include ../components/sections/s-modal-policy/s-modal-policy
+
+include ../components/sections/menu/menu
+include ../components/sections/s-header/s-header
+include ../components/sections/s-footer/s-footer
+
+include ../components/sections/module-1/module-1
+include ../components/sections/module-2/module-2
+include ../components/sections/module-3/module-3
+include ../components/sections/header-slider/header-slider
+include ../components/sections/module-4/module-4
+include ../components/sections/module-5/module-5
+include ../components/sections/module-6/module-6
+include ../components/sections/module-7/module-7
+include ../components/sections/s-order/s-order
+
+doctype html
+html(lang="en")
+    +head(dragster800RC)
+    body
+        //#preloader
+            //img(src="/img/logo-main.svg" alt='')
+        .b-wrapper
+            .content
+                +menu(dragster800RC)
+                +header-slider(dragster800RC)
+                +module-4(dragster800RC)
+                +module-5(dragster800RC)
+                +module-6(dragster800RC)
+                +module-7(dragster800RC)
+                +s-order(dragster800RC)
+                +module-2(dragster800RC)
+                +s-footer(dragster800RC)
+                +s-modal-policy()
+                //+s-contact(dragster800RC) 
+            +scripts()

@@ -1,0 +1,52 @@
+{% set url = app.request.getSchemeAndHttpHost() ~ app.request.pathInfo %}
+{% set defaultOgImage = app.request.getSchemeAndHttpHost() ~ asset('img/s-header-tab.jpg') %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+<meta name="description" content="Эксклюзивный импортер и дистрибьютор мотоциклов, запасных частей и аксессуаров MV Agusta и Cagiva в России и странах СНГ"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="theme-color" content="#272727"/>
+<meta name="robots" content="index,follow"/>
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:url" content="{{ url }}">
+<meta property="og:site_name" content="MV Agusta Россия">
+<meta property="og:title" content="{{ title | default('Добро пожаловать!')}} | MV Agusta Россия"/>
+<meta property="og:description" content="Эксклюзивный импортер и дистрибьютор мотоциклов, запасных частей и аксессуаров MV Agusta и Cagiva в России и странах СНГ"/>
+<meta property="og:image" content="{{ ogImage | default(defaultOgImage) }}"/>
+<meta property="og:image:type" content="image/jpeg" />
+
+<meta property="twitter:title" content="{{ title | default('Добро пожаловать!')}} | MV Agusta Россия">
+<meta property="twitter:description" content="MV Agusta Россия">
+
+<style>.async-hide { opacity: 0 !important}</style>
+
+<link rel="canonical" href="{{ url }}" />
+<link rel="shortcut icon" href="{{ asset('favicon.ico') }}"/>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7V2TMR635F"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7V2TMR635F');
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(95850652, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<!-- /Yandex.Metrika counter -->

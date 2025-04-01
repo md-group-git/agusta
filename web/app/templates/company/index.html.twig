@@ -1,0 +1,199 @@
+{% extends 'base.html.twig' %}
+
+{% set title = 'О компании' %}
+
+{% block page %}
+<section class="module-8">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 module-8__content">
+                <ul class="tabs">
+                    <li class="tab"><a href="#about1" class="module-8__tab-link">О компании</a></li>
+                    <li class="tab"><a href="#about2" class="module-8__tab-link">MV AGUSTA MOTOR RUS</a></li>
+                </ul>
+                <div id="about1" class="module-8__block">
+                    <div class="module-8__blocks-wrap">
+                        <div class="module-8__text-block">
+                            <h3>MV Agusta</h3>
+                            <div class="line"></div>
+                            <h4>Это - Мы</h4>
+                            <p class="module-8__text">Мы не просто производим мотоциклы, мы пробуждаем эмоции. Мы работаем на будущее и создаем мотоциклы, которые всегда на шаг опережают свое время.</p>
+                            <h4>Наша миссия и ценности</h4>
+                            <p class="module-8__text">Наша миссия - конструирование, разработка и изготовление самых передовых мотоциклов в мире. Их отличает фантастический дизайн, лучшие в своем классе характеристики и самые передовые материалы и технологии. Выполняя свою миссию, мы придерживаемся и остаемся верными нашим ценностям трудового мастерства, инноваций и постоянного стремления к совершенству.</p>
+                            <h4>Ручная работа</h4>
+                            <p class="module-8__text">В нашем производственном цеху нет автоматики, каждый мотоцикл собирают умелые руки опытных специалистов.</p>
+                            <h4>Качество</h4>
+                            <p class="module-8__text">Внимательное отношение к "мелочам", глубоко специализированные инженеры, самые передовые материалы.</p>
+                            <h4>Семейные отношения</h4>
+                            <p class="module-8__text">Главная ценность для “MV way” - это люди. Не технология направляет их руки, наоборот - их руки развивают технологию.</p>
+                            <p class="module-8__modal-address">Via Giovanni Macchi, 144, 21100 Varese VA, Italy</p><a href="tel: +39 0332 254443" class="module-8__modal-phone">+39 0332 254443</a>
+                        </div>
+                        <div class="module-8__img-block">
+                            <div class="module-8__img">
+                                <img src="{{ asset('img/about-img-1.jpg') }}" alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="about2" class="module-8__block">
+                    <div class="module-8__blocks-wrap">
+                        <div class="module-8__text-block">
+                            <h3>О «Галерее»</h3>
+                            <div class="line"></div>
+                            <p class="module-8__text">Компания «MV Agusta Россия и СНГ» — эксклюзивный импортер и дистрибьютор мотоциклов, запасных частей и аксессуаров MV Agusta и Cagiva в России и странах СНГ.</p>
+                            <p class="module-8__text">Мы искренне любим своё дело, ценим и уважаем желания каждого гостя, поэтому галерея MV Agusta обеспечивает максимально комфортные условия для клиентов, высокий профессионализм персонала, просторные и современные шоу-румы, специальное оборудование сервисной зоны и склада. Своей ежедневной работой мы демонстрируем фирменный стиль внимательного и грамотного обслуживания клиентов.</p>
+                            <p class="module-8__text">Функция галереи MV Agusta Россия и СНГ не ограничивается реализацией мотоциклов. Наряду с этим мы оказываем полный спектр услуг, включающий в себя гарантийное и послегарантийное обслуживание мототехники MV Agusta и Cagiva, создание уникальных мотоциклов по индивидуальным проектам, продажу оригинальных запасных частей и аксессуаров, а также услуги по программе Trade-in.</p>
+                            <p class="module-8__modal-address">
+                                143421, Новорижское шоссе, 25-й километр, вл20, городской округ Красногорск, Московская область, Россия
+                            </p>
+                            <a href="tel: +7 495 477 33 92" class="module-8__modal-phone">+7 495 477 33 92</a>
+                            <p class="module-8__modal-watsup">MV Agusta Russia & CIS -<a href="https://api.whatsapp.com/send?phone=+7 995 880 00 59&amp;text=%20" target="_blank"> +7 995 880 00 59</a></p>
+                        </div>
+                        <div class="module-8__img-block">
+                            <div class="module-8__img">
+                                <img src="{{ asset('img/about/rus/481A4298.jpg') }}" alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-id="about1" class="module-5 active no-icon">
+    <img src="{{ asset('img/icon-section-2.svg') }}" class="image_svg module-5__icon" alt=""/>
+    <img src="{{ asset('img/s-videos-bg-2.png') }}" class="module-5__overlay" alt=""/>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12 module-5__content">
+                <div class="module-5__top-slider">
+                    <a href="{{ asset('img/about/main/mva-about_factory-gallery-1.jpg') }}" class="module-5__top-slide module-5__top-slide--img module-5-popup-link">
+                        <img src="{{ asset('img/about/main/mva-about_factory-gallery-1.jpg') }}" alt=""/>
+                    </a>
+                    <a href="{{ asset('img/about/main/mva-about_factory-gallery-2.jpg') }}" class="module-5__top-slide module-5__top-slide--img module-5-popup-link">
+                        <img src="{{ asset('img/about/main/mva-about_factory-gallery-2.jpg') }}" alt=""/>
+                    </a>
+                    <a href="{{ asset('img/about/main/mva-about_factory-gallery-3.jpg') }}" class="module-5__top-slide module-5__top-slide--img module-5-popup-link">
+                        <img src="{{ asset('img/about/main/mva-about_factory-gallery-3.jpg') }}" alt=""/>
+                    </a>
+                    <a href="{{ asset('img/about/main/mva-about_factory-gallery-4.jpg') }}" class="module-5__top-slide module-5__top-slide--img module-5-popup-link">
+                        <img src="{{ asset('img/about/main/mva-about_factory-gallery-4.jpg') }}" alt=""/>
+                    </a>
+                    <a href="{{ asset('img/about/main/mva-about_factory-gallery-5.jpg') }}" class="module-5__top-slide module-5__top-slide--img module-5-popup-link">
+                        <img src="{{ asset('img/about/main/mva-about_factory-gallery-5.jpg') }}" alt=""/>
+                    </a>
+                    <a href="{{ asset('img/about/main/mva-about_factory-gallery-12.jpg') }}" class="module-5__top-slide module-5__top-slide--img module-5-popup-link">
+                        <img src="{{ asset('img/about/main/mva-about_factory-gallery-12.jpg') }}" alt=""/>
+                    </a>
+                </div>
+                <div class="module-5__bottom-slider">
+                    <div class="module-5__bottom-slide module-5__bottom-slide--img">
+                        <img src="{{ asset('img/about/main/mva-about_factory-gallery-1.jpg') }}" alt=""/>
+                    </div>
+                    <div class="module-5__bottom-slide module-5__bottom-slide--img">
+                        <img src="{{ asset('img/about/main/mva-about_factory-gallery-2.jpg') }}" alt=""/>
+                    </div>
+                    <div class="module-5__bottom-slide module-5__bottom-slide--img">
+                        <img src="{{ asset('img/about/main/mva-about_factory-gallery-3.jpg') }}" alt=""/>
+                    </div>
+                    <div class="module-5__bottom-slide module-5__bottom-slide--img">
+                        <img src="{{ asset('img/about/main/mva-about_factory-gallery-4.jpg') }}" alt=""/>
+                    </div>
+                    <div class="module-5__bottom-slide module-5__bottom-slide--img">
+                        <img src="{{ asset('img/about/main/mva-about_factory-gallery-5.jpg') }}" alt=""/>
+                    </div>
+                    <div class="module-5__bottom-slide module-5__bottom-slide--img">
+                        <img src="{{ asset('img/about/main/mva-about_factory-gallery-12.jpg') }}" alt=""/>
+                    </div>
+                </div>
+                <div class="module-5__counter">
+                    <p class="counter__curent">1</p>
+                    <p class="counter__all">/ 6</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-id="about2" class="module-5 no-icon">
+    <img src="{{ asset('img/icon-section-2.svg') }}" class="image_svg module-5__icon" alt=""/>
+    <img src="{{ asset('img/s-videos-bg-2.png') }}" class="module-5__overlay" alt=""/>
+
+    <div class="container">
+        <div class="row">
+            <div id="about1" class="col s12 module-5__content">
+                <div class="module-5__top-slider">
+                    <a href="{{ asset('img/about/rus/481A3691.jpg') }}" class="module-5__top-slide module-5__top-slide--img module-5-popup-link">
+                        <img src="{{ asset('img/about/rus/481A3691.jpg') }}" alt=""/>
+                    </a>
+                    <a href="{{ asset('img/about/rus/481A4026.jpg') }}" class="module-5__top-slide module-5__top-slide--img module-5-popup-link">
+                        <img src="{{ asset('img/about/rus/481A4026.jpg') }}" alt=""/>
+                    </a>
+                    <a href="{{ asset('img/about/rus/481A4304.jpg') }}" class="module-5__top-slide module-5__top-slide--img module-5-popup-link">
+                        <img src="{{ asset('img/about/rus/481A4304.jpg') }}" alt=""/>
+                    </a>
+                    <a href="{{ asset('img/about/rus/481A4320 (1).jpg') }}" class="module-5__top-slide module-5__top-slide--img module-5-popup-link">
+                        <img src="{{ asset('img/about/rus/481A4320 (1).jpg') }}" alt=""/>
+                    </a>
+                    <a href="{{ asset('img/about/rus/481A4344.jpg') }}" class="module-5__top-slide module-5__top-slide--img module-5-popup-link">
+                        <img src="{{ asset('img/about/rus/481A4344.jpg') }}" alt=""/>
+                    </a>
+                    <a href="{{ asset('img/about/rus/481A4392.jpg') }}" class="module-5__top-slide module-5__top-slide--img module-5-popup-link">
+                        <img src="{{ asset('img/about/rus/481A4392.jpg') }}" alt=""/>
+                    </a>
+                    <a href="{{ asset('img/about/rus/481A36911.jpg') }}" class="module-5__top-slide module-5__top-slide--img module-5-popup-link">
+                        <img src="{{ asset('img/about/rus/481A36911.jpg') }}" alt=""/>
+                    </a>
+                    <a href="{{ asset('img/about/rus/481A369111.jpg') }}" class="module-5__top-slide module-5__top-slide--img module-5-popup-link">
+                        <img src="{{ asset('img/about/rus/481A369111.jpg') }}" alt=""/>
+                    </a>
+                    <a href="{{ asset('img/about/rus/481A3691111.jpg') }}" class="module-5__top-slide module-5__top-slide--img module-5-popup-link">
+                        <img src="{{ asset('img/about/rus/481A3691111.jpg') }}" alt=""/>
+                    </a>
+                    <a href="{{ asset('img/about/rus/481A369111111.jpg') }}" class="module-5__top-slide module-5__top-slide--img module-5-popup-link">
+                        <img src="{{ asset('img/about/rus/481A369111111.jpg') }}" alt=""/>
+                    </a>
+                </div>
+                <div class="module-5__bottom-slider">
+                    <div class="module-5__bottom-slide module-5__bottom-slide--img">
+                        <img src="{{ asset('img/about/rus/481A3691.jpg') }}" alt=""/>
+                    </div>
+                    <div class="module-5__bottom-slide module-5__bottom-slide--img">
+                        <img src="{{ asset('img/about/rus/481A4026.jpg') }}" alt=""/>
+                    </div>
+                    <div class="module-5__bottom-slide module-5__bottom-slide--img">
+                        <img src="{{ asset('img/about/rus/481A4304.jpg') }}" alt=""/>
+                    </div>
+                    <div class="module-5__bottom-slide module-5__bottom-slide--img">
+                        <img src="{{ asset('img/about/rus/481A4320 (1).jpg') }}" alt=""/>
+                    </div>
+                    <div class="module-5__bottom-slide module-5__bottom-slide--img">
+                        <img src="{{ asset('img/about/rus/481A4344.jpg') }}" alt=""/>
+                    </div>
+                    <div class="module-5__bottom-slide module-5__bottom-slide--img">
+                        <img src="{{ asset('img/about/rus/481A4392.jpg') }}" alt=""/>
+                    </div>
+                    <div class="module-5__bottom-slide module-5__bottom-slide--img">
+                        <img src="{{ asset('img/about/rus/481A36911.jpg') }}" alt=""/>
+                    </div>
+                    <div class="module-5__bottom-slide module-5__bottom-slide--img">
+                        <img src="{{ asset('img/about/rus/481A369111.jpg') }}" alt=""/>
+                    </div>
+                    <div class="module-5__bottom-slide module-5__bottom-slide--img">
+                        <img src="{{ asset('img/about/rus/481A3691111.jpg') }}" alt=""/>
+                    </div>
+                    <div class="module-5__bottom-slide module-5__bottom-slide--img">
+                        <img src="{{ asset('img/about/rus/481A369111111.jpg') }}" alt=""/>
+                    </div>
+                </div>
+                <div class="module-5__counter">
+                    <p class="counter__curent">1</p>
+                    <p class="counter__all">/ 10</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

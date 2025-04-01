@@ -1,0 +1,57 @@
+<div id="modalTechSpec" class="modal modal-tech-spec">
+    <div class="modal-cross-wrap">
+        <a href="#!" class="modal-close">
+            <img src="{{ asset('img/icon-cross.svg') }}" class="image_svg" alt=""/>
+        </a>
+    </div>
+
+    <div class="modal-content">
+        <div class="modal-tech-spec__logos-wrap">
+            {% if model.brochure %}
+            <div class="modal-tech-spec__download-btn-wrap">
+                {% set download = model.lineup.name ~ ' ' ~ model.name %}
+                <a href="{% path model.brochure, 'reference' %}" download="{{ download }}" class="modal-tech-spec__download-btn">
+                    <img src="{{ asset('img/icon-download.svg') }}" class="image_svg" alt=""/>
+                    <span>скачать PDF</span>
+                </a>
+            </div>
+            {% endif %}
+            <img src="{% path model.logo, 'reference' %}" class="modal-tech-spec__main-logo" alt=""/>
+            <div class="modal-tech-spec__tech-logo-wrap">
+                <img src="{{ asset('img/tech-logo.png') }}" class="modal-tech-spec__tech-logo" alt=""/>
+            </div>
+        </div>
+
+        <div class="modal-tech-spec__content-wrap">
+            <div id="modalTechMenu" class="modal-tech-spec__links-block">
+                {% for section in model.techSpecsTree %}
+                    <div class="modal-tech-spec__links-item {% if loop.first %}active{% endif %}">
+                        <a href="#techBlock{{ loop.index }}"><span>{{ section.name }}</span></a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="modal-tech-spec__text-block">
+                {% for section in model.techSpecsTree %}
+                <div id="techBlock{{ loop.index }}" class="modal-tech-spec__text-part">
+                    <div class="modal-tech-spec__header-wrap">
+                        <p>{{ section.name|upper }}</p>
+                        <img src="{{ asset('img/line-bg.png') }}" class="modal-tech-spec__header-line" alt=""/>
+                    </div>
+                    <div class="modal-tech-spec__text-list">
+                        {% for type in section.types %}
+                        <div class="modal-tech-spec__text-item">
+                            <div class="modal-tech-spec__text-title">
+                                <p>{{ type.name }}</p>
+                            </div>
+                            <div class="modal-tech-spec__text-descr">
+                                <p>{{ type.value | nl2br }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

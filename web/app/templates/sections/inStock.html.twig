@@ -1,0 +1,63 @@
+<section class="module-2 {% if topOverlay %}top-overlay{% else %}overlay{% endif %}">
+    <div class="module-2__overlay"></div>
+    <img src="{{ asset('img/icon-section-2.svg') }}" class="image_svg module-2__icon" alt=""/>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12 module-2__content">
+                <div class="section-header">
+                    <h2 class="module-2__title">Модели в наличии</h2>
+                </div>
+
+                <div class="section-header">
+                    <h6 class="module-2__pretitle">
+                        <a href="{{ path('stock') }}">Посмотреть все</a>
+                    </h6>
+                </div>
+
+                <div class="module-2__sliders-wrap">
+                    <div class="module-2__slider-middle">
+                        {% for model in inStock %}
+                        <div class="module-2__slide--middle">
+                            <div class="block-logo block-logo--mob">
+                                <img src="{% path model.logo, 'reference' %}" alt=""/>
+                            </div>
+
+                            <img src="{% path model.image, 'large' %}" alt=""/>
+
+                            <a href="{{ path('model', { "lineup": model.lineup.slug, "model": model.slug }) }}" class="module-2__slide-middle-btn btn">
+                                <span>ПОСМОТРЕТЬ</span>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    {% if inStock|length %}
+                    <div class="module-2__counter">
+                        <p class="counter__curent">1</p>
+                        <p class="counter__all">/ {{ inStock | length }}</p>
+                    </div>
+                    {% endif %}
+
+                    <div class="module-2__slider-top">
+                        {% for model in inStock %}
+                        <div class="module-2__slide--top">
+                            <div class="block-descr">
+                                {{ include('sections/blocks/lineDescrCylinders.html.twig') }}
+                                {{ include('sections/blocks/lineDescrVolume.html.twig') }}
+                                {{ include('sections/blocks/lineDescrPower.html.twig') }}
+                            </div>
+
+                            <div class="block-logo block-logo--desctp">
+                                <img src="{% path model.logo, 'reference' %}" alt=""/>
+                            </div>
+
+                            {{ include('sections/blocks/price.html.twig') }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

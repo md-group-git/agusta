@@ -1,0 +1,17 @@
+{% extends '@SonataAdmin/CRUD/base_list_field.html.twig' %}
+
+{% block field %}
+    {%- apply spaceless %}
+        {% if value == 'instock' %}
+            <span class="label label-success">{{ 'enum.stock.instock' | trans }}</span>
+        {% endif %}
+
+        {% if value == 'onorder' %}
+            <span class="label label-warning">{{ 'enum.stock.onorder' | trans }}</span>
+        {% endif %}
+
+        {% if value == 'outofstock' %}
+            <span class="label label-danger">{{ 'enum.stock.outofstock' | trans }}</span>
+        {% endif %}
+    {% endapply -%}
+{% endblock %}

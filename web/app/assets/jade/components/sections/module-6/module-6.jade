@@ -1,0 +1,35 @@
+mixin module-6(page)
+    section.module-6
+        .container
+            .row
+                .col.s12.module-6__content
+                    .module-6__blocks-wrap
+                        .module-6__text-block  
+                            .module-6__text-slider
+                                each text in page.module6.textSlides
+                                    div
+                                        h3 !{text.header}
+                                        .line
+                                        p.module-6__text.module-6__text-slide !{text.text}
+                            .module-6__slider-controls.module-6__slider-controls--desct
+                                .module-6__counter
+                                    p.counter__curent 1   
+                                    p.counter__all / !{page.module6.slides.length}
+                                .module-6__arrows-wrap
+                                    .module-6__arrow.prev-btn
+                                        img.image_svg(src='/img/icon-arrow-left.svg')
+                                    .module-6__arrow.next-btn
+                                        img.image_svg(src='/img/icon-arrow-right.svg')
+                        .module-6__slider-block
+                            each slide in page.module6.slides
+                                .module-6__slide
+                                    img(src=slide)
+                        .module-6__slider-controls.module-6__slider-controls--mob
+                            .module-6__counter
+                                p.counter__curent 1
+                                p.counter__all / !{page.module6.slides.length}
+                            .module-6__arrows-wrap
+                                .module-6__arrow.prev-btn
+                                    img.image_svg(src='/img/icon-arrow-left.svg')
+                                .module-6__arrow.next-btn
+                                    img.image_svg(src='/img/icon-arrow-right.svg')

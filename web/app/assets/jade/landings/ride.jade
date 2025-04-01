@@ -1,0 +1,26 @@
+include ../components/include/head
+include ../components/include/googleanalitics
+include ../components/include/scripts
+include ../components/sections/s-modal-policy/s-modal-policy
+
+include ../components/sections/menu/menu
+include ../components/sections/s-footer/s-footer
+include ../components/sections/s-timeline/s-timeline
+include ../components/sections/module-9/module-9
+include ../components/sections/s-ride-form/s-ride-form
+
+
+doctype html
+html(lang="en")
+    +head(ride)
+    body
+        //#preloader
+            //img(src="/img/logo-main.svg" alt='')
+        .b-wrapper
+            .content
+                +menu(ride)
+                +module-9(ride)
+                +s-ride-form(ride)
+                +s-footer(ride)
+                +s-modal-policy()
+            +scripts()

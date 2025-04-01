@@ -1,0 +1,59 @@
+<form id="orderForm" novalidate="novalidate" class="wpcf7-form s-order__form form-style notvalid">
+    <div class="formWP form-wrp">
+        <div class="form-group">
+            <div class="wrp-input input-field">
+                <label for="firstName_order">Имя *</label>
+                <input id="firstName_order" type="text" name="firstName" required="" maxlength="50" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="wrp-input input-field">
+                <label for="lastName_order">Фамилия *</label>
+                <input id="lastName_order" type="text" name="lastName" required="" maxlength="50" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="wrp-input input-field">
+                <label for="phone_order">Телефон *</label>
+                <input id="phone_order" type="tel" name="phone" required="" maxlength="30" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="wrp-input input-field">
+                <label for="email_order">E-mail</label>
+                <input id="email_order" type="email" name="email" maxlength="254"/>
+            </div>
+        </div>
+{#        <div class="checkbox-wrap">#}
+{#            <label>#}
+{#                <input type="checkbox" name="agree_receive" value="Yes" class="filled-in"/>#}
+{#                <span>Согласен на получение рекламных информационных материалов</span>#}
+{#            </label>#}
+{#        </div>#}
+        <div class="checkbox-wrap">
+            <label>
+                <input type="checkbox" value="Yes" class="filled-in required-checkbox form-control"/>
+                <span>Я согласен на обработку персональных данных в соответствие с
+                    <a href="#modalPolicy" class="policy_modal-link modal-trigger">политикой кофиденциальности</a>&ensp;*
+                </span>
+            </label>
+        </div>
+        <input id="model_order" type="hidden" name="model" value="{{ model.id }}"/>
+    </div>
+    <div class="btn-wrap">
+        <button type="submit" class="btn submitButton"><span>отправить</span></button>
+        <div class="preloader-wrapper preloader-wrapper-btn small active">
+            <div class="spinner-layer spinner-green-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

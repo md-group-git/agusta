@@ -1,0 +1,586 @@
+mixin module-4(page)
+    .module-4.module-4--price
+        .module-4__price-block-wrap
+            .module-4__block
+                p.module-4__title от официального дилера в России
+            .module-4__block.module-4__block--price
+                .block-price
+                    p от
+                    p.price !{page.price}
+                    p.curency ₽
+            .module-4__block
+                .btns-wrap
+                    a.btn.btn--black(href='/ride.html')
+                        span записаться на Тест-райд
+                    a.btn.btn--white.modal-trigger(href='#modalCall')
+                        span запросить предложение
+    section.module-4.product
+        .module-4__overlay
+        img.image_svg.module-4__icon.module-4__icon--bottom(src='/img/icon-section-2.svg')
+        .container
+            .row
+                .col.s12.module-4__content.module-4__content--top.module-4__content--mob
+                    img.image_svg.module-4__icon(src='/img/icon-section-2.svg')
+                    .module-4__block
+                        p.module-4__title от официального дилера в России
+                    .module-4__block.module-4__block--price
+                        .block-price
+                            p от
+                            p.price !{page.price}
+                            p.curency ₽
+                    .module-4__block
+                        .btns-wrap
+                            a.btn.btn--black(href='#')
+                                span записаться на Тест-райд
+                            a.btn.btn--white.modal-trigger(href='#modalCall')
+                                span запросить предложение
+        .module-4__circle-slider-wrap
+            .container.module-360
+                .row
+                    .module-4__colors-wrap
+                        each colorSlide, index in page.rotateSlider.colorSlides
+                            - var className = (index == 0) ? 'active' : ''
+                            a.module-4__color-line(href='#' color-price = (colorSlide.colorPrice) ? true : false ,data-color= colorSlide.color, class= className)
+                                if colorSlide.colorPrice
+                                    span.color-price !{colorSlide.colorPrice}
+                                span !{colorSlide.description}
+                                .module-4__color-img-wrap
+                                    img.image_svg(src= colorSlide.icon)
+                    .col.s12.module-4__content.module-4__content--slider.model-container
+                        each colorSlide, index in page.rotateSlider.colorSlides
+                            - var className = (index == 0) ? 'active' : ''
+                            .module-4__rotation-slider.rotation.version-container(data-color= colorSlide.color, class= className)
+                                each slide in colorSlide.slides
+                                    img.single-image(src= slide)
+                        img.module-4__rotation-circle(src='/img/360-circle.png')
+                        p.module-4__rotation-circle-num 360°
+                    .module-4__sound-wrap
+                        audio#motoSound(controls='')
+                            source(src='/mp3/moto-sound.mp3' type='audio/mpeg' loop)
+                            | Your browser does not support the audio element.
+                        .module-4__sound-btn
+                            canvas#motoSoundCanvas
+                            .module-4__sound-btn-content
+                                img.image_svg(src='/img/icon-sound.svg')
+                                span ЗАПУСТИТЬ ДВИГАТЕЛЬ
+                                span.off-eng ВЫКЛЮЧИТЬ ДВИГАТЕЛЬ
+                    .module-4__circle-slider-description
+                        .line-descr
+                            img.image_svg(src='/img/icon-numbers-cil.svg')
+                            .line-descr-text
+                                p.line-descr-title количество цилиндров
+                                p.line-descr-about
+                                    | !{page.rotateSlider.description.num}
+                        .line-descr
+                            img.image_svg(src='/img/icon-value-cil.svg')
+                            .line-descr-text
+                                p.line-descr-title ёмкость цилиндров
+                                p.line-descr-about
+                                    | !{page.rotateSlider.description.volume}
+                                    span  CC
+                        .line-descr
+                            img.image_svg(src='/img/icon-speed-cil.svg')
+                            .line-descr-text
+                                p.line-descr-title максимальная скорость
+                                p.line-descr-about
+                                    | !{page.rotateSlider.description.speed}
+                                    span  km/h
+                        .line-descr
+                            img.image_svg(src='/img/icon-pound-cil.svg')
+                            .line-descr-text
+                                p.line-descr-title сухой вес
+                                p.line-descr-about
+                                    | !{page.rotateSlider.description.weight}
+                                    span  kg
+                        .line-descr
+                            img.image_svg(src='/img/icon-horse-cil.svg')
+                            .line-descr-text
+                                p.line-descr-title Мощность
+                                p.line-descr-about
+                                    | !{page.rotateSlider.description.power}
+                                    span  л.с. / 11,500 об.мин
+                        .line-descr
+                            img.image_svg(src='/img/icon-down-cil.svg')
+                            .line-descr-text
+                                p.line-descr-title степень сжатия
+                                p.line-descr-about
+                                    | !{page.rotateSlider.description.compression}
+                        .line-descr
+                            img.image_svg(src='/img/icon-moment-cil.svg')
+                            .line-descr-text
+                                p.line-descr-title максимальный крутящий момент
+                                p.line-descr-about
+                                    | !{page.rotateSlider.description.moment}
+                                    span  KGM @ 11.000 R.P.M.
+                        .line-descr
+                            a.btn.btn--black.btn__open-tech.modal-trigger(href='#modalTechSpec')
+                                span Технические характеристики
+    .modal.modal-tech-spec#modalTechSpec
+        .modal-cross-wrap
+            a.modal-close(href='#!')
+                img.image_svg(src='/img/icon-cross.svg')
+        .modal-content
+            .modal-tech-spec__logos-wrap
+                .modal-tech-spec__download-btn-wrap
+                    a.modal-tech-spec__download-btn(href='#' download)
+                        img.image_svg(src='/img/icon-download.svg')
+                        span скачать PDF
+                img.modal-tech-spec__main-logo(src='/img/brutale/brutale-1000-serie-oro/logo-brutale1000serieoro.svg')
+                .modal-tech-spec__tech-logo-wrap
+                    img.modal-tech-spec__tech-logo(src='/img/tech-logo.png')
+            .modal-tech-spec__content-wrap
+                #modalTechMenu.modal-tech-spec__links-block
+                    .modal-tech-spec__links-item.active
+                        a(href='#techBlock1')
+                            span ENGINE
+                    .modal-tech-spec__links-item
+                        a(href='#techBlock2')
+                            span TRANSMISSION
+                    .modal-tech-spec__links-item
+                        a(href='#techBlock3')
+                            span CHASSIS
+                    .modal-tech-spec__links-item
+                        a(href='#techBlock4')
+                            span DIMENSIONS AND WEIGHTS
+                    .modal-tech-spec__links-item
+                        a(href='#techBlock5')
+                            span EQUIPMENT
+                    .modal-tech-spec__links-item
+                        a(href='#techBlock6')
+                            span WARRANTY
+                    .modal-tech-spec__links-item
+                        a(href='#techBlock7')
+                            span EMISSIONS AND CONSUMPTION
+                .modal-tech-spec__text-block
+                    .modal-tech-spec__text-part#techBlock1
+                        .modal-tech-spec__header-wrap
+                            p ENGINE
+                            img.modal-tech-spec__header-line(src='/img/line-bg.png')
+                        .modal-tech-spec__text-list
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve Four cylinder, 4 stroke, 16 valve Four cylinder, 4 stroke, 16 valve Four cylinder, 4 stroke, 16 valve Four cylinder, 4 stroke, 16 valve Four cylinder, 4 stroke, 16 valve Four cylinder, 4 stroke, 16 valveFour cylinder, 4 stroke, 16 valve Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                    .modal-tech-spec__text-part#techBlock2
+                        .modal-tech-spec__header-wrap
+                            p TRANSMISSION
+                            img.modal-tech-spec__header-line(src='/img/line-bg.png')
+                        .modal-tech-spec__text-list
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                    .modal-tech-spec__text-part#techBlock3
+                        .modal-tech-spec__header-wrap
+                            p CHASSIS
+                            img.modal-tech-spec__header-line(src='/img/line-bg.png')
+                        .modal-tech-spec__text-list
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                    .modal-tech-spec__text-part#techBlock4
+                        .modal-tech-spec__header-wrap
+                            p DIMENSIONS AND WEIGHTS
+                            img.modal-tech-spec__header-line(src='/img/line-bg.png')
+                        .modal-tech-spec__text-list
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                    .modal-tech-spec__text-part#techBlock5
+                        .modal-tech-spec__header-wrap
+                            p EQUIPMENT
+                            img.modal-tech-spec__header-line(src='/img/line-bg.png')
+                        .modal-tech-spec__text-list
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                    .modal-tech-spec__text-part#techBlock6
+                        .modal-tech-spec__header-wrap
+                            p WARRANTY
+                            img.modal-tech-spec__header-line(src='/img/line-bg.png')
+                        .modal-tech-spec__text-list
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                    .modal-tech-spec__text-part#techBlock7
+                        .modal-tech-spec__header-wrap
+                            p EMISSIONS AND CONSUMPTION
+                            img.modal-tech-spec__header-line(src='/img/line-bg.png')
+                        .modal-tech-spec__text-list
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+                            .modal-tech-spec__text-item
+                                .modal-tech-spec__text-title
+                                    p Type
+                                .modal-tech-spec__text-descr
+                                    p Four cylinder, 4 stroke, 16 valve
+
+
+
+
+
+
+
+
+
+
+
+

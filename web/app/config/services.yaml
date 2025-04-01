@@ -1,0 +1,187 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    sonata.media.admin.media.controller: 'App\Controller\Admin\MediaAdminController'
+    sonata.media.admin.media.class: 'App\Admin\MediaAdmin'
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        bind:
+            $mailerNoReply: '%env(string:MAILER_NO_REPLY)%'
+            $mailerRequestRecipients: '%env(json:MAILER_REQUEST_RECIPIENTS)%'
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+
+    Sonata\MediaBundle\Entity\MediaManager:
+        alias: sonata.media.manager.media
+
+    Sonata\MediaBundle\Entity\GalleryManager:
+        alias: sonata.media.manager.gallery
+
+    Sonata\MediaBundle\Admin\GalleryAdmin:
+        alias: sonata.media.admin.gallery
+
+    sonata.media.provider.image.multiupload:
+        class: App\Provider\MultiuploadImageProvider
+        arguments:
+            - sonata.media.provider.image.multiupload
+            - '@sonata.media.filesystem.local'
+            - '@sonata.media.cdn.server'
+            - '@sonata.media.generator.default'
+            - '@sonata.media.thumbnail.format'
+            - ['jpg', 'png', 'jpeg']
+            - ['image/pjpeg', 'image/jpeg', 'image/png', 'image/x-png']
+            - '@sonata.media.adapter.image.gd'
+            - '@sonata.media.resizer.simple'
+            - '@sonata.media.metadata.proxy'
+        tags:
+            - { name: sonata.media.provider, multi_upload: true }
+        calls:
+            -   method: setTemplates
+                arguments:
+                    - helper_view: '@@SonataMedia/Provider/view_image.html.twig'
+                    - helper_thumbnail: '@@SonataMedia/Provider/thumbnail.html.twig'
+        public: true
+
+    sonata.media.provider.video:
+        class: App\Provider\VideoProvider
+        tags:
+            - { name: sonata.media.provider }
+        arguments:
+            - sonata.media.provider.video
+            - '@sonata.media.filesystem.local'
+            - '@sonata.media.cdn.server'
+            - '@sonata.media.generator.default'
+            - '@sonata.media.thumbnail.format'
+            - ['mpg', 'mpeg', 'mp4', 'm4v', 'ogg', 'ogv', 'mov', 'webm', 'flv']
+            - ['video/mpeg', 'video/mp4', 'video/ogg', 'video/quicktime', 'video/webm', 'video/x-flv']
+            - '@sonata.media.resizer.simple'
+            - '@logger'
+            - '@sonata.media.metadata.proxy'
+        calls:
+            - [ setTemplates, [{ helper_view: admin/media/view_video.html.twig, helper_thumbnail: '@@SonataMedia/Provider/thumbnail.html.twig' }]]
+
+    sonata.media.provider.audio:
+        class: App\Provider\AudioProvider
+        tags:
+            - { name: sonata.media.provider }
+        arguments:
+            - sonata.media.provider.audio
+            - '@sonata.media.filesystem.local'
+            - '@sonata.media.cdn.server'
+            - '@sonata.media.generator.default'
+            - '@sonata.media.thumbnail.format'
+            - ['mp3', 'ogg', 'wav']
+            - ['audio/mpeg', 'audio/ogg', 'audio/vorbis', 'audio/vnd.wave']
+            - '@sonata.media.resizer.simple'
+            - '@logger'
+            - '@sonata.media.metadata.proxy'
+        calls:
+            - [ setTemplates, [{ helper_view: admin/media/view_audio.html.twig, helper_thumbnail: '@@SonataMedia/Provider/thumbnail.html.twig' }]]
+
+    sonata.media.provider.svg:
+        class: App\Provider\SvgProvider
+        tags:
+            - { name: sonata.media.provider }
+        arguments:
+            - sonata.media.provider.svg
+            - '@sonata.media.filesystem.local'
+            - '@sonata.media.cdn.server'
+            - '@sonata.media.generator.default'
+            - '@sonata.media.thumbnail.format'
+            - ['svg']
+            - ['image/svg+xml', 'image/svg']
+            - '@sonata.media.metadata.proxy'
+        calls:
+            - [ setTemplates, [{ helper_view: admin/media/view_svg.html.twig, helper_thumbnail: '@@SonataMedia/Provider/thumbnail.html.twig' }]]
+
+    app.admin.highlight:
+        class: App\Admin\HighlightAdmin
+        arguments: [~, App\Entity\Highlight, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: entry.highlights }
+
+    app.admin.lineup:
+        class: App\Admin\LineupAdmin
+        arguments: [~, App\Entity\Lineup, 'PixSortableBehaviorBundle:SortableAdmin']
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: entry.lineup }
+
+    app.admin.model:
+        class: App\Admin\ModelAdmin
+        arguments: [~, App\Entity\Model, App\Controller\Admin\ModelAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: entry.models }
+
+    app.admin.paint:
+        class: App\Admin\PaintAdmin
+        arguments: [~, App\Entity\Paint, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: entry.paints }
+
+    app.admin.color:
+        class: App\Admin\PaintColorAdmin
+        arguments: [~, App\Entity\PaintColor, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: entry.colors }
+
+    app.admin.techSection:
+        class: App\Admin\TechSectionAdmin
+        arguments: [~, App\Entity\TechSection, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: entry.tech_sections }
+
+    app.admin.techSpec:
+        class: App\Admin\TechSpecAdmin
+        arguments: [~, App\Entity\TechSpec, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: entry.tech_specs }
+
+    app.admin.request.call:
+        class: App\Admin\CallRequestAdmin
+        arguments: [~, App\Entity\CallRequest, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: entry.request.call }
+
+    app.admin.request.order:
+        class: App\Admin\OrderRequestAdmin
+        arguments: [~, App\Entity\OrderRequest, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: entry.request.order }
+
+    app.admin.request.ride:
+        class: App\Admin\RideRequestAdmin
+        arguments: [~, App\Entity\RideRequest, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: entry.request.ride }
+
+    app.admin.request.service:
+        class: App\Admin\ServiceRequestAdmin
+        arguments: [~, App\Entity\ServiceRequest, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: entry.request.service }
+
+    app.admin.users:
+        class: App\Admin\UserAdmin
+        arguments: [~, App\Entity\User, App\Controller\Admin\UserAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: entry.admins }

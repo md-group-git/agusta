@@ -1,0 +1,39 @@
+include ../components/include/head
+include ../components/include/googleanalitics
+include ../components/include/scripts
+include ../components/sections/s-modal-policy/s-modal-policy
+
+include ../components/sections/menu/menu
+include ../components/sections/s-header/s-header
+include ../components/sections/s-footer/s-footer
+
+include ../components/sections/module-1/module-1
+include ../components/sections/module-2/module-2
+include ../components/sections/module-3/module-3
+include ../components/sections/header-slider/header-slider
+include ../components/sections/module-4/module-4
+include ../components/sections/module-5/module-5
+include ../components/sections/module-6/module-6
+include ../components/sections/module-7/module-7
+include ../components/sections/s-order/s-order
+
+doctype html
+html(lang="en")
+    +head(rush1000)
+    body
+        //#preloader
+            //img(src="/img/logo-main.svg" alt='')
+        .b-wrapper
+            .content
+                +menu(rush1000)
+                +header-slider(rush1000)
+                +module-4(rush1000)
+                +module-5(rush1000)
+                +module-6(rush1000)
+                +module-7(rush1000)
+                +s-order(rush1000)
+                +module-2(rush1000)
+                +s-footer(rush1000)
+                +s-modal-policy()
+                //+s-contact(rush1000) 
+            +scripts()

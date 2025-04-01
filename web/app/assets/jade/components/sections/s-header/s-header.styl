@@ -1,0 +1,55 @@
+.s-header
+  position: relative
+  background-color: #000000
+  @media only screen and (max-width: 1400px)
+    padding-top: 40px
+  @media only screen and (max-width: 1024px)
+    padding-top: 20px
+  @media only screen and (max-width: 414px)
+    padding-top: 0
+  &__icon
+    position: absolute
+    bottom: -84px
+    left: 50%
+    transform translateX(-50%)
+    z-index: 2
+    @media only screen and (max-width: 1600px)
+      bottom -120px
+    @media only screen and (max-width: 1300px)
+      width: 120px;
+      height: 140px;
+      bottom -80px
+    @media only screen and (max-width: 1024px)
+      width: 96px;
+      height: 112px;
+      bottom -50px
+    @media only screen and (max-width: 600px)
+      bottom -100px
+    @media only screen and (max-width: 414px)
+      bottom: -60px
+  &__img
+    width: 100%
+    &--mob,
+    &--tab
+      display: none
+    @media only screen and (max-width: 1024px)
+      &--desctop
+        display: none
+      &--tab
+        display: block
+    @media only screen and (max-width: 414px)
+      &--tab
+        display: none
+      &--mob
+        display: block
+
+
+
+//&__img
+  //  @media only screen and (max-width: 1400px)
+  //    position: absolute
+  //    top: 0
+  //    left 50%
+  //    transform translateX(-50%)
+  //    height: 100%
+  //    width: 1400px

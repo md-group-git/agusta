@@ -1,0 +1,154 @@
+.s-stock
+
+  h2
+    margin-bottom: 40px
+  .block-price
+    display: flex
+    align-items flex-end
+    justify-content center
+    margin-top: 10px
+    p
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 16px;
+      text-transform: uppercase;
+      color: #A1A1A1;
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      margin-bottom: 0
+      @media only screen and (max-width: 400px)
+        font-size: 14px;
+    .price
+      color brown
+      font-size 32px
+      line-height: 26px
+      margin-left: 8px
+      margin-right: 8px
+      @media only screen and (max-width: 992px)
+        font-size 30px
+      @media only screen and (max-width: 400px)
+        font-size 28px
+    .curency
+      color brown
+      font-size: 18px;
+
+  &__select-wrap
+    max-width calc(25% - 20px)
+    @media only screen and (max-width: 1600px)
+      max-width calc(33.3% - 20px)
+    @media only screen and (max-width: 1180px)
+      max-width calc(50% - 20px)
+    @media only screen and (max-width: 720px)
+      max-width calc(100% - 20px)
+    .select-wrapper
+      input.select-dropdown
+        color #fff
+        &:focus
+          border-bottom 1px solid #9e9e9e;
+
+
+  &__blocks-wrap
+    display: flex
+    flex-wrap wrap
+    width: calc(100% + 20px)
+    margin-left: -10px
+    margin-top: 30px
+
+  .container
+    @media only screen and (max-width: 1600px)
+      padding-left: 100px
+      padding-right: 100px
+    @media only screen and (max-width: 1400px)
+      padding-left: 28px
+      padding-right: 28px
+    @media only screen and (max-width: 600px)
+      padding-left: 0
+      padding-right: 0
+
+  &__block
+    width: calc(25% - 20px)
+    margin: 10px
+    background: linear-gradient(1800deg, #161616 0%, #161616 51.04%, #161616 100%);
+    padding: 30px
+    transition all .3s ease
+    display: none
+    @media only screen and (max-width: 1600px)
+      width: calc(33.3% - 20px)
+    @media only screen and (max-width: 1180px)
+      width: calc(50% - 20px)
+    @media only screen and (max-width: 992px)
+      padding-left: 8px
+      padding-right: 8px
+    @media only screen and (max-width: 720px)
+      width: calc(100% - 20px)
+
+    &.active
+      display: block
+    &:hover
+      background: linear-gradient(1800deg, #161616 0%, rgba(22, 22, 22, 0.489583) 51.04%, rgba(22, 22, 22, 0) 100%);
+      .s-stock__block-descr-wrap
+        opacity 1
+
+  &__block-type
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 0!important
+
+  &__block-name
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 0!important
+
+  &__block-img-wrap
+    margin-top: -20px
+
+  &__block-img
+    max-width inherit
+    width: 120%
+    margin-left: -10%
+
+  &__block-descr-wrap
+    display: flex
+    justify-content space-between
+    margin-top: 40px
+    opacity: .4
+    transition opacity .3s ease
+    .line-descr
+      width: 33.3%
+      position: relative
+      padding-bottom: 26px
+      svg
+        display: block
+        margin-left auto
+        margin-right auto
+      .line-descr-text
+        margin-top: 16px
+        .line-descr-title
+          font-size: 14px;
+          line-height: 17px;
+          text-align: center;
+          text-transform: uppercase;
+          margin-bottom: 0
+        .line-descr-about
+          width: 100%
+          font-weight: 700
+          margin-top: 4px
+          text-align: center
+          position: absolute
+          bottom: 0
+          left: 50%
+          transform translateX(-50%)
+          span
+            font-size: 14px;
+            line-height: 17px;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 0
+            font-weight: 700

@@ -1,0 +1,609 @@
+mixin s-stock(page)
+    section.s-stock
+        .container
+            .row
+                .col.s12.s-stock__content
+                    .section-header
+                        h2.s-stock__title Мотоциклы в наличии
+                    .s-stock__select-wrap
+                        select#select_stock(name='stock-order')
+                            option(value='', disabled='', selected='') Выбрать модель
+                            option(value='all') Все модели
+                            option(value='brutale') Brutale
+                            option(value='dragster') Dragster
+                            option(value='f3') F3
+                            option(value='rush') Rush
+                            option(value='superveloce') Superveloce
+                            option(value='turismo-veloce') Turismo Veloce
+                    .s-stock__blocks-wrap
+                        a.s-stock__block.active(href='/brutale-800-rosso.html' data-id='brutale')
+                            p.s-stock__block-type Brutale
+                            p.s-stock__block-name 800 rosso
+                            .s-stock__block-img-wrap
+                                img.s-stock__block-img(src='/img/brutale/brutale-800-rosso/B3_800MY20_00036.png')
+                            .s-stock__block-price-wrap
+                                .block-price
+                                    p от
+                                    p.price 9 999,999.00
+                                    p.curency ₽
+                            .s-stock__block-descr-wrap
+                                .line-descr
+                                    img.image_svg(src='/img/icon-numbers-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title количество цилиндров
+                                        p.line-descr-about
+                                            | 3
+                                .line-descr
+                                    img.image_svg(src='/img/icon-value-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title ёмкость цилиндров
+                                        p.line-descr-about
+                                            | 79
+                                            span  CC
+                                .line-descr
+                                    img.image_svg(src='/img/icon-horse-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title Мощность
+                                        p.line-descr-about
+                                            | 110
+                                            span  л.с. / 11,500 об.мин
+                        a.s-stock__block.active(href='/brutale-800-rr.html' data-id='brutale')
+                            p.s-stock__block-type Brutale
+                            p.s-stock__block-name 800 RR
+                            .s-stock__block-img-wrap
+                                img.s-stock__block-img(src='/img/brutale/brutale-800-rr/BRUTALE_800RR_MY20_A_00036.png')
+                            .s-stock__block-price-wrap
+                                .block-price
+                                    p от
+                                    p.price 9 999,999.00
+                                    p.curency ₽
+                            .s-stock__block-descr-wrap
+                                .line-descr
+                                    img.image_svg(src='/img/icon-numbers-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title количество цилиндров
+                                        p.line-descr-about
+                                            | 3
+                                .line-descr
+                                    img.image_svg(src='/img/icon-value-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title ёмкость цилиндров
+                                        p.line-descr-about
+                                            | 79
+                                            span  CC
+                                .line-descr
+                                    img.image_svg(src='/img/icon-horse-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title Мощность
+                                        p.line-descr-about
+                                            | 110
+                                            span  л.с. / 11,500 об.мин
+                        a.s-stock__block.active(href='/brutale-800-rr-scs.html' data-id='brutale')
+                            p.s-stock__block-type Brutale
+                            p.s-stock__block-name 800 RR SCS
+                            .s-stock__block-img-wrap
+                                img.s-stock__block-img(src='/img/brutale/brutale-800-rr-scs/SCSMY20_A_vers2__0036.png')
+                            .s-stock__block-price-wrap
+                                .block-price
+                                    p от
+                                    p.price 9 999,999.00
+                                    p.curency ₽
+                            .s-stock__block-descr-wrap
+                                .line-descr
+                                    img.image_svg(src='/img/icon-numbers-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title количество цилиндров
+                                        p.line-descr-about
+                                            | 3
+                                .line-descr
+                                    img.image_svg(src='/img/icon-value-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title ёмкость цилиндров
+                                        p.line-descr-about
+                                            | 79
+                                            span  CC
+                                .line-descr
+                                    img.image_svg(src='/img/icon-horse-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title Мощность
+                                        p.line-descr-about
+                                            | 110
+                                            span  л.с. / 11,500 об.мин
+                        a.s-stock__block.active(href='/brutale-1000-rr.html' data-id='brutale')
+                            p.s-stock__block-type Brutale
+                            p.s-stock__block-name 1000 RR
+                            .s-stock__block-img-wrap
+                                img.s-stock__block-img(src='/img/brutale/brutale-1000-rr/B4_1000RR_A_0036.png')
+                            .s-stock__block-price-wrap
+                                .block-price
+                                    p от
+                                    p.price 9 999,999.00
+                                    p.curency ₽
+                            .s-stock__block-descr-wrap
+                                .line-descr
+                                    img.image_svg(src='/img/icon-numbers-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title количество цилиндров
+                                        p.line-descr-about
+                                            | 3
+                                .line-descr
+                                    img.image_svg(src='/img/icon-value-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title ёмкость цилиндров
+                                        p.line-descr-about
+                                            | 79
+                                            span  CC
+                                .line-descr
+                                    img.image_svg(src='/img/icon-horse-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title Мощность
+                                        p.line-descr-about
+                                            | 110
+                                            span  л.с. / 11,500 об.мин
+                        a.s-stock__block.active(href='/brutale-1000-serie-oro.html' data-id='brutale')
+                            p.s-stock__block-type Brutale
+                            p.s-stock__block-name 1000 serie oro
+                            .s-stock__block-img-wrap
+                                img.s-stock__block-img(src='/img/brutale/brutale-1000-serie-oro/B4_SerieOro_0036.png')
+                            .s-stock__block-price-wrap
+                                .block-price
+                                    p от
+                                    p.price 9 999,999.00
+                                    p.curency ₽
+                            .s-stock__block-descr-wrap
+                                .line-descr
+                                    img.image_svg(src='/img/icon-numbers-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title количество цилиндров
+                                        p.line-descr-about
+                                            | 3
+                                .line-descr
+                                    img.image_svg(src='/img/icon-value-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title ёмкость цилиндров
+                                        p.line-descr-about
+                                            | 79
+                                            span  CC
+                                .line-descr
+                                    img.image_svg(src='/img/icon-horse-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title Мощность
+                                        p.line-descr-about
+                                            | 110
+                                            span  л.с. / 11,500 об.мин
+                        a.s-stock__block.active(href='/dragster-800-rc.html' data-id='dragster')
+                            p.s-stock__block-type Dragster
+                            p.s-stock__block-name 800 RC
+                            .s-stock__block-img-wrap
+                                img.s-stock__block-img(src='/img/dragster/dragster-800-rc/D3_RCMY20_0036.png')
+                            .s-stock__block-price-wrap
+                                .block-price
+                                    p от
+                                    p.price 9 999,999.00
+                                    p.curency ₽
+                            .s-stock__block-descr-wrap
+                                .line-descr
+                                    img.image_svg(src='/img/icon-numbers-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title количество цилиндров
+                                        p.line-descr-about
+                                            | 3
+                                .line-descr
+                                    img.image_svg(src='/img/icon-value-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title ёмкость цилиндров
+                                        p.line-descr-about
+                                            | 79
+                                            span  CC
+                                .line-descr
+                                    img.image_svg(src='/img/icon-horse-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title Мощность
+                                        p.line-descr-about
+                                            | 110
+                                            span  л.с. / 11,500 об.мин
+                        a.s-stock__block.active(href='/dragster-800-rosso.html' data-id='dragster')
+                            p.s-stock__block-type Dragster
+                            p.s-stock__block-name 800 Rosso
+                            .s-stock__block-img-wrap
+                                img.s-stock__block-img(src='/img/dragster/dragster-800-rosso/D3_800MY20_0036.png')
+                            .s-stock__block-price-wrap
+                                .block-price
+                                    p от
+                                    p.price 9 999,999.00
+                                    p.curency ₽
+                            .s-stock__block-descr-wrap
+                                .line-descr
+                                    img.image_svg(src='/img/icon-numbers-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title количество цилиндров
+                                        p.line-descr-about
+                                            | 3
+                                .line-descr
+                                    img.image_svg(src='/img/icon-value-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title ёмкость цилиндров
+                                        p.line-descr-about
+                                            | 79
+                                            span  CC
+                                .line-descr
+                                    img.image_svg(src='/img/icon-horse-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title Мощность
+                                        p.line-descr-about
+                                            | 110
+                                            span  л.с. / 11,500 об.мин
+                        a.s-stock__block.active(href='/dragster-800-rr.html' data-id='dragster')
+                            p.s-stock__block-type Dragster
+                            p.s-stock__block-name 800 RR
+                            .s-stock__block-img-wrap
+                                img.s-stock__block-img(src='/img/dragster/dragster-800-rr/D3_RRMY20_B_0036.png')
+                            .s-stock__block-price-wrap
+                                .block-price
+                                    p от
+                                    p.price 9 999,999.00
+                                    p.curency ₽
+                            .s-stock__block-descr-wrap
+                                .line-descr
+                                    img.image_svg(src='/img/icon-numbers-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title количество цилиндров
+                                        p.line-descr-about
+                                            | 3
+                                .line-descr
+                                    img.image_svg(src='/img/icon-value-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title ёмкость цилиндров
+                                        p.line-descr-about
+                                            | 79
+                                            span  CC
+                                .line-descr
+                                    img.image_svg(src='/img/icon-horse-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title Мощность
+                                        p.line-descr-about
+                                            | 110
+                                            span  л.с. / 11,500 об.мин
+                        a.s-stock__block.active(href='/dragster-800-rr-scs.html' data-id='dragster')
+                            p.s-stock__block-type Dragster
+                            p.s-stock__block-name 800 RR SCS
+                            .s-stock__block-img-wrap
+                                img.s-stock__block-img(src='/img/dragster/dragster-800-rr-scs/D3_SCSMY20_ver2_A_0036.png')
+                            .s-stock__block-price-wrap
+                                .block-price
+                                    p от
+                                    p.price 9 999,999.00
+                                    p.curency ₽
+                            .s-stock__block-descr-wrap
+                                .line-descr
+                                    img.image_svg(src='/img/icon-numbers-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title количество цилиндров
+                                        p.line-descr-about
+                                            | 3
+                                .line-descr
+                                    img.image_svg(src='/img/icon-value-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title ёмкость цилиндров
+                                        p.line-descr-about
+                                            | 79
+                                            span  CC
+                                .line-descr
+                                    img.image_svg(src='/img/icon-horse-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title Мощность
+                                        p.line-descr-about
+                                            | 110
+                                            span  л.с. / 11,500 об.мин
+                        a.s-stock__block.active(href='/f3-675.html' data-id='f3')
+                            p.s-stock__block-type F3
+                            p.s-stock__block-name 675
+                            .s-stock__block-img-wrap
+                                img.s-stock__block-img(src='/img/f3/f3-675/F3_675MY20_0036.png')
+                            .s-stock__block-price-wrap
+                                .block-price
+                                    p от
+                                    p.price 9 999,999.00
+                                    p.curency ₽
+                            .s-stock__block-descr-wrap
+                                .line-descr
+                                    img.image_svg(src='/img/icon-numbers-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title количество цилиндров
+                                        p.line-descr-about
+                                            | 3
+                                .line-descr
+                                    img.image_svg(src='/img/icon-value-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title ёмкость цилиндров
+                                        p.line-descr-about
+                                            | 79
+                                            span  CC
+                                .line-descr
+                                    img.image_svg(src='/img/icon-horse-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title Мощность
+                                        p.line-descr-about
+                                            | 110
+                                            span  л.с. / 11,500 об.мин
+                        a.s-stock__block.active(href='/f3-800.html' data-id='f3')
+                            p.s-stock__block-type F3
+                            p.s-stock__block-name 800
+                            .s-stock__block-img-wrap
+                                img.s-stock__block-img(src='/img/f3/f3-800/F3_800MY20_0036.png')
+                            .s-stock__block-price-wrap
+                                .block-price
+                                    p от
+                                    p.price 9 999,999.00
+                                    p.curency ₽
+                            .s-stock__block-descr-wrap
+                                .line-descr
+                                    img.image_svg(src='/img/icon-numbers-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title количество цилиндров
+                                        p.line-descr-about
+                                            | 3
+                                .line-descr
+                                    img.image_svg(src='/img/icon-value-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title ёмкость цилиндров
+                                        p.line-descr-about
+                                            | 79
+                                            span  CC
+                                .line-descr
+                                    img.image_svg(src='/img/icon-horse-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title Мощность
+                                        p.line-descr-about
+                                            | 110
+                                            span  л.с. / 11,500 об.мин
+                        a.s-stock__block.active(href='/f3-800-rc.html' data-id='f3')
+                            p.s-stock__block-type F3
+                            p.s-stock__block-name 800 RC
+                            .s-stock__block-img-wrap
+                                img.s-stock__block-img(src='/img/f3/f3-800-rc/F3_RCMY20_0036.png')
+                            .s-stock__block-price-wrap
+                                .block-price
+                                    p от
+                                    p.price 9 999,999.00
+                                    p.curency ₽
+                            .s-stock__block-descr-wrap
+                                .line-descr
+                                    img.image_svg(src='/img/icon-numbers-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title количество цилиндров
+                                        p.line-descr-about
+                                            | 3
+                                .line-descr
+                                    img.image_svg(src='/img/icon-value-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title ёмкость цилиндров
+                                        p.line-descr-about
+                                            | 79
+                                            span  CC
+                                .line-descr
+                                    img.image_svg(src='/img/icon-horse-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title Мощность
+                                        p.line-descr-about
+                                            | 110
+                                            span  л.с. / 11,500 об.мин
+                        a.s-stock__block.active(href='/rush-1000.html' data-id='rush')
+                            p.s-stock__block-type Rush
+                            p.s-stock__block-name 1000
+                            .s-stock__block-img-wrap
+                                img.s-stock__block-img(src='/img/rush/rush-1000/rush-1000.png')
+                            .s-stock__block-price-wrap
+                                .block-price
+                                    p от
+                                    p.price 9 999,999.00
+                                    p.curency ₽
+                            .s-stock__block-descr-wrap
+                                .line-descr
+                                    img.image_svg(src='/img/icon-numbers-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title количество цилиндров
+                                        p.line-descr-about
+                                            | 3
+                                .line-descr
+                                    img.image_svg(src='/img/icon-value-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title ёмкость цилиндров
+                                        p.line-descr-about
+                                            | 79
+                                            span  CC
+                                .line-descr
+                                    img.image_svg(src='/img/icon-horse-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title Мощность
+                                        p.line-descr-about
+                                            | 110
+                                            span  л.с. / 11,500 об.мин
+                        a.s-stock__block.active(href='/superveloce-800.html' data-id='superveloce')
+                            p.s-stock__block-type Superveloce
+                            p.s-stock__block-name 800
+                            .s-stock__block-img-wrap
+                                img.s-stock__block-img(src='/img/superveloce/superveloce-800/SV800_A_0036.png')
+                            .s-stock__block-price-wrap
+                                .block-price
+                                    p от
+                                    p.price 9 999,999.00
+                                    p.curency ₽
+                            .s-stock__block-descr-wrap
+                                .line-descr
+                                    img.image_svg(src='/img/icon-numbers-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title количество цилиндров
+                                        p.line-descr-about
+                                            | 3
+                                .line-descr
+                                    img.image_svg(src='/img/icon-value-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title ёмкость цилиндров
+                                        p.line-descr-about
+                                            | 79
+                                            span  CC
+                                .line-descr
+                                    img.image_svg(src='/img/icon-horse-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title Мощность
+                                        p.line-descr-about
+                                            | 110
+                                            span  л.с. / 11,500 об.мин
+                        a.s-stock__block.active(href='/superveloce-800-serie-oro.html' data-id='superveloce')
+                            p.s-stock__block-type Superveloce
+                            p.s-stock__block-name 800 serie oro
+                            .s-stock__block-img-wrap
+                                img.s-stock__block-img(src='/img/superveloce/superveloce-800-serie-oro/SV_SerieOro_0036.png')
+                            .s-stock__block-price-wrap
+                                .block-price
+                                    p от
+                                    p.price 9 999,999.00
+                                    p.curency ₽
+                            .s-stock__block-descr-wrap
+                                .line-descr
+                                    img.image_svg(src='/img/icon-numbers-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title количество цилиндров
+                                        p.line-descr-about
+                                            | 3
+                                .line-descr
+                                    img.image_svg(src='/img/icon-value-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title ёмкость цилиндров
+                                        p.line-descr-about
+                                            | 79
+                                            span  CC
+                                .line-descr
+                                    img.image_svg(src='/img/icon-horse-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title Мощность
+                                        p.line-descr-about
+                                            | 110
+                                            span  л.с. / 11,500 об.мин
+                        a.s-stock__block.active(href='/turismo-veloce-800-lusso.html' data-id='turismo-veloce')
+                            p.s-stock__block-type Turismo Veloce
+                            p.s-stock__block-name 800 lusso
+                            .s-stock__block-img-wrap
+                                img.s-stock__block-img(src='/img/turismo-veloce/turismo-veloce-800-lusso/TVL_MY20_A_0036.png')
+                            .s-stock__block-price-wrap
+                                .block-price
+                                    p от
+                                    p.price 9 999,999.00
+                                    p.curency ₽
+                            .s-stock__block-descr-wrap
+                                .line-descr
+                                    img.image_svg(src='/img/icon-numbers-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title количество цилиндров
+                                        p.line-descr-about
+                                            | 3
+                                .line-descr
+                                    img.image_svg(src='/img/icon-value-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title ёмкость цилиндров
+                                        p.line-descr-about
+                                            | 79
+                                            span  CC
+                                .line-descr
+                                    img.image_svg(src='/img/icon-horse-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title Мощность
+                                        p.line-descr-about
+                                            | 110
+                                            span  л.с. / 11,500 об.мин
+                        a.s-stock__block.active(href='/turismo-veloce-800-lusso-scs.html' data-id='turismo-veloce')
+                            p.s-stock__block-type Turismo Veloce
+                            p.s-stock__block-name 800 lusso scs
+                            .s-stock__block-img-wrap
+                                img.s-stock__block-img(src='/img/turismo-veloce/turismo-veloce-800-lusso-scs/Turismo_SCSMY20_A_0036.png')
+                            .s-stock__block-price-wrap
+                                .block-price
+                                    p от
+                                    p.price 9 999,999.00
+                                    p.curency ₽
+                            .s-stock__block-descr-wrap
+                                .line-descr
+                                    img.image_svg(src='/img/icon-numbers-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title количество цилиндров
+                                        p.line-descr-about
+                                            | 3
+                                .line-descr
+                                    img.image_svg(src='/img/icon-value-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title ёмкость цилиндров
+                                        p.line-descr-about
+                                            | 79
+                                            span  CC
+                                .line-descr
+                                    img.image_svg(src='/img/icon-horse-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title Мощность
+                                        p.line-descr-about
+                                            | 110
+                                            span  л.с. / 11,500 об.мин
+                        a.s-stock__block.active(href='/turismo-veloce-800-rc-scs.html' data-id='turismo-veloce')
+                            p.s-stock__block-type Turismo Veloce
+                            p.s-stock__block-name 800 rc scs
+                            .s-stock__block-img-wrap
+                                img.s-stock__block-img(src='/img/turismo-veloce/turismo-veloce-800-rc-scs/Turismo_RCMY20_0036.png')
+                            .s-stock__block-price-wrap
+                                .block-price
+                                    p от
+                                    p.price 9 999,999.00
+                                    p.curency ₽
+                            .s-stock__block-descr-wrap
+                                .line-descr
+                                    img.image_svg(src='/img/icon-numbers-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title количество цилиндров
+                                        p.line-descr-about
+                                            | 3
+                                .line-descr
+                                    img.image_svg(src='/img/icon-value-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title ёмкость цилиндров
+                                        p.line-descr-about
+                                            | 79
+                                            span  CC
+                                .line-descr
+                                    img.image_svg(src='/img/icon-horse-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title Мощность
+                                        p.line-descr-about
+                                            | 110
+                                            span  л.с. / 11,500 об.мин
+                        a.s-stock__block.active(href='/turismo-veloce-800-rosso.html' data-id='turismo-veloce')
+                            p.s-stock__block-type Turismo Veloce
+                            p.s-stock__block-name 800 rosso
+                            .s-stock__block-img-wrap
+                                img.s-stock__block-img(src='/img/turismo-veloce/turismo-veloce-800-rosso/Turismo_800MY20_0036.png')
+                            .s-stock__block-price-wrap
+                                .block-price
+                                    p от
+                                    p.price 9 999,999.00
+                                    p.curency ₽
+                            .s-stock__block-descr-wrap
+                                .line-descr
+                                    img.image_svg(src='/img/icon-numbers-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title количество цилиндров
+                                        p.line-descr-about
+                                            | 3
+                                .line-descr
+                                    img.image_svg(src='/img/icon-value-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title ёмкость цилиндров
+                                        p.line-descr-about
+                                            | 79
+                                            span  CC
+                                .line-descr
+                                    img.image_svg(src='/img/icon-horse-cil.svg')
+                                    .line-descr-text
+                                        p.line-descr-title Мощность
+                                        p.line-descr-about
+                                            | 110
+                                            span  л.с. / 11,500 об.мин
+
+

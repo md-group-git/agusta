@@ -1,0 +1,14 @@
+include ../components/include/head
+include ../components/sections/s-repair/s-repair
+include ../components/sections/s-modal-policy/s-modal-policy
+
+doctype html
+html(lang="en")
+    +head(repair)
+    body
+        //#preloader
+            //img(src="/img/logo-main.svg" alt='')
+        .b-wrapper
+            .content
+                +s-repair()
+                +s-modal-policy()

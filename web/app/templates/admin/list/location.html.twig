@@ -1,0 +1,13 @@
+{% extends '@SonataAdmin/CRUD/base_list_field.html.twig' %}
+
+{% block field %}
+    {%- apply spaceless %}
+        {% if value == 'top' %}
+            <span>{{ 'enum.location.top' | trans }}</span>
+        {% endif %}
+
+        {% if value == 'bottom' %}
+            <span>{{ 'enum.location.bottom' | trans }}</span>
+        {% endif %}
+    {% endapply -%}
+{% endblock %}

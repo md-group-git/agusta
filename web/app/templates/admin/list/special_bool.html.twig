@@ -1,0 +1,10 @@
+{% extends '@SonataAdmin/CRUD/base_list_field.html.twig' %}
+
+{% block field %}
+    {%- apply spaceless %}
+        {% if value %}
+            {% set text = 'label_type_yes'|trans({}, 'SonataAdminBundle') %}
+            <span class="label label-success">{{ text }}</span>
+        {% endif %}
+    {% endapply -%}
+{% endblock %}

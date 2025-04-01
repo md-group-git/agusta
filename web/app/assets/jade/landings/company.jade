@@ -1,0 +1,28 @@
+include ../components/include/head
+include ../components/include/googleanalitics
+include ../components/include/scripts
+include ../components/sections/s-modal-policy/s-modal-policy
+
+include ../components/sections/menu/menu
+include ../components/sections/s-footer/s-footer
+include ../components/sections/module-8/module-8
+include ../components/sections/module-5/module-5
+include ../components/sections/s-timeline/s-timeline
+
+
+doctype html
+html(lang="en")
+    +head(company)
+    body
+        //#preloader
+            //img(src="/img/logo-main.svg" alt='')
+        .b-wrapper
+            .content
+                +menu(company)
+                +module-8(company)
+                //+s-timeline(company)
+                +module-5(company, 'no-icon')
+                +s-footer(company)
+                +s-modal-policy()
+            +scripts()
+            script(src="/libs/timeline/timeline.js" defer)

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="11 0.333333333 21.6666667 21.6666667 0.333333333 21.6666667"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="w-copy-9" transform="translate(-373.000000, -7574.000000)">
+            <g id="6.-Icon-/-Standart-/-Play-/-Default" transform="translate(373.000000, 7574.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Icon" fill="#6E6E6E" transform="translate(11.000000, 11.000000) rotate(-270.000000) translate(-11.000000, -11.000000) " xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,24 @@
+breadcrumb.link_media_multi_upload: Media Multi Upload
+
+sonata.media.provider.image.multiupload: Image
+sonata.media.provider.image.multiupload.description: Upload multiple images at once
+
+sonata.media.provider.video: Video
+sonata.media.provider.video.description: Upload video
+
+sonata.media.provider.audio: Audio
+sonata.media.provider.audio.description: Upload audio
+
+sonata.media.provider.svg: SVG
+sonata.media.provider.svg.description: Upload SVG
+
+circular: View 360°
+color: Color
+default: Default
+document: Document
+header_gallery: Header Gallery
+highlight: Highlight
+logo: Logo
+model: Model
+bike_gallery: Model Gallery
+sound: Sound

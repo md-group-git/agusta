@@ -1,0 +1,62 @@
+mixin service-form(page)
+    section.service-form
+        .container
+            .row
+                .col.s12.service-form__content
+                    .section-header
+                        h2.service-form__title Записаться на сервис
+                    //.service-form__icons-wrap
+                    //    .service-form__icon-block
+                    //        .service-form__icon-wrap
+                    //            img.image_svg(src='/img/icon-service-1.svg')
+                    //        span
+                    //            | PRIORITIZED PRODUCTION SLOT
+                    //    .service-form__icon-block
+                    //        .service-form__icon-wrap
+                    //            img.image_svg(src='/img/icon-service-2.svg')
+                    //        span
+                    //            | SUPPORT THROUGHOUT PURCHASE
+                    //    .service-form__icon-block
+                    //        .service-form__icon-wrap
+                    //            img.image_svg(src='/img/icon-service-3.svg')
+                    //        span
+                    //            | 100€ RESERVATION FEE INCLUDED IN FINAL PRICE
+                    form#serviceForm.wpcf7-form.service-form__form(class="form-style notvalid" novalidate="novalidate")
+                        .formWP.form-wrp
+                            .form-group
+                                .wrp-input.input-field
+                                    label(for='first_name_s') Имя
+                                    input#first_name_s(type='text', name='firstName', maxlength='50')
+                            .form-group
+                                .wrp-input.input-field
+                                    label(for='last_name_s') Фамилия
+                                    input#last_name_s(type='text', name='lastName', maxlength='50')
+                            .form-group
+                                .wrp-input.input-field
+                                    label(for='phone_s') Телефон *
+                                    input#phone_s.form-control(type='tel', name='phone', required='', maxlength='30')
+                            .form-group
+                                .wrp-input
+                                    textarea#message_s.form-control.max-length-counter(name="message" rows="3" placeholder="Оставить запрос" maxlength="1800")
+                            .checkbox-wrap
+                                label
+                                    input.filled-in(type='checkbox', name="agree_receive", value="Yes")
+                                    span Согласен на получение рекламных информационных материалов
+                            .checkbox-wrap
+                                label
+                                    input.filled-in.required-checkbox.form-control(type='checkbox', name="agree_personal", value="Yes")
+                                    span
+                                        | Я согласен на обработку персональных данных в соответствие с&ensp;
+                                        a.policy_modal-link.modal-trigger(href="#modalPolicy") политикой кофиденциальности
+                                        | *
+                        .btn-wrap
+                            button.btn.submitButton(type='submit')
+                                span отправить
+                            .preloader-wrapper.preloader-wrapper-btn.small.active
+                                .spinner-layer.spinner-green-only
+                                    .circle-clipper.left
+                                        .circle
+                                    .gap-patch
+                                        .circle
+                                    .circle-clipper.right
+                                        .circle

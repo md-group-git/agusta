@@ -1,0 +1,8 @@
+<h2>Обратный звонок</h2>
+<h3>Заявка № {{ request.id }} от {{ request.createdAt|date('d.m.Y H:i') }}</h3>
+
+<p>Имя: {{ request.firstName }}</p>
+<p>Фамилия: {{ request.lastName }}</p>
+<p>Телефон: {{ request.phone }}</p>
+<p>Сообщение: {{ request.message }}</p>
+<p>Страница: <a href="{{ request.referer }}" target="_blank">{{ request.referer }}</a></p>

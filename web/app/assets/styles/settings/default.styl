@@ -1,0 +1,890 @@
+/*
+p -- page
+s -- section
+b -- block
+pr -- block preview (pr-xxs, pr-xs, pr-s, pr-m, pr) if different sizes on site
+f -- form
+m -- menu
+l -- list
+i -- img links, lone links, logos, svg
+t -- tables
+title -- default titles
+btn -- buttons
+msg -- message - not content
+
+_error*
+_success*
+_active*
+*/
+
+black = #111111;
+brown = #A27B3E;
+grey = #BDBDBD;
+grey_dark = #2f2f2f;
+grey_light = #6b7f87;
+grey-bg = #f9fafd;
+grey_descr = #444444;
+purple_grey = #f6f6ff;
+white = #ffffff;
+blue = #1247ff;
+blue_hoverd = #182388;
+blue_active = #1B2BB9;
+blue-bg = #186585;
+blue-bg_light = #237192;
+blue-bg_dark = #0f465d;
+green_dark = #485442;
+green_bg = #EBF7FC;
+green = #02bebd;
+green_light = #E8F6FC;
+red = #CA0202;
+
+*
+*:before
+*:after
+  -webkit-box-sizing border-box
+  -moz-box-sizing border-box
+  box-sizing border-box
+.owl-item
+  transform translateZ(0)   //фиксим изчезновения слайдов
+
+img
+  display block
+button
+  background transparent
+input,textarea
+  font-family: 'Open Sans', sans-serif;
+  font-weight 400
+  -webkit-appearance none //убираем тени и прочую дрянь на мобилах
+  border-radius: 0 //убираем скругления - для мобил
+html,body
+  color light_grey
+  height 100%
+  font-size 16px
+  line-height: 28px
+  font-weight 400
+  font-family 'Open Sans', sans-serif;
+  -webkit-font-smoothing antialiased   //сглаживаем шрифты
+  -moz-osx-font-smoothing grayscale   //сглаживаем шрифты
+  -webkit-overflow-scrolling touch  //производительный скролл
+  -webkit-tap-highlight-color: rgba(0,0,0,0); //убираем выделение при нажатии
+
+
+//footer to bottom
+* {
+  margin: 0
+  padding: 0
+}
+header
+footer
+section {
+  max-width 100vw
+}
+html,
+body {
+  width: 100%
+  height: 100%
+}
+
+
+body {
+  max-width 100vw
+  overflow-x: hidden;
+}
+
+#preloader {
+  display: flex
+  justify-content center
+  align-items center
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #141414;
+  /* change if the mask should have another color then white */
+  z-index: 99;
+  /* makes sure it stays on top */
+}
+
+#preloader
+  img
+    width: 160px
+    height: 106px
+    animation: preloader-animation 2.5s infinite;
+    animation-timing-function: linear;
+
+
+@keyframes preloader-animation {
+  0%   { opacity: 1 }
+  25% { opacity: .75 }
+  50% { opacity: .5 }
+  75% { opacity: .75  }
+  100% { opacity: 1 }
+}
+
+.b-wrapper {
+  width: 100%
+  display: table
+  height: 100%
+}
+.content {
+  display: table-row
+  width: 100%
+  height: 100%
+}
+
+section {
+  background: linear-gradient(90deg, #161616 0%, #454545 51.04%, #141414 100%);
+  padding: 140px 0;
+  margin: -2px 0 0;
+}
+
+.section {
+  width: 100%
+}
+.hidden
+  display: none!important
+
+.container
+  max-width 1660px
+  width: 100%
+  position: relative
+  z-index: 1
+  padding: 0 30px
+  @media only screen and (max-width: 1280px)
+    padding 0 15px
+  @media only screen and (max-width: 600px)
+    padding 0
+
+.row
+  margin-bottom 0
+
+.col
+  padding 0 15px
+
+span
+  font-size inherit
+  line-height inherit
+  color inherit
+
+h1
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 60px;
+  text-transform: uppercase;
+  margin-bottom 42px
+  color white
+  @media only screen and (max-width: 1199px)
+    font-size 40px
+    line-height 46px
+  @media only screen and (max-width: 600px)
+    margin-bottom: 24px
+
+.section-header
+  display: flex
+  justify-content center
+  flex-wrap wrap
+  width 100%
+
+h2
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 48px
+  color white
+  position: relative
+  padding-left: 174px
+  padding-right: 174px
+  margin-bottom: 70px
+  text-align: center
+  &:before
+    content ''
+    display: block
+    width: 146px
+    height: 26px
+    position: absolute
+    top: 12px
+    left: 0
+    background url("/img/icon-wind-section-left.svg") center no-repeat
+    background-size contain!important
+    transition all .3s ease
+  &:after
+    content ''
+    display: block
+    width: 146px
+    height: 26px
+    position: absolute
+    top: 12px
+    right: 0
+    background url("/img/icon-wind-section-right.svg") center no-repeat
+    background-size contain!important
+    transition all .3s ease
+  @media only screen and (max-width: 1024px)
+    padding-left: 0
+    padding-right: 0
+    &:before
+      display: none
+    &:after
+      display: none
+  @media only screen and (max-width: 600px)
+    font-size 30px
+    line-height 34px
+    margin-bottom 40px
+
+h3
+  font-size: 36px;
+  line-height: 43px;
+  color white
+  span
+    font-weight: 800
+  @media only screen and (max-width: 600px)
+    font-size: 24px;
+    line-height: 29px;
+
+
+h4
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 40px;
+
+h6
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  padding-left: 74px
+  padding-right: 74px
+  position: relative
+  color #A1A1A1
+  &:before
+    content ''
+    display: block
+    width: 62px
+    height: 2px
+    position: absolute
+    top: 50%
+    left: 0
+    background url("/img/icon-title-line-left.svg")
+    transition all .3s ease
+  &:after
+    content ''
+    display: block
+    width: 62px
+    height: 2px
+    position: absolute
+    top: 50%
+    right: 0
+    background url("/img/icon-title-line-right.svg")
+    transition all .3s ease
+  a
+    font-size inherit
+    line-height: inherit
+    color inherit
+
+.btn
+  border-radius 19px
+  border 1px solid rgba(255,255,255,.3)
+  padding: 10px 30px
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color white
+  display: inline-flex
+  background-color: transparent
+  text-transform: none 
+  height: 38px
+  transition all .3s ease
+  box-shadow none
+  span
+    transition all .3s ease
+    margin-top: -2px
+  &:focus,
+  &:hover
+    background-color: white
+    span
+      color #1A1A1A
+
+img
+  max-width 100%
+
+p
+  font-size: 16px;
+  line-height: 25px;
+  color: grey;
+  &:not(:last-child)
+    margin-bottom 25px
+
+a
+  font-size: 16px;
+  line-height: 25px;
+  color white
+  transition all .3s ease
+
+
+
+.slick-dots
+  width 100%
+  display flex
+  justify-content center
+  align-items center
+  li
+    margin 0 7px
+    &.slick-active
+      button
+        width 9px
+        height 9px
+        opacity 1
+    button
+      font-size 0
+      width 7px
+      height 7px
+      border-radius 50%
+      background-color blue
+      opacity .4
+      transition all .2s ease
+      cursor pointer
+
+[type="checkbox"]+span:not(.lever):before,
+[type="checkbox"]:not(.filled-in)+span:not(.lever):after
+  width 16px
+  height 16px
+  border 1px solid #616161
+  margin-top 4px
+
+[type="checkbox"]:checked+span:not(.lever):before
+  border-right 2px solid blue
+  border-bottom 2px solid blue
+  top -2px
+  left -2px
+  width 8px
+  height 16px
+
+
+form
+  .btn-wrap
+    margin-top: 40px
+    display: flex
+    justify-content center
+    .btn
+      padding-top: 12px
+      padding-bottom: 12px
+      padding-left: 50px
+      padding-right: 50px
+      background-color: #000000
+      border none
+      span
+        text-transform: uppercase
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        color white
+      &:hover
+        background-color: white
+        span
+          color #000000
+          font-weight: 700;
+
+.form-wrp
+  input
+    color white
+    font-size: 18px;
+    line-height: 22px;
+    box-shadow none!important
+    &:focus
+      border-bottom 1px solid white!important
+    &.invalid
+      border-bottom 1px solid red!important
+  label
+    color white
+  textarea
+    border: 1px solid rgba(255,255,255,.5);
+    box-sizing: border-box;
+    color rgba(255,255,255,.5);
+    margin-top: 20px
+    padding: 12px
+    height: 150px
+  .form-error
+    position: absolute
+    left: 0
+    bottom: -16px
+    color red
+    display: block
+    margin-top: -10px
+  .form-group
+    display: flex
+    justify-content space-between
+    @media only screen and (max-width: 600px)
+      flex-wrap wrap
+    &--center
+      justify-content center
+    .wrp-input
+      width: 100%
+    .input-field
+      margin-top: 0
+      width: 100%
+      &--date
+        position: relative
+        &:after
+          content ''
+          display: block;
+          width: 20px
+          height: 22px
+          position: absolute
+          top: 50%
+          right: 0
+          transform translateY(-50%)
+          background url("/img/icon-date.svg") center no-repeat
+          background-size contain
+      &--half
+        width: 49%
+        @media only screen and (max-width: 600px)
+          width: 100%
+
+.checkbox-wrap
+  margin-top: 20px
+  position: relative
+  a
+    text-decoration: underline
+  [type="checkbox"].filled-in:not(:checked)+span:not(.lever):after
+    top: 2px
+    border: 2px solid #fff;
+  [type="checkbox"].filled-in:checked+span:not(.lever):after
+    top: 2px
+    border: 2px solid #AF883E;
+    background-color: #AF883E
+  .required-checkbox.invalid + span:after
+      border 2px solid #ca0202!important
+
+.modal-policy
+  padding: 36px 60px 46px
+  background-color: #373737
+  max-height 90%
+  @media only screen and (max-width: 767px)
+    padding-left: 40px
+    padding-right: 40px
+    padding-top: 50px
+  @media only screen and (max-width: 400px)
+    padding-left: 0
+    padding-right: 0
+  h3
+    text-transform: none
+    margin-bottom: 30px
+    @media only screen and (max-width: 768px)
+      font-size 26px
+    @media only screen and (max-width: 500px)
+      font-size 16px
+  h4
+    color #fff
+    margin-bottom: 30px
+    @media only screen and (max-width: 768px)
+      font-size 22px
+      line-height: 24px
+  .modal-cross-wrap
+    position: absolute
+    top: 16px
+    right: 16px
+    .modal-close
+      path
+        transition all .3s ease
+      &:hover
+        path
+          stroke brown
+
+.modal-call
+  padding: 36px 85px 46px
+  background-color: #373737
+  max-width 700px
+  max-height 90%
+  @media only screen and (max-width: 992px)
+    width: 95%
+  @media only screen and (max-width: 767px)
+    padding-left: 40px
+    padding-right: 40px
+    padding-top: 50px
+  @media only screen and (max-width: 400px)
+    padding-left: 20px
+    padding-right: 20px
+  .modal-content
+    padding: 0
+    svg
+      max-width 100%
+  .modal-cross-wrap
+    position: absolute
+    top: 16px
+    right: 16px
+    .modal-close
+      path
+        transition all .3s ease
+      &:hover
+        path
+          stroke brown
+  .modal__title
+    margin-bottom: 18px
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  &.modal-thanks
+    padding-top: 60px
+    padding-left: 70px
+    padding-right: 70px
+    max-width 360px
+    @media only screen and (max-width: 767px)
+      padding-left: 40px
+      padding-right: 40px
+    @media only screen and (max-width: 400px)
+      padding-left: 20px
+      padding-right: 20px
+    .modal__title
+      font-weight 400
+      font-size: 18px;
+      line-height: 25px;
+      text-align: center;
+      color: #FFFFFF;
+      margin-bottom: 0
+  .btn-wrap
+    margin-top: 40px
+    display: flex
+    justify-content center
+    .btn
+      display: flex
+      justify-content center
+      width: 180px
+      padding-top: 12px
+      padding-bottom: 12px
+      padding-left: 50px
+      padding-right: 50px
+      background-color: #000000
+      border none
+      span
+        text-transform: uppercase
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        color white
+      &:hover
+        background-color: white
+        span
+          color #000000
+          font-weight: 700;
+
+.modal-tech-spec
+  padding: 36px 85px 46px
+  background-color: #373737
+  width: 95%
+  height 95%
+  max-height inherit
+  overflow hidden
+  @media only screen and (max-width: 992px)
+    overflow auto
+  @media only screen and (max-width: 767px)
+    padding-left: 40px
+    padding-right: 40px
+    padding-top: 50px
+  @media only screen and (max-width: 400px)
+    padding-left: 20px
+    padding-right: 20px
+  .modal-content
+    padding: 0
+    max-width 1400px
+    margin-left auto
+    margin-right auto
+    @media only screen and (max-width: 992px)
+      height 82vh
+      overflow auto
+    svg
+      max-width 100%
+  .modal-cross-wrap
+    position: absolute
+    top: 16px
+    right: 16px
+    .modal-close
+      display: flex
+      justify-content center
+      align-items center
+      background-color: #373737
+      path
+        transition all .3s ease
+      &:hover
+        path
+          stroke brown
+  .modal-tech-spec__logos-wrap
+    display: flex
+    justify-content space-between
+    align-items center
+    margin-top: 30px
+    @media only screen and (max-width: 992px)
+      flex-wrap wrap
+  .modal-tech-spec__main-logo
+    max-width 350px
+    @media only screen and (max-width: 992px)
+      order 1
+      margin-left: auto
+      margin-right: auto
+      margin-bottom: 16px
+  .modal-tech-spec__tech-logo-wrap
+    @media only screen and (max-width: 992px)
+      width 100%
+      display: flex
+      justify-content center
+      order 2
+      margin-bottom: 16px
+  .modal-tech-spec__download-btn-wrap
+    @media only screen and (max-width: 992px)
+      width 100%
+      display: flex
+      justify-content center
+      order 3
+  .modal-tech-spec__download-btn
+    display: flex
+    align-items center
+    justify-content center
+    padding: 10px 20px
+    border 1px solid #fff
+    transition all .3s ease
+    span
+      text-transform: uppercase
+      margin-left: 10px
+      transition all .3s ease
+    svg
+      path
+        transition all .3s ease
+    &:hover
+      background-color: #fff
+      span
+        color #000
+      svg
+        path
+          stroke #000
+  .modal-tech-spec__content-wrap
+    display: flex
+    margin-top: 46px
+  .modal-tech-spec__links-block
+    width: 215px
+    padding-right: 20px
+    @media only screen and (max-width: 992px)
+      display: none
+  .modal-tech-spec__text-block
+    width: calc(100% - 215px)
+    height: 70vh
+    overflow auto
+    @media only screen and (max-width: 992px)
+      height: auto
+      width: 100%
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #272727;
+    }
+  .modal-tech-spec__links-item
+    margin-bottom: 5px
+    &.active
+      a
+        span
+          color #ffffff
+    a
+      text-transform: uppercase
+      span
+        font-weight: 600
+        transition all .3s ease
+        font-size: 12px;
+        line-height: 18px;
+        color #8F8F8F
+      &:hover
+        span
+          color #ffffff
+  .modal-tech-spec__header-wrap
+    padding: 8px
+    position: relative
+    //background url("/img/line-bg.png") center no-repeat
+    //background-size cover
+    margin-bottom: 12px
+    .modal-tech-spec__header-line
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+    p
+      position: relative
+      font-size: 18px;
+      line-height: 18px;
+      font-weight: 700
+      text-align: center;
+      color: #FFFFFF;
+      margin: 0
+      z-index: 2
+  .modal-tech-spec__text-item
+    display: flex
+    padding: 8px 0
+    border-bottom 1px solid #4A4A4A
+    &:last-child
+      border-bottom none
+  .modal-tech-spec__text-title
+    width: 25%
+    p
+      font-size: 14px;
+      line-height: 25px;
+      color: #FFFFFF;
+      margin: 0
+  .modal-tech-spec__text-descr
+    width: 75%
+    padding-left: 46px
+    p
+      font-size: 12px;
+      line-height: 25px;
+      color: #CCCCCC;
+
+
+
+
+
+
+
+
+
+.modal
+  &.open
+    top: 50%!important
+    transform: scaleX(1) scaleY(1) translateY(-50%)!important
+
+
+.preloader-wrapper
+  display none
+
+
+.tmb-wrap-table div.active
+  border-color transparent!important
+
+.select-wrapper
+  position: relative
+  .caret
+    display: none
+  &:after
+    content ''
+    display: block
+    height: 9px
+    width: 18px
+    position: absolute
+    right: 0
+    top: 50%
+    transform translateY(-50%)
+    background url("/img/icon-select-arrow.svg") center no-repeat
+    background-size contain
+    
+.dropdown-content
+  background-color: #373737
+  li
+    span
+      color white
+    &.selected
+      span
+        color brown
+
+.tabs
+  height: auto
+  background-color: transparent
+  margin-bottom: 65px
+  border-bottom 1px solid rgba(255,255,255,.3);
+  .tab
+    height: auto
+    line-height: inherit
+    margin-right: 72px
+    @media only screen and (max-width: 500px)
+      margin-right: 40px
+    a
+      padding: 0
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      text-transform: uppercase;
+      color rgba(255,255,255,.3)
+      background-color: transparent!important
+      @media only screen and (max-width: 992px)
+        padding-top: 10px
+        padding-bottom: 10px
+      &:hover,
+      &.active
+        color #fff
+      &.active
+        position: relative
+        &:after
+          content ''
+          display: block
+          width: 100%
+          height: 2px
+          background-color: #ffffff
+          position: absolute
+          bottom: 0
+          left: 0
+  .indicator
+    background-color: #fff
+    display: none
+
+
+
+input:-webkit-autofill
+  -webkit-box-shadow 0 0 0 50px #3D3D3D inset!important
+  -webkit-text-fill-color white
+.datepicker
+  &::-webkit-input-placeholder
+    color #fff
+
+.datepicker-date-display
+  background-color: #373737
+
+
+.is-today
+  background-color: RGBA(55,55,55,.6)!important
+  .datepicker-day-button
+    color #fff
+
+.is-selected
+  background-color: #373737!important
+
+.datepicker-done,
+.datepicker-cancel
+  color #373737!important
+  &:hover
+    color brown!important
+
+.datepicker-day-button:focus
+  background-color: RGBA(55,55,55,.2)
+
+.datepicker-calendar-container
+  .dropdown-trigger
+    color #373737
+  .select-month
+    .dropdown-trigger
+      width: 90px
+
+img.mfp-img
+  padding: 0!important
+.mfp-wrap
+  .mfp-container
+    .mfp-content
+      .mfp-close
+        width: 25px
+        height: 25px
+        display: flex
+        justify-content center
+        align-items center
+        position: absolute
+        top: 20px
+        right: 20px
+        background url("/img/icon-cross.svg") center no-repeat
+        background-size: cover;
+        content ''
+        font-size 0
+        line-height: 0
+        cursor pointer
+        &:hover
+          background url("/img/icon-cross-brown.svg") center no-repeat
+
+.spinner-green-only
+  border-color #fff!important

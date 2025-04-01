@@ -1,0 +1,124 @@
+.module-8
+  position: relative
+  @media only screen and (max-width: 1024px)
+    padding-bottom: 0
+
+  .tabs
+    .tab
+      overflow visible
+      margin-bottom: 5px
+      @media only screen and (max-width: 992px)
+        margin-bottom: 0
+      a
+        line-height: 30px
+        &:after
+          bottom -5px
+          @media only screen and (max-width: 992px)
+            bottom: 0
+
+  h4
+    color #fff
+  &__text-block
+    h3
+      font-weight: 700
+      margin-bottom: 40px
+      @media only screen and (max-width: 1024px)
+        text-align: center
+    @media only screen and (max-width: 1024px)
+      margin-bottom: 60px
+  .line
+    width: 152px
+    height: 2px
+    background-color: white
+    margin-bottom: 40px
+    @media only screen and (max-width: 1024px)
+      margin-left: auto
+      margin-right: auto
+  &__blocks-wrap
+    display: flex
+    align-items flex-start
+    @media only screen and (max-width: 1024px)
+      flex-wrap wrap
+  &__text-block
+    width: 543px
+    padding-right: 160px
+    @media only screen and (max-width: 1024px)
+      width: 100%
+      padding-right: 0
+      order 2
+  &__img-block
+    width: calc(100% - 543px)
+    @media only screen and (max-width: 1024px)
+      position: static!important
+      margin-bottom: 40px!important
+      width: 100%
+      order 1
+
+  &__modal-address
+    position: relative
+    padding-left: 38px
+    width: 100%
+    font-size: 16px;
+    color: #bdbdbd;
+    margin: 40px 0 23px
+    &:before
+      content ''
+      display: block
+      width: 20px
+      height: 24px
+      position: absolute
+      left: 0
+      top: 2px
+      background url("/img/icon-contact-location.svg") center no-repeat
+
+  &__modal-phone
+    display: block
+    position: relative
+    padding-left: 38px
+    width: 100%
+    font-size: 16px;
+    color: #bdbdbd;
+    margin: 23px 0
+    transition all .3s ease
+    &:hover
+      color brown
+    &:before
+      content ''
+      display: block
+      width: 20px
+      height: 20px
+      position: absolute
+      left: 0
+      top: 2px
+      background url("/img/icon-contact-phone.svg") center no-repeat
+
+  &__modal-watsup
+    display: block
+    position: relative
+    padding-left: 38px
+    width: 100%
+    font-size: 16px;
+    color: #bdbdbd;
+    margin: 23px 0
+    &:before
+      content ''
+      display: block
+      width: 20px
+      height: 20px
+      position: absolute
+      left: 0
+      top: 2px
+      background url("/img/icon-whatsapp.svg") center no-repeat
+      background-size: cover;
+    a
+      color: #bdbdbd;
+      transition all .3s ease
+      &:hover
+        color brown
+
+  &__icon
+    position: absolute
+    left: 50%
+    transform translateX(-50%)
+    bottom: -90px
+    z-index: 2

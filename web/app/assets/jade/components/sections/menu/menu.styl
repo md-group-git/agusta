@@ -1,0 +1,703 @@
+.top-menu
+  background-color: transparent
+  height: auto
+  line-height: inherit
+  position: fixed
+  box-shadow none
+  padding: 15px 40px
+  z-index: 10
+  transition all .3s ease
+  @media only screen and (max-width: 1024px)
+    padding-left: 24px
+    padding-right: 24px
+    height: 60px!important
+  .brand-logo
+    position static
+    transition all .3s ease
+    img
+      transition all .3s ease
+      width: 159px
+    @media only screen and (max-width: 1300px)
+      width: 120px
+    @media only screen and (max-width: 1024px)
+      margin-top: 15px
+      height: 60px
+      transform none
+    img
+      max-height 100%
+      transition all .3s ease
+  .anqors-wrap
+    @media only screen and (max-width: 1024px)
+      position: absolute
+      top: 50%
+      left: 0
+      transform translateY(-50%)
+  &__link
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color white
+    position relative
+    padding-left: 20px
+    padding-right: 20px
+    @media only screen and (max-width: 1080px)
+      font-size 14px
+    @media only screen and (max-width: 1024px)
+      display: none
+    &--ride
+      padding-left: 60px
+      padding-right: 60px
+      &:before
+        content ''
+        display: block
+        width: 53px
+        height: 14px
+        position: absolute
+        top: 0
+        left: 0
+        background url("/img/icon-wind-left.svg")
+        transition all .3s ease
+      &:after
+        content ''
+        display: block
+        width: 53px
+        height: 14px
+        position: absolute
+        top: 0
+        right: 0
+        background url("/img/icon-wind-right.svg")
+        transition all .3s ease
+      &.active
+        &:before
+          background url("/img/icon-wind-right-yellow.svg")
+        &:after
+          background url("/img/icon-wind-left-yellow.svg")
+    &.active
+      color #AA8132!important
+      .top-menu__link-line
+        display: none!important
+      .top-menu__link-line-active
+        display: block
+    &:hover
+      color white
+      .top-menu__link-line
+        width: 100%
+  .top-menu__link-line-active
+    display: none
+    position: absolute
+    width 100%
+    left: 50%
+    bottom: -12px
+    transform translateX(-50%)
+    transition all .3s ease
+  .top-menu__link-line
+    width: 0
+    position: absolute
+    left: 50%
+    bottom: -12px
+    transform translateX(-50%)
+    transition all .3s ease
+  .nav-wrapper
+    display: flex
+    align-items center
+    justify-content space-between
+    position: relative
+    @media only screen and (max-width: 1024px)
+      justify-content center
+    &__block
+      width: calc(50% - 180px)
+      display: flex
+      align-items center
+      justify-content space-between
+      @media only screen and (max-width: 1600px)
+        width: calc(50% - 150px)
+      @media only screen and (max-width: 1400px)
+        width: calc(50% - 120px)
+      @media only screen and (max-width: 1300px)
+        width: calc(50% - 100px)
+      @media only screen and (max-width: 1200px)
+        width: calc(50% - 80px)
+  .sandwich
+    width: 24px
+    display: flex
+    flex-wrap wrap
+    .line
+      width: 100%
+      height: 2px
+      background-color: white
+      transition all .3s ease
+      &:nth-child(2)
+        margin-top: 4px
+  .sidenav-trigger
+    display: block
+    height: 28px
+    background-color: transparent!important
+    box-shadow none!important
+    padding: 10px 0
+    margin: 0
+    &:hover
+      .sandwich
+        .line
+          background-color: brown
+
+  &__link-phone
+    position: relative
+    display: flex
+    justify-content center
+    align-items center
+    width: 38px
+    height: 38px
+    border-radius 50%
+    background-color: red
+    transition all .3s ease
+    @media only screen and (max-width: 1024px)
+      display: none
+    &:hover
+      .top-menu__phone-tooltip
+        display: block
+    path
+      transition fill .3s ease
+    &:hover
+      background-color: white
+      path
+        fill red
+  &__phone-tooltip
+    display: none
+    position: absolute
+    right: 20px
+    bottom -60px
+    padding: 8px 10px
+    background: #FFFFFF;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px 0 16px 16px;
+    width: 160px
+    transition all .3s ease
+    span
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      color: black;
+  &.not-top
+    background-color: #141414
+    padding-top: 8px
+    padding-bottom: 8px
+    height: 76px
+    .brand-logo
+      transform scale(.6,.6)
+      @media only screen and (max-width: 1024px)
+        margin-top: 0
+        transform scale(.8,.8)
+
+
+.sidenav
+  width: 100%
+  background: linear-gradient(90deg, #161616 0%, #454545 51.04%, #141414 100%);
+  padding: 40px!important
+  display: flex
+  align-items center
+  justify-content center
+  height: 100%
+  @media only screen and (max-width: 1024px)
+    padding-bottom: 60px!important
+  @media only screen and (max-width: 600px)
+    align-items flex-start
+  .sidenav-body
+    max-height 100%
+    @media only screen and (max-width: 1024px)
+      margin-top: 80px
+    @media only screen and (max-width: 600px)
+      margin-top: 60px
+  .sidenav-cross
+    position absolute
+    top: 40px
+    left: 40px
+    font-size 24px
+    color white
+    display: flex
+    justify-content center
+    align-items center
+    transition all .3s ease
+    path
+      transition all .3s ease
+    &:hover
+      path
+        stroke brown
+    &:hover
+      color brown
+  &__link-phone-wrap
+    display: flex!important
+    justify-content center
+  &__link
+    display: block
+    width: 100%
+    text-align: center
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 58px;
+    color white
+    margin-bottom: 40px
+    transition all .3s ease
+    @media only screen and (max-width: 1024px)
+      font-size: 30px;
+      line-height: 36px;
+    @media only screen and (max-width: 600px)
+      font-size: 24px;
+      line-height: 29px;
+      margin-bottom: 36px
+    &:last-child
+      margin-bottom: 0
+    &:hover
+      color brown
+    &--mob
+      display: none
+      @media only screen and (max-width: 1024px)
+        display: block
+    &--phone
+      padding: 18px 24px
+      margin-bottom: 60px!important
+      background: red;
+      border-radius: 35px;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+      text-transform: uppercase;
+      display: inline-flex
+      align-items center
+      justify-content center
+      width auto
+      @media only screen and (min-width: 1024px)
+        display: none
+      @media only screen and (max-width: 600px)
+        margin-top: 15px
+      span
+        margin-left: 14px
+        color white!important
+    &--ride
+      padding-left: 110px
+      padding-right: 110px
+      position: relative
+      max-width 370px
+      margin-left: auto
+      margin-right: auto
+      &:before
+        content ''
+        display: block
+        width: 95px
+        height: 25px
+        position: absolute
+        top: 6px
+        left: 0
+        background url("/img/icon-wind-left.svg") center no-repeat
+        background-size cover!important
+        transition all .3s ease
+      &:after
+        content ''
+        display: block
+        width: 95px
+        height: 25px
+        position: absolute
+        top: 6px
+        right: 0
+        background url("/img/icon-wind-right.svg") center no-repeat
+        background-size cover!important
+        transition all .3s ease
+      @media only screen and (max-width: 440px)
+        padding-left: 60px
+        padding-right: 60px
+        width: 320px
+        &:before
+          width: 60px
+          height: 16px
+        &:after
+          width: 60px
+          height: 16px
+
+  .collapsible
+    @media only screen and (min-width: 1024px)
+      display: none
+    li
+      background-color: transparent
+    .collapsible-header
+      position: relative
+      width: 100%
+      background-color: transparent
+      margin-bottom: 40px
+      @media only screen and (max-width: 600px)
+        margin-bottom: 36px
+        width: 100vw
+      &:after
+        content ''
+        display: block
+        width: 14px
+        height: 8px
+        background url("/img/arrow-down-white.svg") center no-repeat
+        background-size contain
+        position: absolute
+        top: 50%
+        right: 20px
+        transform translateY(-50%)
+      p
+        display: block
+        font-size: 30px;
+        line-height: 36px;
+        text-align: center
+        width: 100%
+        color white
+        font-weight: 600
+        @media only screen and (max-width: 600px)
+          font-size: 24px;
+          line-height: 29px;
+    .collapsible-body
+      background-color: transparent
+      a
+        display: block
+        width: 100%
+        font-size: 30px;
+        line-height: 36px;
+        text-align: center
+        color white
+        font-weight: 600
+        margin-bottom: 40px
+        text-transform: uppercase
+        @media only screen and (max-width: 600px)
+          font-size: 24px;
+          line-height: 29px;
+    .first-level-item.active
+      .first-level-header
+        p
+          color brown
+        &:after
+          transform rotate(180deg) translateY(50%)
+    .second-level-item.active
+      .second-level-header
+        p
+          color brown
+        &:after
+          transform rotate(180deg) translateY(50%)
+
+.models-dropdown
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%!important
+  height 492px
+  background-color: #161616
+  transition all .3s ease
+  transform translateY(-100%)
+  padding: 140px 40px 40px
+  z-index 5
+  overflow hidden
+  &.active
+    transform translateY(0)
+  &.show-bike
+    height: 90%
+  @media only screen and (max-width: 1024px)
+    display: none
+
+  .models-main-links
+    position: relative
+    width: 200px
+    z-index 4
+    @media only screen and (max-width: 1600px)
+      width: 150px
+    li
+      margin-bottom: 24px
+      span
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        text-transform: uppercase;
+        color: #747474;
+        transition all .3s ease
+
+
+  .models-main-link
+    &.active,
+    &:hover
+      .models-main-name
+        color white
+
+  .models-second-links
+    opacity 0
+    transform translateX(50%)
+    position absolute
+    top: 0
+    left: 0
+    width: 240px
+    transition all .3s ease
+    z-index: -1
+    @media only screen and (max-width: 1600px)
+      width: 180px
+    @media only screen and (max-width: 1200px)
+      width: 145px
+    &.active
+      opacity 1
+      transform translateX(100%)
+      z-index: 2
+  .models-second-link
+    &.active,
+    &:hover
+      .models-second-name
+        color white
+
+
+  .models-blocks-wrap
+    height 0
+    overflow hidden
+    &.active
+      height auto
+  .models-block
+    position: absolute
+    top: 0
+    left: 50%
+    transform translateX(-50%)
+    width: 80%
+    transition opacity .3s ease
+    opacity 0
+    @media only screen and (max-width: 1400px)
+      width: 100%
+      transform none
+      left: 0
+      padding-left: 40px
+      padding-right: 40px
+    &.active
+      opacity 1
+      z-index 2!important
+      .models-block__img-wrap
+        opacity 1
+    &__img-wrap
+      width: 80%
+      margin-left: auto
+      margin-right: auto
+      transition opacity 1s ease
+      opacity: 0
+      position: relative
+      &:after
+        content ''
+        display: block
+        position: absolute
+        height: 80%
+        width:100%
+        bottom: 0
+        left: 0
+        background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+        opacity: 0.3;
+        filter: blur(150px);
+        z-index -1
+      @media only screen and (max-width: 1600px)
+        margin-top: 30px
+      @media only screen and (max-width: 1400px)
+        margin-right: 0
+        width: 76%
+    &__descr-wrap
+      display: flex
+      margin-top: -30px
+      @media only screen and (max-width: 1600px)
+        margin-top: 0
+    &__logo-wrap
+      width: 34%
+      padding-left: 60px
+      padding-top: 40px
+      padding-bottom: 10px
+      position: relative
+      order 2
+      //&:after
+      //  content ''
+      //  display: block
+      //  height: 100%
+      //  width: 1px
+      //  position: absolute
+      //  top: 0
+      //  right: 0
+      //  background-color: #4F4F4F;
+    &__descr-block
+      width: 22%
+      position: relative
+      display: flex
+      justify-content center
+      align-items center
+      svg
+        height: 55px
+        width: 55px
+        margin-right: 10px
+      &:after
+        content ''
+        display: block
+        height: 100%
+        width: 1px
+        position: absolute
+        top: 0
+        right: 0
+        background-color: #4F4F4F;
+    &__link
+      display: flex
+      align-items center
+      justify-content flex-end
+      margin-top: 16px
+      position: relative
+      span
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        transition all .3s ease
+      &:hover
+        span
+          color #AA8132
+        .models-block__link-arrow
+          background-color: #fff
+          path
+            fill #AA8132
+    &__link-arrow
+      display: flex
+      justify-content center
+      align-items center
+      width: 38px
+      height: 38px
+      border-radius 50%
+      border 1px solid #fff
+      margin-right: 14px
+      transition all .3s ease
+      path
+        transition all .3s ease
+    &__descr-name
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 16px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      margin-bottom: 10px
+    &__descr-about
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 16px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      @media only screen and (max-width: 1200px)
+        font-size 30px
+      span
+        font-size: 18px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color brown
+        margin-left: 6px
+    &__descr-content
+      display: flex
+      align-items center
+      transform translateX(-50%)
+      opacity 0
+      transition all .3s ease
+      @media only screen and (max-width: 1300px)
+        padding-left: 20px
+        padding-right: 10px
+    &__logo
+      transform translateX(-50%)
+      opacity 0
+      transition all .3s ease
+      height: 100%
+    &__logo-block
+      display: flex
+      justify-content flex-end
+      height: 55px
+    &__price-block
+      position: absolute
+      right: 0
+      bottom: 180px
+      transform scale(0,0)
+      transition all .3s ease
+      @media only screen and (max-width: 1400px)
+        right: 40px
+      @media only screen and (max-width: 1360px)
+        bottom: 150px
+      @media only screen and (max-width: 1190px)
+        display: none
+    .stock
+      display: inline-block
+      float right
+      margin-bottom: 0
+      margin-top: 30px
+      padding: 6px 8px 8px 16px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      text-align: center;
+      color: #FFFFFF;
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      background url("/img/icon-flag.svg") center no-repeat
+      background-size: contain;
+      &--grey
+        background url("/img/icon-flag-grey.svg") center no-repeat
+        background-size: contain;
+        width: 104px
+        height: 28px
+        padding: 5px 8px 8px 10px;
+      @media only screen and (max-width: 1260px)
+        margin-top: 20px
+
+  .models-block
+    &.active
+      .models-block__logo
+        transform translateX(0)
+        opacity 1
+        transition-delay .1s
+      .models-block__price-block
+        transform scale(1,1)
+        transition-delay .2s
+      .models-block__descr-block
+        &:nth-child(3)
+          .models-block__descr-content
+            transform translateX(0)
+            opacity 1
+            transition-delay .3s
+        &:nth-child(4)
+          .models-block__descr-content
+            transform translateX(0)
+            opacity 1
+            transition-delay .4s
+        &:nth-child(5)
+          .models-block__descr-content
+            transform translateX(0)
+            opacity 1
+            transition-delay .5s
+
+  .block-price
+    display: flex
+    align-items flex-end
+    justify-content flex-end
+    p
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 16px;
+      text-transform: uppercase;
+      color: #A1A1A1;
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      margin-bottom: 0
+      @media only screen and (max-width: 1260px)
+        font-size: 14px;
+    .price
+      color brown
+      font-size 32px
+      line-height: 26px
+      margin-left: 8px
+      margin-right: 8px
+      @media only screen and (max-width: 1260px)
+        font-size 28px
+    .curency
+      color brown
+      font-size: 18px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

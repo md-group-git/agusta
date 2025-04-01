@@ -1,0 +1,9 @@
+<h2>Заказ</h2>
+<h3>Заявка № {{ request.id }} от {{ request.createdAt|date('d.m.Y H:i') }}</h3>
+
+<p>Имя: {{ request.firstName }}</p>
+<p>Фамилия: {{ request.lastName }}</p>
+<p>Телефон: {{ request.phone }}</p>
+<p>Email: {{ request.email }}</p>
+<p>Модель: {{ request.model }}</p>
+<p>Страница: <a href="{{ request.referer }}" target="_blank">{{ request.referer }}</a></p>

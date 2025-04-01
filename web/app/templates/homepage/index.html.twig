@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block page %}
+    <header id="headerSection" class="s-header">
+        <img src="{{ asset('img/s-header-bg.jpg') }}" class="s-header__img s-header__img--desctop" alt=""/>
+        <img src="{{ asset('img/s-header-tab.jpg') }}" class="s-header__img s-header__img--tab" alt=""/>
+        <img src="{{ asset('img/s-header-mob.jpg') }}" class="s-header__img s-header__img--mob" alt=""/>
+        <img src="{{ asset('img/icon-section-1.svg') }}" class="image_svg s-header__icon" alt=""/>
+    </header>
+
+    {{ include('sections/inStock.html.twig', { topOverlay: true }) }}
+
+    <section class="module-1">
+        <img src="{{ asset('img/icon-section-2.svg') }}" class="image_svg module-1__icon" alt=""/>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 module-1__content">
+                    <div class="section-header">
+                        <h2 class="module-1__title">О компании</h2>
+                    </div>
+                    <div class="module-1__blocks-wrap">
+                        <div class="module-1__text-block">
+                            <h3><span>MV Agusta</span></h3>
+                            <div class="line"></div>
+                            <p class="module-1__text">Мы не просто производим мотоциклы, мы пробуждаем эмоции. Мы работаем на будущее и создаем мотоциклы, которые всегда на шаг опережают свое время.</p>
+                            <p class="module-1__text">Наша миссия - конструирование, разработка и изготовление самых передовых мотоциклов в мире. Их отличает фантастический дизайн, лучшие в своем классе характеристики и самые передовые материалы и технологии. Выполняя свою миссию, мы придерживаемся и остаемся верными нашим ценностям трудового мастерства, инноваций и постоянного стремления к совершенству.</p>
+                            <div class="module-1__btn-wrap">
+                                <a href="{{ path('company')}}" class="module-1__btn btn">
+                                    <span>подробнее</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="module-1__img-block">
+                            <img data-src="{{ asset('img/module-1-img.jpg') }}" class="lazy"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="module-3">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 module-3__content">
+                    <div class="section-header">
+                        <h2 class="module-3__title">Наши преимущества<br/>для клиентов</h2>
+                    </div>
+
+                    <div class="module-3__blocks-wrap">
+                        <div class="module-3__block">
+                            <div class="module-3__block-img-wrap">
+                                <img src="{{ asset('img/icon-moto.svg') }}" class="image_svg" alt=""/>
+                            </div>
+                            <p class="module-3__block-title">Сервисное<span>обслуживание</span></p>
+                        </div>
+
+                        <div class="module-3__block">
+                            <div class="module-3__block-img-wrap">
+                                <img src="{{ asset('img/icon-doc.svg') }}" class="image_svg" alt=""/>
+                            </div>
+                            <p class="module-3__block-title">Программы<span>обслуживания</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

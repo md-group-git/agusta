@@ -1,0 +1,18 @@
+Admin: MV Agusta Russia Admin
+
+label_type_yes: Yes
+label_type_no: No
+action_clone: Clone
+action_recalc_positions: Recalc positions
+
+title_clone: Confirm cloning
+message_clone_confirmation: Are you sure you want to clone the selected "%object%" element?
+btn_clone: Clone
+flash_clone_success: Item "%name%" has been cloned successfully.
+flash_clone_error: An error has occurred during cloning of item "%name%"
+
+title_recalc_positions: Confirm position recalculation
+message_recalc_positions_confirmation: Recalculate positions?
+btn_recalc_positions: Recalculate
+flash_recalc_positions_success: Positions has been recalculated successfully.
+flash_recalc_positions_error: An error has occurred during position recalculation.

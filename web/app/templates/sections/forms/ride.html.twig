@@ -1,0 +1,86 @@
+<form id="rideOrderForm" novalidate="novalidate" class="wpcf7-form form-style notvalid">
+    <div class="formWP form-wrp">
+        <div class="form-group">
+            <div class="wrp-input input-field input-field--half">
+                <label for="firstName_r">Имя *</label>
+                <input id="firstName_r" type="text" name="firstName" required="" maxlength="50" class="form-control"/>
+            </div>
+            <div class="wrp-input input-field input-field--half">
+                <label for="phone_r">Телефон *</label>
+                <input id="phone_r" type="tel" name="phone" required="" maxlength="30" class="form-control"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="wrp-input input-field input-field--half">
+                <label for="lastName_r">Фамилия *</label>
+                <input id="lastName_r" type="text" name="lastName" required="" maxlength="50" class="form-control"/>
+            </div>
+            <div class="wrp-input input-field input-field--half">
+                <label for="email_r">E-mail</label>
+                <input id="email_r" type="email" name="email" maxlength="254"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="wrp-input input-field input-field--date input-field--half">
+                <label for="date_r"></label>
+                <input id="date_r" type="text" name="date" required="" placeholder="Дата и время *" class="datepicker form-control"/>
+            </div>
+            <div class="wrp-input input-field input-field--half">
+                <label for="licensed_r"></label>
+                <select id="licensed_r" name="licensed">
+                    <option value="" disabled="" selected="">У Вас есть ВУ с категорией А?</option>
+                    <option value="true">да</option>
+                    <option value="false">нет</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group form-group--center">
+            <div class="wrp-input input-field input-field--half">
+                <label for="model_r"></label>
+                <select id="model_r" name="model">
+                    <option value="" disabled="" selected="">Выберите модель</option>
+                    {% for model in forRide %}
+                        <option value="{{ model.id }}">{{ model.lineup.name }} {{ model.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <h5>ХОТИТЕ ЛИ ВЫ, ЧТОБЫ МЫ СВЯЗАЛИСЬ С ВАМИ ПО ПОВОДУ ПРОДУКЦИИ, УСЛУГ И МЕРОПРИЯТИЙ?</h5>
+
+{#        <div class="checkbox-wrap">#}
+{#            <label>#}
+{#                <input type="checkbox" name="agree_receive" value="Yes" class="filled-in"/>#}
+{#                <span>Согласен на получение рекламных информационных материалов</span>#}
+{#            </label>#}
+{#        </div>#}
+        <div class="checkbox-wrap">
+            <label>
+                <input type="checkbox" value="Yes" class="filled-in required-checkbox form-control"/>
+                <span>Я согласен на обработку персональных данных в соответствие с
+                    <a href="#modalPolicy" class="policy_modal-link modal-trigger">политикой кофиденциальности</a>&ensp;*
+                </span>
+            </label>
+        </div>
+    </div>
+
+    <div class="btn-wrap">
+        <button type="submit" class="btn submitButton"><span>отправить</span></button>
+        <div class="preloader-wrapper preloader-wrapper-btn small active">
+            <div class="spinner-layer spinner-green-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

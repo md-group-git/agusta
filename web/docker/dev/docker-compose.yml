@@ -1,0 +1,61 @@
+version: '3.7'
+
+services:
+    mvrussia_data:
+        container_name: mvrussia_data
+        image: mysql:latest
+        command: ["--default-authentication-plugin=mysql_native_password"]
+        ports:
+            - "3326:3306"
+        networks:
+            - mvrussia_network
+        volumes:
+            - ./data/mysql:/var/lib/mysql
+        environment:
+            MYSQL_RANDOM_ROOT_PASSWORD: 1
+            MYSQL_DATABASE: mvrussia
+            MYSQL_USER:     mvrussia
+            MYSQL_PASSWORD: mvrussia
+
+    mvrussia_app:
+        container_name: mvrussia_app
+        build:
+            context: ./app
+            dockerfile: app.dockerfile
+        image: mvrussia_app:latest
+        networks:
+            - mvrussia_network
+        volumes:
+            - ../../app:/var/www/project:rw,cached
+            - ../../app/var:/var/www/project/var:rw
+        extra_hosts:
+            - docker-host.localhost:127.0.0.1
+        depends_on:
+            - mvrussia_data
+
+    mvrussia_server:
+        container_name: mvrussia_server
+        build:
+            context: ./server
+            dockerfile: server.dockerfile
+        image: mvrussia_server:latest
+        networks:
+            - mvrussia_network
+        volumes:
+            - ../../app/public:/var/www/project/public:ro
+            - ../../app/var/log/nginx:/var/log/nginx:cached
+        ports:
+            - "8181:80"
+        depends_on:
+            - mvrussia_app
+
+    mvrussia_mailer:
+        container_name: mvrussia_mailer
+        image: schickling/mailcatcher
+        ports:
+            - "1080:1080"
+        networks:
+            - mvrussia_network
+
+networks:
+    mvrussia_network:

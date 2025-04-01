@@ -1,0 +1,54 @@
+mixin s-order(page)
+    section.s-order
+        img.image_svg.s-order__icon(src='/img/icon-section-2.svg')
+        .container
+            .row
+                .col.s12.s-order__content
+                    h4.s-order__title Оставить заявку
+                    form#orderForm.wpcf7-form.s-order__form(class="form-style notvalid" novalidate="novalidate")
+                        .formWP.form-wrp
+                            .form-group
+                                .wrp-input.input-field
+                                    label(for='first_name_order') Имя
+                                    input#first_name_order(type='text', name='firstName', maxlength='50')
+                            .form-group
+                                .wrp-input.input-field
+                                    label(for='last_name_order') Фамилия
+                                    input#last_name_order(type='text', name='lastName', maxlength='50')
+                            .form-group
+                                .wrp-input.input-field
+                                    label(for='phone_order') Телефон *
+                                    input#phone_order.form-control(type='tel', name='phone', required='', maxlength='30')
+                            .form-group
+                                .wrp-input.input-field
+                                    label(for='email_order') E-mail
+                                    input#email_order(type='email', name='email', maxlength='254')
+                            .checkbox-wrap
+                                label
+                                    input.filled-in(type='checkbox', name="agree_receive", value="Yes")
+                                    span Согласен на получение рекламных информационных материалов
+                            .checkbox-wrap
+                                label
+                                    input.filled-in.required-checkbox.form-control(type='checkbox', name="agree_personal", value="Yes")
+                                    span
+                                        | Я согласен на обработку персональных данных в соответствие с&ensp;
+                                        a.policy_modal-link.modal-trigger(href="#modalPolicy") политикой кофиденциальности
+                                        | *
+                            //.form-group
+                            //    .wrp-input
+                            //        select#select_order(name='messageOrder')
+                            //            option(value='', disabled='', selected='') Интересующий вопрос
+                            //            option(value='вопрос') вопрос
+                            //            option(value='вопрос') вопрос
+                            //            option(value='вопрос') вопрос
+                        .btn-wrap
+                            button.btn.submitButton(type='submit')
+                                span отправить
+                            .preloader-wrapper.preloader-wrapper-btn.small.active
+                                .spinner-layer.spinner-green-only
+                                    .circle-clipper.left
+                                        .circle
+                                    .gap-patch
+                                        .circle
+                                    .circle-clipper.right
+                                        .circle

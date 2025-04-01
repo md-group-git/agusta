@@ -1,0 +1,13 @@
+{% if short is not defined %}
+    {% set short = false %}
+{% endif %}
+
+<div class="line-descr">
+    <img src="{{ asset('img/icon-horse-cil.svg') }}" class="image_svg" alt=""/>
+    <div class="line-descr-text">
+        <p class="line-descr-title">Мощность</p>
+        <p class="line-descr-about">{{ model.power }}
+            <span>л.с.{% if not short %} / {{ model.powerRpm | number_format(0, ',', ',') }} об.мин{% endif %}</span>
+        </p>
+    </div>
+</div>

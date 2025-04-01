@@ -1,0 +1,13 @@
+<h2>Тест-райд</h2>
+<h3>Заявка № {{ request.id }} от {{ request.createdAt|date('d.m.Y H:i') }}</h3>
+
+<p>Имя: {{ request.firstName }}</p>
+<p>Фамилия: {{ request.lastName }}</p>
+<p>Телефон: {{ request.phone }}</p>
+<p>Email: {{ request.email }}</p>
+{% if request.date %}
+    <p>Дата: {{ request.date|date('d.m.Y H:i') }}</p>
+{% endif %}
+<p>Есть водительское удостоверение: {% if request.licensed %}Да{% else %}Нет{% endif %}</p>
+<p>Модель: {{ request.model }}</p>
+<p>Страница: <a href="{{ request.referer }}" target="_blank">{{ request.referer }}</a></p>

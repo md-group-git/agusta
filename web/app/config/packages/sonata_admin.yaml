@@ -1,0 +1,64 @@
+sonata_admin:
+    title: 'MV Agusta Russia'
+
+    dashboard:
+        blocks:
+            - { type: sonata.admin.block.admin_list, position: left }
+
+        groups:
+            requests:
+                keep_open:       true
+                label:           entry.requests
+                label_catalogue: messages
+                icon:            '<i class="fa fa-phone"></i>'
+                items:
+                    - app.admin.request.order
+                    - app.admin.request.ride
+                    - app.admin.request.service
+                    - app.admin.request.call
+
+            catalog:
+                keep_open:       true
+                label:           entry.catalog
+                label_catalogue: messages
+                icon:            '<i class="fa fa-motorcycle"></i>'
+                items:
+                    - app.admin.lineup
+                    - app.admin.model
+                    - app.admin.color
+                    - app.admin.techSection
+
+            media:
+                keep_open:       true
+                label:           sonata_media
+                label_catalogue: SonataMediaBundle
+                icon:            '<i class="fa fa-image"></i>'
+                items:
+                    - sonata.media.admin.media
+                    - sonata.media.admin.gallery
+
+            users:
+                on_top:          true
+                label:           entry.admins
+                label_catalogue: messages
+                icon:            '<i class="fa fa-users"></i>'
+                items:
+                    - app.admin.users
+
+    assets:
+        extra_javascripts:
+            - bundles/pixsortablebehavior/js/init.js
+
+    options:
+        title_mode: 'single_text'
+        legacy_twig_text_extension: false
+
+    templates:
+        layout: admin\standard_layout.html.twig
+        edit: admin\edit.html.twig
+        user_block: admin\user_block.html.twig
+
+sonata_block:
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]

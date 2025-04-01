@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ title | default('Добро пожаловать!')}} | MV Agusta Россия</title>
+
+        {{ include('sections/head.html.twig') }}
+
+        {% block stylesheets %}
+            {{ include('sections/stylesheets.html.twig') }}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        {{ include('sections/noscript.html.twig') }}
+
+{#        <div id="preloader">#}
+{#            <img src="{{ asset('img/logo-main.svg') }}" alt="">#}
+{#        </div>#}
+
+        <div class="b-wrapper">
+            <div class="content">
+                {{ include('sections/menu.html.twig') }}
+                {{ include('sections/models.html.twig') }}
+                {{ include('sections/slideOut.html.twig') }}
+                {{ include('sections/call.html.twig') }}
+                {{ include('sections/modalThanks.html.twig') }}
+
+                {% block page %}{% endblock %}
+
+                {{ include('sections/footer.html.twig') }}
+                {{ include('sections/policy.html.twig') }}
+            </div>
+        </div>
+
+        {% block javascripts %}
+            {{ include('sections/javascripts.html.twig') }}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </body>
+</html>

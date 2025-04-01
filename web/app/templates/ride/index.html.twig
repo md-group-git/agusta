@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% set title = 'Тест-райд' %}
+
+{% block page %}
+    <section class="module-9">
+        <img src="{{ asset('img/icon-section-2.svg') }}" class="image_svg module-9__icon" alt=""/>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 module-9__content">
+                    <div class="section-header">
+                        <h2 class="module-9__title">Записаться на тест-райд</h2>
+                    </div>
+
+                    <ul class="tabs">
+                        {% for model in forRide %}
+                            <li class="tab">
+                                <a href="#{{ model.id }}">
+                                    {{ model.lineup.name }} {{ model.name }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    {% for model in forRide %}
+                        <div id="{{ model.id }}" class="module-9__block">
+                            <div class="module-9__img-block">
+                                <img src="{% path model.image, 'reference' %}" alt="">
+                            </div>
+
+                            <div class="module-9__circle-slider-description">
+                                {{ include('sections/blocks/lineDescrCylinders.html.twig') }}
+                                {{ include('sections/blocks/lineDescrVolume.html.twig') }}
+                                {{ include('sections/blocks/lineDescrSpeed.html.twig') }}
+                                {{ include('sections/blocks/lineDescrWeight.html.twig') }}
+                                {{ include('sections/blocks/lineDescrPower.html.twig') }}
+                                {{ include('sections/blocks/lineDescrCompression.html.twig') }}
+                                {{ include('sections/blocks/lineDescrTorque.html.twig') }}
+                            </div>
+
+                            <div class="btns-wrap">
+                                <a href="{{ path('model', { "lineup": model.lineup.slug, "model": model.slug }) }}" class="btn btn--grey">
+                                    <span>Посмотреть</span>
+                                </a>
+                                <a href="#" class="btn btn--black check-ride">
+                                    <span>Выбрать</span>
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rideFormSection" class="s-ride-form">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="s-ride-form__content">
+                        <p class="s-ride-form__title">Оставьте свои данные</p>
+                        <img src="{{ asset('img/ride-line.svg') }}" class="image_svg s-ride-form__line" alt=""/>
+                        <p class="s-ride-form__description">
+                            С вами свяжутся по телефону для подтверждения бронирования.
+                            Пожалуйста, убедитесь в том, что Ваш телефон указан верно.
+                        </p>
+                        {{ include('sections/forms/ride.html.twig') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

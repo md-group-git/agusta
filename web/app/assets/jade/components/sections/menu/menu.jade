@@ -1,0 +1,1027 @@
+mixin menu(page)
+    nav.top-menu
+        .nav-wrapper
+            .nav-wrapper__block
+                ul.anqors-wrap
+                    li
+                        a.sidenav-trigger.sandwich-wrap(href='#', data-target='slide-out')
+                            .sandwich
+                                .line
+                                .line
+                a.top-menu__link.top-menu__link--models(href='#')
+                    span Модельный ряд
+                    img.image_svg.top-menu__link-line(src='/img/line-menu.svg')
+                    img.image_svg.top-menu__link-line-active(src='/img/line-menu-yellow.svg')
+                a.top-menu__link(href='/stock.html' class = page.activeMenu == 'stock' ? 'active' : '')
+                    span Мотоциклы в наличии
+                    img.image_svg.top-menu__link-line(src='/img/line-menu-long.svg')
+                    img.image_svg.top-menu__link-line-active(src='/img/line-menu-yellow.svg')
+            a.brand-logo(href="/")
+                img(src="/img/logo-main.svg" alt='')
+            .nav-wrapper__block
+                a.top-menu__link(href='/contacts.html' class = page.activeMenu == 'contacts' ? 'active' : '')
+                    span Контакты
+                    img.image_svg.top-menu__link-line(src='/img/line-menu.svg')
+                    img.image_svg.top-menu__link-line-active(src='/img/line-menu-yellow.svg')
+                a.top-menu__link.top-menu__link--ride(href='/ride.html' class = page.activeMenu == 'ride' ? 'active' : '')
+                    span Тест-райд
+                    img.image_svg.top-menu__link-line(src='/img/line-menu.svg')
+                    img.image_svg.top-menu__link-line-active(src='/img/line-menu-yellow.svg')
+                a.top-menu__link-phone.modal-trigger(href='#modalCall')
+                    img.image_svg(src='/img/icon-phone.svg')
+                    .top-menu__phone-tooltip
+                        span Обратный звонок
+    .models-dropdown#dropdown-models
+        ul.models-main-links
+            li.models-main-item
+                a.models-main-link(href='#')
+                    span.models-main-name Brutale
+                ul.models-second-links
+                    li.models-second-item
+                        a.models-second-link(href='/brutale-800-rosso.html' data-href='brutale-800-rosso')
+                            span.models-second-name brutale 800 rosso
+                    li.models-second-item
+                        a.models-second-link(href='/brutale-800-rr.html' data-href='brutale-800-rr')
+                            span.models-second-name brutale 800 rr
+                    li.models-second-item
+                        a.models-second-link(href='/brutale-800-rr-scs.html' data-href='brutale-800-rr-scs')
+                            span.models-second-name brutale 800 rr scs
+                    li.models-second-item
+                        a.models-second-link(href='/brutale-1000-rr.html' data-href='brutale-1000-rr')
+                            span.models-second-name brutale 1000 rr
+                    li.models-second-item
+                        a.models-second-link(href='/brutale-1000-serie-oro.html' data-href='brutale-1000-serie-oro')
+                            span.models-second-name brutale 1000 serie oro
+            li.models-main-item
+                a.models-main-link(href='#')
+                    span.models-main-name Dragster
+                ul.models-second-links
+                    li.models-second-item
+                        a.models-second-link(href='/dragster-800-rc.html' data-href='dragster-800-rc')
+                            span.models-second-name dragster 800 rc scs
+                    li.models-second-item
+                        a.models-second-link(href='/dragster-800-rosso.html' data-href='dragster-800-rosso')
+                            span.models-second-name dragster 800 rosso
+                    li.models-second-item
+                        a.models-second-link(href='/dragster-800-rr.html' data-href='dragster-800-rr')
+                            span.models-second-name dragster 800 rr
+                    li.models-second-item
+                        a.models-second-link(href='/dragster-800-rr-scs.html' data-href='dragster-800-rr-scs')
+                            span.models-second-name dragster 800 rr scs
+            li.models-main-item
+                a.models-main-link(href='#')
+                    span.models-main-name F3
+                ul.models-second-links
+                    li.models-second-item
+                        a.models-second-link(href='/f3-675.html' data-href='f3-675')
+                            span.models-second-name f3 675
+                    li.models-second-item
+                        a.models-second-link(href='/f3-800.html' data-href='f3-800')
+                            span.models-second-name f3 800
+                    li.models-second-item
+                        a.models-second-link(href='/f3-800-rc.html' data-href='f3-800-rc')
+                            span.models-second-name f3 800 rc
+            li.models-main-item
+                a.models-main-link(href='#')
+                    span.models-main-name Rush
+                ul.models-second-links
+                    li.models-second-item
+                        a.models-second-link(href='/rush-1000.html' data-href='rush-1000')
+                            span.models-second-name rush 1000
+            li.models-main-item
+                a.models-main-link(href='#')
+                    span.models-main-name Superveloce
+                ul.models-second-links
+                    li.models-second-item
+                        a.models-second-link(href='/superveloce-800.html' data-href='superveloce-800')
+                            span.models-second-name superveloce 800
+                    li.models-second-item
+                        a.models-second-link(href='/superveloce-800-serie-oro.html' data-href='superveloce-800-serie-oro')
+                            span.models-second-name superveloce 800 serie oro
+            li.models-main-item
+                a.models-main-link(href='#')
+                    span.models-main-name Turismo Veloce
+                ul.models-second-links
+                    li.models-second-item
+                        a.models-second-link(href='/turismo-veloce-800-lusso.html' data-href='turismo-veloce-800-lusso')
+                            span.models-second-name turismo veloce 800 lusso
+                    li.models-second-item
+                        a.models-second-link(href='/turismo-veloce-800-lusso-scs.html' data-href='turismo-veloce-800-lusso-scs')
+                            span.models-second-name turismo veloce 800 lusso scs
+                    li.models-second-item
+                        a.models-second-link(href='/turismo-veloce-800-rc-scs.html' data-href='turismo-veloce-800-rc-scs')
+                            span.models-second-name turismo veloce 800 rc scs
+                    li.models-second-item
+                        a.models-second-link(href='/turismo-veloce-800-rosso.html' data-href='turismo-veloce-800-rosso')
+                            span.models-second-name turismo veloce 800 rosso
+        .models-blocks-wrap
+            .models-block(data-id='brutale-800-rosso')
+                .models-block__img-wrap
+                    img(src='/img/brutale/brutale-800-rosso/B3_800MY20_00036.png')
+                .models-block__descr-wrap
+                    .models-block__price-block
+                        .block-price
+                            p от
+                            p.price 1 371,200.00
+                            p.curency ₽
+                        p.stock.stock--grey На заказ
+                    .models-block__logo-wrap
+                        .models-block__logo-block
+                            img.models-block__logo(src='/img/brutale/brutale-800-rosso/logo-brutale-rosso.svg')
+                        a.models-block__link(href='/brutale-800-rosso.html')
+                            .models-block__link-arrow
+                                img.image_svg(src='/img/arrow-btn.svg')
+                            span подробнее
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-numbers-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 3
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-value-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 998
+                                    span cc
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-horse-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 212
+                                    span л.с. / 11,500 об.мин
+            .models-block(data-id='brutale-800-rr')
+                .models-block__img-wrap
+                    img(src='/img/brutale/brutale-800-rr/BRUTALE_800RR_MY20_A_00036.png')
+                .models-block__descr-wrap
+                    .models-block__price-block
+                        .block-price
+                            p от
+                            p.price 1 920,100.00
+                            p.curency ₽
+                        p.stock В наличии
+                    .models-block__logo-wrap
+                        .models-block__logo-block
+                            img.models-block__logo(src='/img/brutale/brutale-800-rr/logo_brutale88rr.svg')
+                        a.models-block__link(href='/brutale-800-rr.html')
+                            .models-block__link-arrow
+                                img.image_svg(src='/img/arrow-btn.svg')
+                            span подробнее
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-numbers-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 3
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-value-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 998
+                                    span cc
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-horse-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 212
+                                    span л.с. / 11,500 об.мин
+            .models-block(data-id='brutale-800-rr-scs')
+                .models-block__img-wrap
+                    img(src='/img/brutale/brutale-800-rr-scs/SCSMY20_A_vers2__0036.png')
+                .models-block__descr-wrap
+                    .models-block__price-block
+                        .block-price
+                            p от
+                            p.price 2 067,200.00
+                            p.curency ₽
+                        p.stock В наличии
+                    .models-block__logo-wrap
+                        .models-block__logo-block
+                            img.models-block__logo(src='/img/brutale/brutale-800-rr-scs/logo-brutale800-scs.svg')
+                        a.models-block__link(href='/brutale-800-rr-scs.html')
+                            .models-block__link-arrow
+                                img.image_svg(src='/img/arrow-btn.svg')
+                            span подробнее
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-numbers-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 3
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-value-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 998
+                                    span cc
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-horse-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 212
+                                    span л.с. / 11,500 об.мин
+            .models-block(data-id='brutale-1000-rr')
+                .models-block__img-wrap
+                    img(src='/img/brutale/brutale-1000-rr/B4_1000RR_A_0036.png')
+                .models-block__descr-wrap
+                    .models-block__price-block
+                        .block-price
+                            p от
+                            p.price 3 656,400.00
+                            p.curency ₽
+                        p.stock В наличии
+                    .models-block__logo-wrap
+                        .models-block__logo-block
+                            img.models-block__logo(src='/img/brutale/brutale-1000-rr/logo-brutale1000-rr.svg')
+                        a.models-block__link(href='/brutale-1000-rr.html')
+                            .models-block__link-arrow
+                                img.image_svg(src='/img/arrow-btn.svg')
+                            span подробнее
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-numbers-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 3
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-value-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 998
+                                    span cc
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-horse-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 212
+                                    span л.с. / 11,500 об.мин
+            .models-block(data-id='brutale-1000-serie-oro')
+                .models-block__img-wrap
+                    img(src='/img/brutale/brutale-1000-serie-oro/B4_SerieOro_0036.png')
+                .models-block__descr-wrap
+                    .models-block__price-block
+                        .block-price
+                            p от
+                            p.price 4 657,300.00
+                            p.curency ₽
+                        p.stock В наличии
+                    .models-block__logo-wrap
+                        .models-block__logo-block
+                            img.models-block__logo(src='/img/brutale/brutale-1000-serie-oro/logo-brutale1000serieoro.svg')
+                        a.models-block__link(href='/brutale-1000-serie-oro.html')
+                            .models-block__link-arrow
+                                img.image_svg(src='/img/arrow-btn.svg')
+                            span подробнее
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-numbers-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 3
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-value-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 998
+                                    span cc
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-horse-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 212
+                                    span л.с. / 11,500 об.мин
+            .models-block(data-id='dragster-800-rc')
+                .models-block__img-wrap
+                    img(src='/img/dragster/dragster-800-rc/D3_RCMY20_0036.png')
+                .models-block__descr-wrap
+                    .models-block__price-block
+                        .block-price
+                            p от
+                            p.price 2 439,600.00
+                            p.curency ₽
+                        p.stock В наличии
+                    .models-block__logo-wrap
+                        .models-block__logo-block
+                            img.models-block__logo(src='/img/dragster/dragster-800-rc/logo_dragster800rc.svg')
+                        a.models-block__link(href='/dragster-800-rc.html')
+                            .models-block__link-arrow
+                                img.image_svg(src='/img/arrow-btn.svg')
+                            span подробнее
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-numbers-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 3
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-value-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 998
+                                    span cc
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-horse-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 212
+                                    span л.с. / 11,500 об.мин
+            .models-block(data-id='dragster-800-rosso')
+                .models-block__img-wrap
+                    img(src='/img/dragster/dragster-800-rosso/D3_800MY20_0036.png')
+                .models-block__descr-wrap
+                    .models-block__price-block
+                        .block-price
+                            p от
+                            p.price 1 467,300.00
+                            p.curency ₽
+                        p.stock В наличии
+                    .models-block__logo-wrap
+                        .models-block__logo-block
+                            img.models-block__logo(src='/img/dragster/dragster-800-rosso/logo-dragster-rosso.svg')
+                        a.models-block__link(href='/dragster-800-rosso.html')
+                            .models-block__link-arrow
+                                img.image_svg(src='/img/arrow-btn.svg')
+                            span подробнее
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-numbers-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 3
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-value-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 998
+                                    span cc
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-horse-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 212
+                                    span л.с. / 11,500 об.мин
+            .models-block(data-id='dragster-800-rr')
+                .models-block__img-wrap
+                    img(src='/img/dragster/dragster-800-rr/D3_RRMY20_B_0036.png')
+                .models-block__descr-wrap
+                    .models-block__price-block
+                        .block-price
+                            p от
+                            p.price 2 115,600.00
+                            p.curency ₽
+                        p.stock В наличии
+                    .models-block__logo-wrap
+                        .models-block__logo-block
+                            img.models-block__logo(src='/img/dragster/dragster-800-rr/logo_dragster800rr_white.svg')
+                        a.models-block__link(href='/dragster-800-rr.html')
+                            .models-block__link-arrow
+                                img.image_svg(src='/img/arrow-btn.svg')
+                            span подробнее
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-numbers-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 3
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-value-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 998
+                                    span cc
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-horse-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 212
+                                    span л.с. / 11,500 об.мин
+            .models-block(data-id='dragster-800-rr-scs')
+                .models-block__img-wrap
+                    img(src='/img/dragster/dragster-800-rr-scs/D3_SCSMY20_ver2_A_0036.png')
+                .models-block__descr-wrap
+                    .models-block__price-block
+                        .block-price
+                            p от
+                            p.price 2 260,200.00
+                            p.curency ₽
+                        p.stock В наличии
+                    .models-block__logo-wrap
+                        .models-block__logo-block
+                            img.models-block__logo(src='/img/dragster/dragster-800-rr-scs/logo-dragster800-scs.svg')
+                        a.models-block__link(href='/dragster-800-rr-scs.html')
+                            .models-block__link-arrow
+                                img.image_svg(src='/img/arrow-btn.svg')
+                            span подробнее
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-numbers-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 3
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-value-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 998
+                                    span cc
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-horse-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 212
+                                    span л.с. / 11,500 об.мин
+            .models-block(data-id='f3-675')
+                .models-block__img-wrap
+                    img(src='/img/f3/f3-675/F3_675MY20_0036.png')
+                .models-block__descr-wrap
+                    .models-block__price-block
+                        .block-price
+                            p от
+                            p.price 1 827,400.00
+                            p.curency ₽
+                        p.stock В наличии
+                    .models-block__logo-wrap
+                        .models-block__logo-block
+                            img.models-block__logo(src='/img/f3/f3-675/logo_f3675.svg')
+                        a.models-block__link(href='/f3-675.html')
+                            .models-block__link-arrow
+                                img.image_svg(src='/img/arrow-btn.svg')
+                            span подробнее
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-numbers-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 3
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-value-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 998
+                                    span cc
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-horse-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 212
+                                    span л.с. / 11,500 об.мин
+            .models-block(data-id='f3-800')
+                .models-block__img-wrap
+                    img(src='/img/f3/f3-800/F3_800MY20_0036.png')
+                .models-block__descr-wrap
+                    .models-block__price-block
+                        .block-price
+                            p от
+                            p.price 2 027,800.00
+                            p.curency ₽
+                        p.stock В наличии
+                    .models-block__logo-wrap
+                        .models-block__logo-block
+                            img.models-block__logo(src='/img/f3/f3-800/logo_f3800_white.svg')
+                        a.models-block__link(href='/f3-800.html')
+                            .models-block__link-arrow
+                                img.image_svg(src='/img/arrow-btn.svg')
+                            span подробнее
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-numbers-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 3
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-value-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 998
+                                    span cc
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-horse-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 212
+                                    span л.с. / 11,500 об.мин
+            .models-block(data-id='f3-800-rc')
+                .models-block__img-wrap
+                    img(src='/img/f3/f3-800-rc/F3_RCMY20_0036.png')
+                .models-block__descr-wrap
+                    .models-block__price-block
+                        .block-price
+                            p от
+                            p.price 2 420,200.00
+                            p.curency ₽
+                        p.stock В наличии
+                    .models-block__logo-wrap
+                        .models-block__logo-block
+                            img.models-block__logo(src='/img/f3/f3-800-rc/logo_f3800rc_white.svg')
+                        a.models-block__link(href='/f3-800-rc.html')
+                            .models-block__link-arrow
+                                img.image_svg(src='/img/arrow-btn.svg')
+                            span подробнее
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-numbers-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 3
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-value-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 998
+                                    span cc
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-horse-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 212
+                                    span л.с. / 11,500 об.мин
+            .models-block(data-id='rush-1000')
+                .models-block__img-wrap
+                    img(src='/img/rush/rush-1000/rush-1000.png')
+                .models-block__descr-wrap
+                    .models-block__price-block
+                        .block-price
+                            p от
+                            p.price 4 402,800.00
+                            p.curency ₽
+                        p.stock В наличии
+                    .models-block__logo-wrap
+                        .models-block__logo-block
+                            img.models-block__logo(src='/img/rush/rush-1000/logo-rush1000.svg')
+                        a.models-block__link(href='/rush-1000.html')
+                            .models-block__link-arrow
+                                img.image_svg(src='/img/arrow-btn.svg')
+                            span подробнее
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-numbers-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 3
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-value-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 998
+                                    span cc
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-horse-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 212
+                                    span л.с. / 11,500 об.мин
+            .models-block(data-id='superveloce-800')
+                .models-block__img-wrap
+                    img(src='/img/superveloce/superveloce-800/SV800_A_0036.png')
+                .models-block__descr-wrap
+                    .models-block__price-block
+                        .block-price
+                            p от
+                            p.price 2 347,300.00
+                            p.curency ₽
+                        p.stock В наличии
+                    .models-block__logo-wrap
+                        .models-block__logo-block
+                            img.models-block__logo(src='/img/superveloce/superveloce-800/logo-superveloce800.svg')
+                        a.models-block__link(href='/superveloce-800.html')
+                            .models-block__link-arrow
+                                img.image_svg(src='/img/arrow-btn.svg')
+                            span подробнее
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-numbers-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 3
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-value-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 998
+                                    span cc
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-horse-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 212
+                                    span л.с. / 11,500 об.мин
+            .models-block(data-id='superveloce-800-serie-oro')
+                .models-block__img-wrap
+                    img(src='/img/superveloce/superveloce-800-serie-oro/SV_SerieOro_0036.png')
+                .models-block__descr-wrap
+                    .models-block__price-block
+                        .block-price
+                            p от
+                            p.price 3 519,000.00
+                            p.curency ₽
+                        p.stock В наличии
+                    .models-block__logo-wrap
+                        .models-block__logo-block
+                            img.models-block__logo(src='/img/superveloce/superveloce-800-serie-oro/superveloce_serie_oro_logo.svg')
+                        a.models-block__link(href='/superveloce-800-serie-oro.html')
+                            .models-block__link-arrow
+                                img.image_svg(src='/img/arrow-btn.svg')
+                            span подробнее
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-numbers-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 3
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-value-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 998
+                                    span cc
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-horse-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 212
+                                    span л.с. / 11,500 об.мин
+            .models-block(data-id='turismo-veloce-800-lusso')
+                .models-block__img-wrap
+                    img(src='/img/turismo-veloce/turismo-veloce-800-lusso/TVL_MY20_A_0036.png')
+                .models-block__descr-wrap
+                    .models-block__price-block
+                        .block-price
+                            p от
+                            p.price 2 231,500.00
+                            p.curency ₽
+                        p.stock В наличии
+                    .models-block__logo-wrap
+                        .models-block__logo-block
+                            img.models-block__logo(src='/img/turismo-veloce/turismo-veloce-800-lusso/logo_turismoveloce800lusso_white.svg')
+                        a.models-block__link(href='/turismo-veloce-800-lusso.html')
+                            .models-block__link-arrow
+                                img.image_svg(src='/img/arrow-btn.svg')
+                            span подробнее
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-numbers-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 3
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-value-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 998
+                                    span cc
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-horse-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 212
+                                    span л.с. / 11,500 об.мин
+            .models-block(data-id='turismo-veloce-800-lusso-scs')
+                .models-block__img-wrap
+                    img(src='/img/turismo-veloce/turismo-veloce-800-lusso-scs/Turismo_SCSMY20_A_0036.png')
+                .models-block__descr-wrap
+                    .models-block__price-block
+                        .block-price
+                            p от
+                            p.price 2 472,300.00
+                            p.curency ₽
+                        p.stock В наличии
+                    .models-block__logo-wrap
+                        .models-block__logo-block
+                            img.models-block__logo(src='/img/turismo-veloce/turismo-veloce-800-lusso-scs/logo_turismoveloce800lussoscs.svg')
+                        a.models-block__link(href='/turismo-veloce-800-lusso-scs.html')
+                            .models-block__link-arrow
+                                img.image_svg(src='/img/arrow-btn.svg')
+                            span подробнее
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-numbers-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 3
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-value-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 998
+                                    span cc
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-horse-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 212
+                                    span л.с. / 11,500 об.мин
+            .models-block(data-id='turismo-veloce-800-rc-scs')
+                .models-block__img-wrap
+                    img(src='/img/turismo-veloce/turismo-veloce-800-rc-scs/Turismo_RCMY20_0036.png')
+                .models-block__descr-wrap
+                    .models-block__price-block
+                        .block-price
+                            p от
+                            p.price 2 572,800.00
+                            p.curency ₽
+                        p.stock В наличии
+                    .models-block__logo-wrap
+                        .models-block__logo-block
+                            img.models-block__logo(src='/img/turismo-veloce/turismo-veloce-800-rc-scs/logo_turismovelocerc.svg')
+                        a.models-block__link(href='/turismo-veloce-800-rc-scs.html')
+                            .models-block__link-arrow
+                                img.image_svg(src='/img/arrow-btn.svg')
+                            span подробнее
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-numbers-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 3
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-value-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 998
+                                    span cc
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-horse-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 212
+                                    span л.с. / 11,500 об.мин
+            .models-block(data-id='turismo-veloce-800-rosso')
+                .models-block__img-wrap
+                    img(src='/img/turismo-veloce/turismo-veloce-800-rosso/Turismo_800MY20_0036.png')
+                .models-block__descr-wrap
+                    .models-block__price-block
+                        .block-price
+                            p от
+                            p.price 1 543,600.00
+                            p.curency ₽
+                        p.stock В наличии
+                    .models-block__logo-wrap
+                        .models-block__logo-block
+                            img.models-block__logo(src='/img/turismo-veloce/turismo-veloce-800-rosso/logo-turismoveloce-rosso.svg')
+                        a.models-block__link(href='/turismo-veloce-800-rosso.html')
+                            .models-block__link-arrow
+                                img.image_svg(src='/img/arrow-btn.svg')
+                            span подробнее
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-numbers-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 3
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-value-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 998
+                                    span cc
+                    .models-block__descr-block
+                        .models-block__descr-content
+                            img.image_svg(src='/img/icon-horse-cil.svg')
+                            .models-block__descr-text-wrap
+                                p.models-block__descr-name количество цилиндров
+                                p.models-block__descr-about
+                                    | 212
+                                    span л.с. / 11,500 об.мин
+    ul#slide-out.sidenav
+        .sidenav-header
+            a.sidenav-close.sidenav-cross(href='#!')
+                img.image_svg(src='/img/icon-cross.svg')
+        .sidenav-body
+            a.sidenav__link.sidenav__link--mob(href='/stock.html')
+                span Мотоциклы в наличии
+            ul.collapsible
+                li.first-level-item 
+                    .collapsible-header.first-level-header
+                        p Модельный ряд
+                    .collapsible-body
+                        ul.collapsible
+                            li.second-level-item
+                                .collapsible-header.second-level-header
+                                    p Brutale
+                                .collapsible-body
+                                    a(href='/brutale-800-rosso.html')
+                                        sapn Brutale 800 rosso
+                                    a(href='/brutale-800-rr.html')
+                                        sapn brutale 800 rr
+                                    a(href='/brutale-800-rr-scs.html')
+                                        sapn brutale 800 rr scs
+                                    a(href='/brutale-1000-rr.html')
+                                        sapn brutale 1000 rr
+                                    a(href='/brutale-1000-serie-oro.html')
+                                        sapn brutale 1000 serie oro
+                        ul.collapsible
+                            li.second-level-item
+                                .collapsible-header.second-level-header
+                                    p Dragster
+                                .collapsible-body
+                                    a(href='/dragster-800-rc.html')
+                                        sapn dragster 800 rc
+                                    a(href='/dragster-800-rosso.html')
+                                        sapn dragster 800 rosso
+                                    a(href='/dragster-800-rr.html')
+                                        sapn dragster 800 rr
+                                    a(href='/dragster-800-rr-scs.html')
+                                        sapn dragster 800 rr scs
+                        ul.collapsible
+                            li.second-level-item
+                                .collapsible-header.second-level-header
+                                    p F3
+                                .collapsible-body
+                                    a(href='/f3-675.html')
+                                        sapn f3 675
+                                    a(href='/f3-800.html')
+                                        sapn f3 800
+                                    a(href='/f3-800-rc.html')
+                                        sapn f3 800 rc
+                        ul.collapsible
+                            li.second-level-item
+                                .collapsible-header.second-level-header
+                                    p Rush
+                                .collapsible-body
+                                    a(href='/rush-1000.html')
+                                        sapn rush 1000
+                        ul.collapsible
+                            li.second-level-item
+                                .collapsible-header.second-level-header
+                                    p Superveloce
+                                .collapsible-body
+                                    a(href='/superveloce-800.html')
+                                        sapn superveloce 800
+                                    a(href='/superveloce-800-serie-oro.html')
+                                        sapn superveloce 800 serie oro
+                        ul.collapsible
+                            li.second-level-item
+                                .collapsible-header.second-level-header
+                                    p Turismo Veloce
+                                .collapsible-body
+                                    a(href='/turismo-veloce-800-lusso.html')
+                                        sapn turismo veloce 800 lusso
+                                    a(href='/turismo-veloce-800-lusso-scs.html')
+                                        sapn turismo veloce 800 lusso scs
+                                    a(href='/turismo-veloce-800-rc-scs.html')
+                                        sapn turismo veloce 800 rc scs
+                                    a(href='/turismo-veloce-800-rosso.html')
+                                        sapn turismo veloce 800 rosso
+            a.sidenav__link.sidenav__link--mob(href='/contacts.html')
+                span Контакты
+            //a.sidenav__link(href='#')
+            //    span Тюнинг
+            a.sidenav__link(href='/service.html')
+                span Запись на сервис
+            a.sidenav__link(href='/company.html')
+                span О компании
+            a.sidenav__link.sidenav__link--mob.sidenav__link--ride(href='/ride.html')
+                span Тест-райд
+            .sidenav__link-phone-wrap.sidenav__link--mob
+                a.sidenav__link.sidenav__link--mob.sidenav__link--phone.modal-trigger.sidenav-close(href='#modalCall')
+                    img.image_svg(src='/img/icon-phone.svg')
+                    span Обратный звонок
+    .modal.modal-call#modalCall
+        .modal-cross-wrap
+            a.modal-close(href='#!')
+                img.image_svg(src='/img/icon-cross.svg')
+        .modal-content
+            p.modal__title оставьте свои данные
+            img.image_svg(src='/img/modal-line.svg')
+            form#bottomForm.wpcf7-form(class="form-style notvalid" novalidate="novalidate")
+                .formWP.form-wrp
+                    .form-group
+                        .wrp-input.input-field
+                            label(for='first_name_p') Имя
+                            input#first_name_p(type='text', name='firstName', maxlength='50')
+                    .form-group
+                        .wrp-input.input-field
+                            label(for='last_name_p') Фамилия
+                            input#last_name_p(type='text', name='lastName', maxlength='50')
+                    .form-group
+                        .wrp-input.input-field
+                            label(for='phone_p') Телефон *
+                            input#phone_p.form-control(type='tel', name='phone', required='', maxlength='30')
+                    .form-group
+                        .wrp-input
+                            textarea#message_p.form-control.max-length-counter(name="message" rows="3" placeholder="Оставить запрос" maxlength="1800")
+                    .checkbox-wrap
+                        label
+                            input.filled-in(type='checkbox', name="agree_receive", value="Yes")
+                            span Согласен на получение рекламных информационных материалов
+                    .checkbox-wrap
+                        label
+                            input.filled-in.required-checkbox.form-control(type='checkbox', name="agree_personal", value="Yes")
+                            span
+                                | Я согласен на обработку персональных данных в соответствие с&ensp;
+                                a.policy_modal-link.modal-trigger(href="#modalPolicy") политикой кофиденциальности
+                                | *
+                .btn-wrap
+                    button.btn.submitButton(type='submit')
+                        span отправить
+                    .preloader-wrapper.preloader-wrapper-btn.small.active
+                        .spinner-layer.spinner-green-only
+                            .circle-clipper.left
+                                .circle
+                            .gap-patch
+                                .circle
+                            .circle-clipper.right
+                                .circle
+    .modal.modal-call.modal-thanks#modalThanks
+        .modal-cross-wrap
+            a.modal-close(href='#!')
+                img.image_svg(src='/img/icon-cross.svg')
+        .modal-content
+            p.modal__title Заявка отправлена!
+            p.modal__title Мы вам перезвоним в течении 10 минут!
+            .btn-wrap
+                a.modal-close.btn(href='#!')
+                    span ок

@@ -1,0 +1,59 @@
+<form id="serviceForm" novalidate="novalidate" class="wpcf7-form service-form__form form-style notvalid">
+    <div class="formWP form-wrp">
+        <div class="form-group">
+            <div class="wrp-input input-field">
+                <label for="firstName_s">Имя *</label>
+                <input id="firstName_s" type="text" name="firstName" required="" maxlength="50" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="wrp-input input-field">
+                <label for="lastName_s">Фамилия *</label>
+                <input id="lastName_s" type="text" name="lastName" required="" maxlength="50" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="wrp-input input-field">
+                <label for="phone_s">Телефон *</label>
+                <input id="phone_s" type="tel" name="phone" required="" maxlength="30" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="wrp-input">
+                <label>
+                    <textarea id="message_s" name="message" rows="3" placeholder="Оставить запрос" maxlength="1800" class="form-control max-length-counter"></textarea>
+                </label>
+            </div>
+        </div>
+{#        <div class="checkbox-wrap">#}
+{#            <label>#}
+{#                <input type="checkbox" name="agree_receive" value="Yes" class="filled-in"/>#}
+{#                <span>Согласен на получение рекламных информационных материалов</span>#}
+{#            </label>#}
+{#        </div>#}
+        <div class="checkbox-wrap">
+            <label>
+                <input type="checkbox" value="Yes" class="filled-in required-checkbox form-control"/>
+                <span>Я согласен на обработку персональных данных в соответствие с
+                    <a href="#modalPolicy" class="policy_modal-link modal-trigger">политикой кофиденциальности</a>&ensp;*
+                </span>
+            </label>
+        </div>
+    </div>
+    <div class="btn-wrap">
+        <button type="submit" class="btn submitButton"><span>отправить</span></button>
+        <div class="preloader-wrapper preloader-wrapper-btn small active">
+            <div class="spinner-layer spinner-green-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,102 @@
+sonata_media:
+    db_driver: doctrine_orm
+    default_context: default
+
+    class:
+        media: App\Entity\Media
+        gallery: App\Entity\Gallery
+        gallery_has_media: App\Entity\GalleryHasMedia
+
+    contexts:
+        default:
+            providers:
+                - sonata.media.provider.image
+                - sonata.media.provider.image.multiupload
+                - sonata.media.provider.youtube
+                - sonata.media.provider.video
+                - sonata.media.provider.audio
+                - sonata.media.provider.file
+                - sonata.media.provider.svg
+            formats:
+                small: { width: 100 , quality: 90 }
+                big:   { width: 500 , quality: 90 }
+                large: { width: 900 , quality: 90 }
+
+                #    XXS     50
+                #    XS      100
+                #    S       150
+                #    M       500
+                #    L       900
+                #    XL      1200
+                #    XXL     1920
+                #    XXXL    2000
+
+        model:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                small: { width: 100 , quality: 90 }
+                big:   { width: 500 , quality: 90 }
+                large: { width: 900 , quality: 90 }
+
+        bike_gallery:
+            providers:
+                - sonata.media.provider.image
+                - sonata.media.provider.youtube
+                - sonata.media.provider.video
+            formats:
+                small: { width: 100 , quality: 90 }
+                big:   { width: 500 , quality: 90 }
+                large: { width: 900 , quality: 90 }
+
+        circular:
+            providers:
+                - sonata.media.provider.image
+                - sonata.media.provider.image.multiupload
+            formats:
+                small: { width: 100 , quality: 90 }
+                big:   { width: 500 , quality: 90 }
+                large: { width: 900 , quality: 90 }
+
+        header_gallery:
+            providers:
+                - sonata.media.provider.image
+                - sonata.media.provider.video
+            formats:
+                small: { width: 100 , quality: 90 }
+                big:   { width: 500 , quality: 90 }
+                large: { width: 900 , quality: 90 }
+
+        highlight:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                small: { width: 100 , quality: 90 }
+                big:   { width: 500 , quality: 90 }
+                large: { width: 900 , quality: 90 }
+
+        logo:
+            providers:
+                - sonata.media.provider.svg
+
+        color:
+            providers:
+                - sonata.media.provider.svg
+
+        sound:
+            providers:
+                - sonata.media.provider.audio
+
+        document:
+            providers:
+                - sonata.media.provider.file
+
+    cdn:
+        server:
+            path: /upload/media
+
+    filesystem:
+        local:
+            # Directory for uploads should be writable
+            directory: "%kernel.project_dir%/public/upload/media"
+            create: false
